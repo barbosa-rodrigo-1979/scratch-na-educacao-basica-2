@@ -19,7 +19,7 @@
     <!-- Título exibido na aba do navegador -->
     <title>Scratch no Ensino Fundamental II | Cartilha Pedagógica UTFPR</title>
     <!-- Link para o arquivo CSS externo que contém os estilos da página -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
                 <!-- Container do logotipo e nome da instituição -->
                 <div class="logo-container">
                     <!-- Imagem do logotipo da UTFPR -->
-                    <img src="UTFPR_logo.png" alt="UTFPR Logo" class="logo">
+                    <img src="assets/images/UTFPR_logo.png" alt="UTFPR Logo" class="logo">
                     <!-- Nome da universidade com um pequeno texto para o campus -->
                     <div class="institution-name">
                         Universidade Tecnológica Federal do Paraná<br>
@@ -54,13 +54,13 @@
                     <ul>
                         <!-- Cada item da lista representa um link; 'active' indica a página atual -->
                         <li><a href="index.html" class="active" aria-current="page">Página Inicial</a></li>
-                        <li><a href="primeiros_passos.html">Primeiros Passos</a></li>
-                        <li><a href="projetos_6_ano.html">Projetos 6º Ano</a></li>
-                        <li><a href="projetos_7_ano.html">Projetos 7º Ano</a></li>
-                        <li><a href="projetos_8_ano.html">Projetos 8º Ano</a></li>
-                        <li><a href="projetos_9_ano.html">Projetos 9º Ano</a></li>
+                        <li><a href="pages/primeiros_passos.html">Primeiros Passos</a></li>
+                        <li><a href="pages/projetos_6_ano.html">Projetos 6º Ano</a></li>
+                        <li><a href="pages/projetos_7_ano.html">Projetos 7º Ano</a></li>
+                        <li><a href="pages/projetos_8_ano.html">Projetos 8º Ano</a></li>
+                        <li><a href="pages/projetos_9_ano.html">Projetos 9º Ano</a></li>
                         <li><a href="planos_de_aula.html">Planos de Aula</a></li>
-                        <li><a href="referencias_bncc.html">Referências BNCC</a></li>
+                        <li><a href="pages/referencias_bncc.html">Referências BNCC</a></li>
                     </ul>
                 </nav>
             </div>
@@ -166,16 +166,19 @@
                 <h2>SUMÁRIO DA SEQUÊNCIA DIDÁTICA</h2>
                 <!-- Lista ordenada com links para as principais páginas do portal -->
                 <ol class="sumario">
-                    <li><a href="primeiros_passos.html">Introdução ao Scratch para o Ensino Fundamental II</a></li>
-                    <li><a href="projetos_6_ano.html">Projetos para o 6º Ano: Narrativas Interativas e Jogos de
-                            Aventura</a></li>
-                    <li><a href="projetos_7_ano.html">Projetos para o 7º Ano: Jogos de Perguntas e Respostas (Quiz)</a>
+                    <li><a href="pages/primeiros_passos.html">Introdução ao Scratch para o Ensino Fundamental II</a>
                     </li>
-                    <li><a href="#projetos_8_ano.html">Projetos para o 8º Ano: Simulações e Jogos com Clones</a></li>
-                    <li><a href="#projetos_9_ano.html">Projetos para o 9º Ano: Super Trunfo e Ponte para Linguagens
+                    <li><a href="pages/projetos_6_ano.html">Projetos para o 6º Ano: Narrativas Interativas e Jogos de
+                            Aventura</a></li>
+                    <li><a href="pages/projetos_7_ano.html">Projetos para o 7º Ano: Jogos de Perguntas e Respostas
+                            (Quiz)</a>
+                    </li>
+                    <li><a href="pages/projetos_8_ano.html">Projetos para o 8º Ano: Simulações e Jogos com Clones</a>
+                    </li>
+                    <li><a href="pages/projetos_9_ano.html">Projetos para o 9º Ano: Super Trunfo e Ponte para Linguagens
                             Textuais</a></li>
-                    <li><a href="planos_de_aula.html">Planos de Aula Detalhados (com BNCC e DCE-PR)</a></li>
-                    <li><a href="referencias_bncc.html">Referências Bibliográficas e Materiais de Apoio</a></li>
+                    <li><a href="pages/planos_de_aula.html">Planos de Aula Detalhados (com BNCC e DCE-PR)</a></li>
+                    <li><a href="pages/referencias_bncc.html">Referências Bibliográficas e Materiais de Apoio</a></li>
                 </ol>
             </div>
 
@@ -186,7 +189,7 @@
                 <!-- Container para imagem ilustrativa -->
                 <div class="image-container">
                     <!-- Imagem mostrando a interface do Scratch com destaque para blocos avançados -->
-                    <img src="interface_scratch.png"
+                    <img src="assets/images/interface_scratch.png"
                         alt="Interface do Scratch destacando blocos de Listas e Meus Blocos" class="content-image">
                 </div>
                 <!-- Parágrafo explicando a evolução dos conceitos em relação aos anos iniciais -->
@@ -259,7 +262,7 @@
     <button class="theme-toggle" id="themeToggle" aria-pressed="false"
         aria-label="Alternar tema claro e escuro">🌙</button>
     <!-- Link para o arquivo JavaScript externo que controla a funcionalidade do tema e outras interações -->
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
