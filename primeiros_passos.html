@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!-- ===================================================================
+    Primeiros Passos no Scratch (EF II) | Guia Unificado
+    ===================================================================
+    Objetivo: Revisão e aprofundamento da plataforma Scratch para professores 
+              do Ensino Fundamental II, com integração de conteúdos básicos 
+              e avançados.
+    Autor : Gisele Nunes, Rodrigo Barbosa
+    Data  : 2026
+    ===================================================================
+    Este arquivo foi completamente comentado em português para facilitar
+    a compreensão e manutenção do código. Cada seção importante possui
+    explicações detalhadas sobre sua função e estrutura.
+-->
+<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
+
+<head>
+    <!-- Configuração de codificação de caracteres para suporte a acentos e caracteres especiais -->
+    <meta charset="UTF-8">
+    <!-- Configuração de viewport para garantir responsividade em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título exibido na aba do navegador -->
+    <title>Primeiros Passos no Scratch (EF II) | Guia Unificado</title>
+    <!-- Link para o arquivo de estilos CSS externo (responsável pelo design visual) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho principal da página, dividido em duas partes: topo e menu de navegação -->
+    <header>
+        <!-- Primeira linha do cabeçalho: logotipo, nome da instituição e título principal -->
+        <div class="header-top">
+            <!-- Container para centralizar e limitar a largura do conteúdo -->
+            <div class="container">
+                <!-- Área que agrupa a logo e o nome da universidade -->
+                <div class="logo-container">
+                    <!-- Imagem da logo da UTFPR (caminho relativo) -->
+                    <img src="UTFPR_logo.png" alt="UTFPR Logo" class="logo">
+                    <!-- Nome da instituição com um pequeno texto adicional -->
+                    <div class="institution-name">
+                        Universidade Tecnológica Federal do Paraná<br>
+                        <small>Campus Siqueira Campos</small>
+                    </div>
+                </div>
+                <!-- Título principal do material didático, alinhado à direita ou centralizado -->
+                <div class="header-title">
+                    Scratch na Educação Básica<br>
+                    <small>Material Didático para Professores do 6º ao 9º Ano</small>
+                </div>
+            </div>
+        </div>
+        <!-- Segunda linha do cabeçalho: barra de navegação com links para as páginas do guia -->
+        <div class="header-bottom">
+            <div class="container">
+                <nav> <!-- Elemento semântico de navegação -->
+                    <ul> <!-- Lista não ordenada de links -->
+                        <li><a href="index.html">Página Inicial</a></li>
+                        <!-- Link ativo (página atual) com atributo aria-current para acessibilidade -->
+                        <li><a href="primeiros_passos.html" class="active" aria-current="page">Primeiros Passos</a></li>
+                        <li><a href="projetos_6_ano.html">Projetos 6º Ano</a></li>
+                        <li><a href="projetos_7_ano.html">Projetos 7º Ano</a></li>
+                        <li><a href="projetos_8_ano.html">Projetos 8º Ano</a></li>
+                        <li><a href="projetos_9_ano.html">Projetos 9º Ano</a></li>
+                        <li><a href="planos_de_aula.html">Planos de Aula</a></li>
+                        <li><a href="referencias_BNCC.html">Referências BNCC</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        <div class="container">
+            <!-- Cabeçalho interno da página, com título e subtítulo descritivo -->
+            <div class="page-header">
+                <h1>Primeiros Passos no Scratch</h1>
+                <p class="subtitle">Guia Completo para Professores – do Básico ao Avançado</p>
+            </div>
+
+            <!-- Botão de impressão: aciona a função de imprimir todo o guia (controlado pelo script.js) -->
+            <button class="print-button" id="printPrimeirosPassosBtn">🖨️ Imprimir Guia Completo</button>
+
+            <!-- SEÇÃO 1: ACESSANDO A PLATAFORMA SCRATCH -->
+            <div class="content-section">
+                <h2>1. ACESSANDO A PLATAFORMA SCRATCH</h2>
+
+                <h3>Opção 1: Conta Online (Recomendada)</h3>
+                <!-- Lista ordenada com os passos para criar conta online -->
+                <ol>
+                    <li>Acesse o site oficial: <a href="https://scratch.mit.edu"
+                            target="_blank">https://scratch.mit.edu</a></li>
+                    <li>Clique em "Entrar" (canto superior direito)</li>
+                    <li>Clique em "Junte-se à Comunidade Scratch"</li>
+                    <li>Preencha o formulário com nome de usuário, senha e e-mail</li>
+                    <li>Clique em "Avançar" e complete o cadastro</li>
+                </ol>
+
+                <h3>Opção 2: Modo Offline</h3>
+                <ol>
+                    <li>Baixe o Scratch Desktop em <a href="https://scratch.mit.edu/download"
+                            target="_blank">https://scratch.mit.edu/download</a></li>
+                    <li>Instale no computador seguindo as instruções do sistema operacional</li>
+                </ol>
+
+                <!-- Caixa de informação com dicas importantes para professores -->
+                <div class="info-box">
+                    <h4>📌 Dicas Importantes</h4>
+                    <ul>
+                        <li>Crie uma conta própria para demonstrar</li>
+                        <li>Considere criar conta de turma se permitido</li>
+                        <li>Teste o acesso antes da aula</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 2: CONHECENDO A INTERFACE DO SCRATCH -->
+            <div class="content-section">
+                <h2>2. CONHECENDO A INTERFACE DO SCRATCH</h2>
+
+                <!-- Representação visual simplificada da interface do Scratch (usando divs) -->
+                <div class="scratch-interface">
+                    <div class="interface-area menu-area">MENU SUPERIOR [Arquivo] [Editar] [Ajuda]</div>
+                    <div class="interface-area palco-area">
+                        <div class="area-label">PALCO</div>
+                        <div class="area-content">[Animação]</div>
+                    </div>
+                    <div class="interface-area blocos-area">
+                        <div class="area-label">BLOCOS</div>
+                        <div class="area-content">
+                            Movimento<br>Aparência<br>Som<br>Eventos<br>Controle<br>Sensores<br>Operadores<br>Variáveis
+                        </div>
+                    </div>
+                    <div class="interface-area scripts-area">
+                        <div class="area-label">ÁREA DE SCRIPTS</div>
+                        <div class="area-content">[Blocos encaixados]</div>
+                    </div>
+                    <div class="interface-area sprites-area">
+                        <div class="area-label">SPRITES</div>
+                        <div class="area-content">[Gato] [+]</div>
+                    </div>
+                </div>
+
+                <h3>Categorias de Blocos</h3>
+                <!-- Tabela que resume as categorias de blocos, suas cores e funções principais -->
+                <table class="category-table">
+                    <thead>
+                        <tr>
+                            <th>Cor</th>
+                            <th>Categoria</th>
+                            <th>Função Principal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🟦</td>
+                            <td>Movimento</td>
+                            <td>Controlar posição e direção</td>
+                        </tr>
+                        <tr>
+                            <td>🟪</td>
+                            <td>Aparência</td>
+                            <td>Mudar visual, falar, pensar</td>
+                        </tr>
+                        <tr>
+                            <td>🟥</td>
+                            <td>Som</td>
+                            <td>Efeitos sonoros e música</td>
+                        </tr>
+                        <tr>
+                            <td>🟨</td>
+                            <td>Eventos</td>
+                            <td>Iniciar programas, detectar ações</td>
+                        </tr>
+                        <tr>
+                            <td>🟧</td>
+                            <td>Controle</td>
+                            <td>Repetições, condições, esperas</td>
+                        </tr>
+                        <tr>
+                            <td>🟩</td>
+                            <td>Sensores</td>
+                            <td>Detectar toques, cores, respostas</td>
+                        </tr>
+                        <tr>
+                            <td>🟦</td>
+                            <td>Operadores</td>
+                            <td>Cálculos matemáticos, lógica</td>
+                        </tr>
+                        <tr>
+                            <td>🟫</td>
+                            <td>Variáveis</td>
+                            <td>Armazenar e manipular dados</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Destaque para recursos avançados (variáveis, listas, meus blocos, clones) -->
+                <div class="highlight-box">
+                    <h4>🚀 Novidades para este nível <span class="new-feature">Essencial</span></h4>
+                    <ul>
+                        <li><strong>Variáveis e Listas:</strong> Crie variáveis para pontuações, vidas, e listas para
+                            conjuntos de dados.</li>
+                        <li><strong>Meus Blocos (Blocos Personalizados):</strong> Crie funções reutilizáveis.</li>
+                        <li><strong>Clones:</strong> Crie cópias dinâmicas de sprites.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 3: PRIMEIRO PROJETO – GATO DANÇARINO -->
+            <div class="content-section">
+                <h2>3. PRIMEIRO PROJETO: "GATO DANÇARINO"</h2>
+                <p><strong>Objetivo:</strong> Criar uma animação simples para familiarização.</p>
+
+                <h3>Passo a Passo</h3>
+                <ol>
+                    <li>Clique em "Criar" no canto superior esquerdo.</li>
+                    <li>Arraste os seguintes blocos para a área de scripts, encaixando-os:
+                        <ul>
+                            <li><code>quando ⚑ for clicado</code> (Eventos)</li>
+                            <li><code>mova 10 passos</code> (Movimento)</li>
+                            <li><code>diga Olá! por 2 segundos</code> (Aparência)</li>
+                            <li><code>espere 1 segundos</code> (Controle)</li>
+                            <li><code>mova 10 passos</code> (Movimento)</li>
+                        </ul>
+                    </li>
+                    <li>Clique na bandeira verde para testar.</li>
+                    <li>Modifique os valores (ex.: troque "10" por "20") e o texto "Olá!".</li>
+                </ol>
+                <!-- Bloco de código representando os blocos Scratch em formato textual -->
+                <div class="scratch-code">
+                    quando ⚑ for clicado<br>
+                    mova 10 passos<br>
+                    diga Olá! por 2 segundos<br>
+                    espere 1 segundos<br>
+                    mova 10 passos
+                </div>
+            </div>
+
+            <!-- SEÇÃO 4: EXPLORANDO SPRITES E CENÁRIOS -->
+            <div class="content-section">
+                <h2>4. EXPLORANDO SPRITES E CENÁRIOS</h2>
+
+                <h3>Adicionando Sprites</h3>
+                <ul>
+                    <li><strong>Biblioteca:</strong> Clique em "Escolher um Sprite" (+) e escolha um.</li>
+                    <li><strong>Upload:</strong> Carregue uma imagem do computador.</li>
+                    <li><strong>Desenhar:</strong> Crie seu próprio sprite com as ferramentas de desenho.</li>
+                </ul>
+
+                <h3>Cenários</h3>
+                <ul>
+                    <li>Clique em "Escolher um Cenário" (+) para adicionar um fundo.</li>
+                    <li>Use o bloco <code>mude para o cenário [ ]</code> (Aparência) para trocar durante a execução.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- SEÇÃO 5: RECURSOS AVANÇADOS -->
+            <div class="content-section">
+                <h2>5. RECURSOS AVANÇADOS</h2>
+
+                <h3>Variáveis e Listas</h3>
+                <p>Variáveis guardam valores que podem mudar. Listas guardam vários valores em sequência.</p>
+                <div class="step-by-step">
+                    <h4>Criar uma variável:</h4>
+                    <ol>
+                        <li>Na aba <strong>Variáveis</strong>, clique em <strong>Criar uma Variável</strong>.</li>
+                        <li>Dê um nome, como <code>pontuação</code>.</li>
+                        <li>Use blocos como <code>adicione 1 a [pontuação]</code>.</li>
+                    </ol>
+                </div>
+                <div class="step-by-step">
+                    <h4>Criar uma lista:</h4>
+                    <ol>
+                        <li>Na aba <strong>Variáveis</strong>, clique em <strong>Criar uma Lista</strong>.</li>
+                        <li>Dê um nome, como <code>perguntas</code>.</li>
+                        <li>Use <code>adicione [valor] a [lista]</code>.</li>
+                    </ol>
+                </div>
+
+                <h3>Meus Blocos (Blocos Personalizados)</h3>
+                <p>Crie funções reutilizáveis.</p>
+                <div class="step-by-step">
+                    <ol>
+                        <li>Na aba <strong>Meus Blocos</strong>, clique em <strong>Criar um Bloco</strong>.</li>
+                        <li>Dê um nome, como <code>comparar cartas</code>.</li>
+                        <li>Adicione parâmetros se necessário.</li>
+                        <li>Defina a lógica na área de scripts.</li>
+                    </ol>
+                </div>
+
+                <h3>Clones</h3>
+                <p>Crie cópias dinâmicas de sprites.</p>
+                <div class="step-by-step">
+                    <ol>
+                        <li>Use <code>crie um clone de [mim mesmo]</code>.</li>
+                        <li>Programe o clone em <code>quando eu começar como clone</code>.</li>
+                        <li>Use <code>delete este clone</code> para remover.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 6: PROJETO DE TESTE AVANÇADO -->
+            <div class="content-section">
+                <h2>6. PROJETO DE TESTE: "EXPLORANDO AS NOVIDADES"</h2>
+                <p>Utilize lista, bloco personalizado e clones para simular uma fila de espera com nomes.</p>
+                <!-- Exemplo de código Scratch avançado -->
+                <div class="scratch-code">
+                    quando ⚑ for clicado<br>
+                    esconda<br>
+                    repita (5) vezes<br>
+                    crie um clone de [mim mesmo]<br>
+                    espere (1) segundos<br>
+                    <br>
+                    quando eu começar como clone<br>
+                    mostre<br>
+                    defina [indice] como (número aleatório entre (1) e (comprimento de [nomes]))<br>
+                    defina [nome_escolhido] como (item (indice) de [nomes])<br>
+                    exibir_nome (nome_escolhido)<br>
+                    espere (3) segundos<br>
+                    delete este clone<br>
+                    <br>
+                    definir exibir_nome (nome)<br>
+                    diga (nome) por (2) segundos
+                </div>
+            </div>
+
+            <!-- SEÇÃO 7: ATIVIDADE PRÁTICA FINAL -->
+            <div class="content-section">
+                <h2>7. ATIVIDADE PRÁTICA FINAL: "ANIMAÇÃO COMPLETA"</h2>
+                <p>Crie uma animação com:</p>
+                <ul>
+                    <li>2 sprites diferentes</li>
+                    <li>1 cenário</li>
+                    <li>Movimento</li>
+                    <li>Fala</li>
+                    <li>Esperas</li>
+                    <li>Sons</li>
+                </ul>
+                <h3>Exemplo</h3>
+                <div class="scratch-code">
+                    quando ⚑ for clicado<br>
+                    mova 50 passos<br>
+                    diga [Olá, eu sou o gato!] por 2 segundos<br>
+                    toque o som [meow]<br>
+                    espere 1 segundos
+                </div>
+            </div>
+
+            <!-- SEÇÃO 8: SALVAMENTO E COMPARTILHAMENTO -->
+            <div class="content-section">
+                <h2>8. SALVANDO E COMPARTILHANDO PROJETOS</h2>
+                <ul>
+                    <li>Clique em "Arquivo" > "Salvar agora" para salvar manualmente.</li>
+                    <li>O Scratch salva automaticamente a cada minuto.</li>
+                    <li>Para compartilhar, clique em "Compartilhar" (canto superior direito).</li>
+                </ul>
+                <div class="info-box">
+                    <h4>💡 Dica para Professores</h4>
+                    <p>Use nomes padronizados para os projetos e faça backups regulares.</p>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 9: SOLUÇÃO DE PROBLEMAS COMUNS -->
+            <div class="content-section">
+                <h2>9. RESOLVENDO PROBLEMAS COMUNS</h2>
+                <ul>
+                    <li><strong>Blocos não encaixam:</strong> Arraste até aparecer a linha branca de conexão.</li>
+                    <li><strong>Programa não inicia:</strong> Verifique se usou o bloco "quando ⚑ for clicado" e clicou
+                        na bandeira verde.</li>
+                    <li><strong>Sprite some:</strong> Use "mostre" (Aparência).</li>
+                    <li><strong>Som não funciona:</strong> Verifique o volume do computador e se o bloco "toque o som"
+                        está correto.</li>
+                </ul>
+            </div>
+
+            <!-- SEÇÃO 10: MATERIAL DE APOIO AO PROFESSOR -->
+            <div class="content-section">
+                <h2>MATERIAL DE APOIO AO PROFESSOR</h2>
+                <!-- Caixa com plano de aula sugerido -->
+                <div class="info-box">
+                    <h4>📌 Plano de Aula (50 min)</h4>
+                    <ul>
+                        <li><strong>0-10 min:</strong> Criação de contas e apresentação da interface.</li>
+                        <li><strong>10-25 min:</strong> Projeto "Gato Dançarino".</li>
+                        <li><strong>25-40 min:</strong> Introdução a variáveis e listas (demonstração).</li>
+                        <li><strong>40-50 min:</strong> Exploração livre e discussão.</li>
+                    </ul>
+                </div>
+                <!-- Caixa com links para recursos complementares externos -->
+                <div class="info-box">
+                    <h4>📚 Recursos Complementares</h4>
+                    <ul>
+                        <li><a href="https://scratch.mit.edu/projects/editor/?tutorial=getStarted"
+                                target="_blank">Tutorial oficial do Scratch</a></li>
+                        <li><a href="https://resources.scratch.mit.edu/www/cards/pt-BR/scratch-cards-all.pdf"
+                                target="_blank">Cartões Scratch (PDF)</a></li>
+                        <li><a href="https://creativecomputing.gse.harvard.edu/guide/" target="_blank">Guia de
+                                Computação Criativa (Harvard)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SEÇÃO DE NAVEGAÇÃO: links rápidos para outras páginas do guia -->
+            <div class="content-section">
+                <h2>Navegação</h2>
+                <div class="card-grid">
+                    <a href="index.html" class="nav-card">
+                        <h3>Página Inicial</h3>
+                        <p>Voltar à cartilha principal</p>
+                    </a>
+                    <a href="projetos_6_ano.html" class="nav-card">
+                        <h3>Projetos 6º Ano</h3>
+                        <p>Narrativa Interativa</p>
+                    </a>
+                    <a href="planos_de_aula.html" class="nav-card">
+                        <h3>Planos de Aula</h3>
+                        <p>Planos completos para 6º, 7º, 8º e 9º ano</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé da página com informações institucionais, recursos e contato -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Seção sobre a UTFPR -->
+                <div class="footer-section">
+                    <h3>UTFPR - Campus Siqueira Campos</h3>
+                    <p>Universidade Tecnológica Federal do Paraná</p>
+                    <p>Departamento de Computação</p>
+                </div>
+                <!-- Seção de recursos externos do Scratch -->
+                <div class="footer-section">
+                    <h3>Recursos Scratch</h3>
+                    <ul>
+                        <li><a href="https://scratch.mit.edu" target="_blank" rel="noopener noreferrer">Site Oficial do
+                                Scratch</a></li>
+                        <li><a href="https://scratch.mit.edu/educators" target="_blank" rel="noopener noreferrer">Para
+                                Educadores</a></li>
+                        <li><a href="https://scratch.mit.edu/parents" target="_blank" rel="noopener noreferrer">Para
+                                Pais</a></li>
+                    </ul>
+                </div>
+                <!-- Seção de contato dos autores -->
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: giseleacn@gmail.com</p>
+                    <p>Email: barbosa.rodrigo.1979@gmail.com</p>
+                </div>
+            </div>
+            <!-- Direitos autorais -->
+            <div class="copyright">
+                &copy; 2026 UTFPR - Desenvolvido por Gisele Nunes e Rodrigo Barbosa. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão para alternar entre temas claro e escuro (controlado pelo script.js) -->
+    <button class="theme-toggle" id="themeToggle" aria-pressed="false"
+        aria-label="Alternar tema claro e escuro">🌙</button>
+    <!-- Referência ao arquivo JavaScript externo que adiciona interatividade (ex: impressão, troca de tema) -->
+    <script src="script.js"></script>
+</body>
+
+</html>

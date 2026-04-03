@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!--
+    ===================================================================
+        Scratch no Ensino Fundamental II | Cartilha Pedagógica UTFPR
+    ===================================================================
+        Objetivo: Portal de introdução ao professor do Ensino Fundamental II,
+                  apresentando a sequência didática com Scratch para os 6º ao 9º ano.
+        Autor : Gisele Nunes, Rodrigo Barbosa
+        Data  : 2026
+    ===================================================================
+-->
+
+<head>
+    <!-- Define o conjunto de caracteres como UTF-8 para suporte a acentos e caracteres especiais -->
+    <meta charset="UTF-8">
+    <!-- Configura a viewport para tornar a página responsiva em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título exibido na aba do navegador -->
+    <title>Scratch no Ensino Fundamental II | Cartilha Pedagógica UTFPR</title>
+    <!-- Link para o arquivo CSS externo que contém os estilos da página -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho principal da página, dividido em duas partes: topo e menu de navegação -->
+    <header>
+        <!-- Div para o topo do cabeçalho (logotipo e título institucional) -->
+        <div class="header-top">
+            <!-- Container centraliza e limita a largura do conteúdo -->
+            <div class="container">
+                <!-- Container do logotipo e nome da instituição -->
+                <div class="logo-container">
+                    <!-- Imagem do logotipo da UTFPR -->
+                    <img src="UTFPR_logo.png" alt="UTFPR Logo" class="logo">
+                    <!-- Nome da universidade com um pequeno texto para o campus -->
+                    <div class="institution-name">
+                        Universidade Tecnológica Federal do Paraná<br>
+                        <small>Campus Siqueira Campos</small>
+                    </div>
+                </div>
+                <!-- Título principal do portal, com subtítulo -->
+                <div class="header-title">
+                    Scratch na Educação Básica<br>
+                    <small>Material Didático para Professores do 6º ao 9º Ano</small>
+                </div>
+            </div>
+        </div>
+        <!-- Div para a parte inferior do cabeçalho, contendo o menu de navegação -->
+        <div class="header-bottom">
+            <div class="container">
+                <!-- Barra de navegação com links para as principais seções do portal -->
+                <nav>
+                    <ul>
+                        <!-- Cada item da lista representa um link; 'active' indica a página atual -->
+                        <li><a href="index.html" class="active" aria-current="page">Página Inicial</a></li>
+                        <li><a href="primeiros_passos.html">Primeiros Passos</a></li>
+                        <li><a href="projetos_6_ano.html">Projetos 6º Ano</a></li>
+                        <li><a href="projetos_7_ano.html">Projetos 7º Ano</a></li>
+                        <li><a href="projetos_8_ano.html">Projetos 8º Ano</a></li>
+                        <li><a href="projetos_9_ano.html">Projetos 9º Ano</a></li>
+                        <li><a href="planos_de_aula.html">Planos de Aula</a></li>
+                        <li><a href="referencias_BNCC.html">Referências BNCC</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        <div class="container">
+            <!-- Cabeçalho da página com título, subtítulo e informações dos autores -->
+            <div class="page-header">
+                <h1>Cartilha Pedagógica: Scratch no Ensino Fundamental II</h1>
+                <p class="subtitle">Uma sequência didática para desenvolver o Pensamento Computacional do 6º ao 9º ano
+                </p>
+                <div class="authors">
+                    Autores: Gisele Nunes, Rodrigo Barbosa<br>
+                    Orientador: Alexandre Busquim<br>
+                    Instituição: UTFPR Polo Siqueira Campos<br>
+                    Ano: 2026
+                </div>
+            </div>
+
+            <!-- Seção de conteúdo: Apresentação -->
+            <div class="content-section">
+                <h2>APRESENTAÇÃO</h2>
+                <!-- Parágrafo de introdução explicando o propósito do material -->
+                <p class="introduction-text">
+                    Este material foi desenvolvido para apoiar professores do Ensino Fundamental II (6º ao 9º ano) na
+                    implementação de uma sequência didática completa utilizando a plataforma Scratch. Diferente do
+                    material para os anos iniciais, este guia aprofunda os conceitos de programação, explorando
+                    estruturas de dados (listas), criação de blocos personalizados (procedimentos), sistemas complexos
+                    com múltiplas variáveis e a integração com outras áreas do conhecimento, como Matemática, Ciências,
+                    Geografia e Língua Portuguesa, em consonância com a Base Nacional Comum Curricular (BNCC) e as
+                    Diretrizes Curriculares do Estado do Paraná.
+                </p>
+                <!-- Segundo parágrafo destacando a importância do Scratch para o pensamento abstrato -->
+                <p class="introduction-text">
+                    Acreditamos que, nesta fase, os estudantes estão prontos para desafios mais complexos, que exigem
+                    raciocínio abstrato e resolução sistemática de problemas. O Scratch, com sua interface visual e
+                    poderosa, continua sendo a ferramenta ideal para explorar esses conceitos, servindo como uma ponte
+                    perfeita para linguagens textuais como Python no Ensino Médio.
+                </p>
+            </div>
+
+            <!-- Seção de conteúdo: Resumo acadêmico e alinhamento curricular -->
+            <div class="content-section">
+                <h2>RESUMO ACADÊMICO E ALINHAMENTO CURRICULAR</h2>
+                <!-- Explicação sobre a competência geral da BNCC e metodologia -->
+                <p>Esta cartilha apresenta uma progressão de aprendizagem em Pensamento Computacional e programação com
+                    Scratch, organizada por ano escolar (6º ao 9º). A sequência foi elaborada para atender à
+                    <strong>Competência Geral 5 da BNCC</strong> (Cultura Digital), que prevê "compreender, utilizar e
+                    criar tecnologias digitais de forma crítica, significativa, reflexiva e ética". Além
+                    disso, o material dialoga com as habilidades de outras áreas, como Matemática (criação de
+                    algoritmos, resolução de problemas), Ciências (simulação de sistemas) e Língua Portuguesa (produção
+                    de narrativas interativas).
+                </p>
+                <p>Metodologicamente, utilizamos a abordagem da <strong>Computação Criativa</strong>, que valoriza a
+                    expressão pessoal, a experimentação e a construção de projetos significativos para o estudante. A
+                    sequência é dividida em quatro eixos principais de desenvolvimento, um
+                    para cada ano, garantindo uma curva de aprendizado gradual e desafiadora.</p>
+                <!-- Visão geral da progressão por ano, em formato de grade -->
+                <div class="year-overview">
+                    <h3>📚 Progressão da Aprendizagem: 6º ao 9º Ano</h3>
+                    <div class="year-grid">
+                        <!-- Card do 6º ano -->
+                        <div class="year-card">
+                            <h4>6º Ano</h4>
+                            <p><strong>Eixo:</strong> Fundamentos e Narrativas</p>
+                            <p><strong>Conceitos:</strong> Sequências, eventos, coordenadas, sincronização de diálogos.
+                            </p>
+                            <p><strong>Projeto Principal:</strong> Narrativa Interativa com Múltiplas Escolhas.</p>
+                        </div>
+                        <!-- Card do 7º ano -->
+                        <div class="year-card">
+                            <h4>7º Ano</h4>
+                            <p><strong>Eixo:</strong> Lógica e Jogabilidade</p>
+                            <p><strong>Conceitos:</strong> Condicionais, variáveis, laços de repetição, detecção de
+                                colisão.</p>
+                            <p><strong>Projeto Principal:</strong> Jogo de Perguntas e Respostas (Quiz).</p>
+                        </div>
+                        <!-- Card do 8º ano -->
+                        <div class="year-card">
+                            <h4>8º Ano</h4>
+                            <p><strong>Eixo:</strong> Simulação e Otimização</p>
+                            <p><strong>Conceitos:</strong> Clones, listas (arrays), operadores matemáticos avançados,
+                                otimização de código.</p>
+                            <p><strong>Projeto Principal:</strong> Simulador de Ecossistema ou Corrida de Clones.</p>
+                        </div>
+                        <!-- Card do 9º ano -->
+                        <div class="year-card">
+                            <h4>9º Ano</h4>
+                            <p><strong>Eixo:</strong> Autoria e Projetos Integradores</p>
+                            <p><strong>Conceitos:</strong> Blocos personalizados (procedimentos), sistemas de pontuação
+                                complexos, integração com hardware (Arduino via Scratch).</p>
+                            <p><strong>Projeto Principal:</strong> Super Trunfo (com listas) e Ponte para Python.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de conteúdo: Sumário da sequência didática -->
+            <div class="content-section">
+                <h2>SUMÁRIO DA SEQUÊNCIA DIDÁTICA</h2>
+                <!-- Lista ordenada com links para as principais páginas do portal -->
+                <ol class="sumario">
+                    <li><a href="primeiros_passos.html">Introdução ao Scratch para o Ensino Fundamental II</a></li>
+                    <li><a href="projetos_6_ano.html">Projetos para o 6º Ano: Narrativas Interativas e Jogos de
+                            Aventura</a></li>
+                    <li><a href="projetos_7_ano.html">Projetos para o 7º Ano: Jogos de Perguntas e Respostas (Quiz)</a>
+                    </li>
+                    <li><a href="#projetos_8_ano.html">Projetos para o 8º Ano: Simulações e Jogos com Clones</a></li>
+                    <li><a href="#projetos_9_ano.html">Projetos para o 9º Ano: Super Trunfo e Ponte para Linguagens
+                            Textuais</a></li>
+                    <li><a href="planos_de_aula.html">Planos de Aula Detalhados (com BNCC e DCE-PR)</a></li>
+                    <li><a href="referencias_BNCC.html">Referências Bibliográficas e Materiais de Apoio</a></li>
+                </ol>
+            </div>
+
+            <!-- Seção de conteúdo: Introdução ao Scratch para o EF II -->
+            <div class="content-section" id="introducao-ef2">
+                <h2>1. INTRODUÇÃO AO SCRATCH PARA O ENSINO FUNDAMENTAL II</h2>
+                <h3>Revisitando a Plataforma com um Olhar Mais Técnico</h3>
+                <!-- Container para imagem ilustrativa -->
+                <div class="image-container">
+                    <!-- Imagem mostrando a interface do Scratch com destaque para blocos avançados -->
+                    <img src="interface_scratch.png"
+                        alt="Interface do Scratch destacando blocos de Listas e Meus Blocos" class="content-image">
+                </div>
+                <!-- Parágrafo explicando a evolução dos conceitos em relação aos anos iniciais -->
+                <p>Nos anos iniciais, os alunos exploraram o básico do Scratch. Agora, vamos nos aprofundar! Embora a
+                    interface seja a mesma, o foco muda para conceitos fundamentais da Ciência da Computação, como:
+                    <strong>listas</strong> (para armazenar dados), <strong>blocos personalizados</strong> (para criar
+                    funções) e <strong>gerenciamento de clones</strong> (para sistemas complexos).
+                </p>
+                <!-- Lista com as principais características para este nível de ensino -->
+                <h4>Características principais para este nível:</h4>
+                <ul>
+                    <li><strong>Abstração:</strong> Criar blocos próprios para organizar e reutilizar o código.</li>
+                    <li><strong>Estruturas de Dados:</strong> Utilizar listas para guardar pontuações, perguntas ou
+                        informações de um jogo.</li>
+                    <li><strong>Otimização:</strong> Refatorar códigos repetitivos, utilizando loops e blocos
+                        personalizados.</li>
+                    <li><strong>Interdisciplinaridade:</strong> Integrar conhecimentos de outras disciplinas para criar
+                        projetos complexos e contextualizados.</li>
+                </ul>
+                <!-- Caixa de dica para o professor -->
+                <div class="info-box">
+                    <h4>💡 Dica para o Professor:</h4>
+                    <p>No início de cada ano, faça uma breve revisão da interface, mas foque em apresentar os novos
+                        blocos que serão explorados. Use metáforas: "Uma lista é como uma prateleira com vários
+                        compartimentos" e "Um bloco personalizado é como uma máquina que faz uma tarefa específica, que
+                        você pode usar várias vezes."</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <div class="container">
+            <!-- Div para organizar o conteúdo do rodapé em seções -->
+            <div class="footer-content">
+                <!-- Seção com informações institucionais -->
+                <div class="footer-section">
+                    <h3>UTFPR - Campus Siqueira Campos</h3>
+                    <p>Universidade Tecnológica Federal do Paraná</p>
+                    <p>Departamento de Computação</p>
+                </div>
+                <!-- Seção com links úteis sobre o Scratch -->
+                <div class="footer-section">
+                    <h3>Recursos Scratch</h3>
+                    <ul>
+                        <li><a href="https://scratch.mit.edu" target="_blank" rel="noopener noreferrer">Site Oficial do
+                                Scratch</a></li>
+                        <li><a href="https://scratch.mit.edu/educators" target="_blank" rel="noopener noreferrer">Para
+                                Educadores</a></li>
+                        <li><a href="https://scratch.mit.edu/parents" target="_blank" rel="noopener noreferrer">Para
+                                Pais</a></li>
+                    </ul>
+                </div>
+                <!-- Seção com e-mails de contato dos autores -->
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: giseleacn@gmail.com</p>
+                    <p>Email: barbosa.rodrigo.1979@gmail.com</p>
+                </div>
+            </div>
+            <!-- Direitos autorais -->
+            <div class="copyright">
+                &copy; 2026 UTFPR - Desenvolvido por Gisele Nunes e Rodrigo Barbosa. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão para alternar entre tema claro e escuro -->
+    <button class="theme-toggle" id="themeToggle" aria-pressed="false"
+        aria-label="Alternar tema claro e escuro">🌙</button>
+    <!-- Link para o arquivo JavaScript externo que controla a funcionalidade do tema e outras interações -->
+    <script src="script.js"></script>
+</body>
+
+</html>

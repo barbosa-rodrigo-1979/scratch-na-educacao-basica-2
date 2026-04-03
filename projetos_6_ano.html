@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<!-- Declara o tipo de documento como HTML5, garantindo que o navegador interprete o conteúdo corretamente. -->
+
+<!--
+    ===================================================================
+    Projetos 6º Ano: Narrativa Interativa | Scratch EF II
+    ===================================================================
+    Objetivo: Apresentar projetos didáticos para o 6º ano do ensino fundamental utilizando Scratch, incluindo narrativa interativa, labirinto numérico, decisões territoriais e experimento científico, com alinhamento BNCC, passo a passo, rubricas e extensões.
+    Autor : Gisele Nunes, Rodrigo Barbosa
+    Data  : 2026
+    ===================================================================
+-->
+
+<html lang="pt-BR"> <!-- Define o idioma principal da página como português do Brasil. -->
+
+<head> <!-- Início da seção de cabeçalho, que contém metadados e links para recursos externos. -->
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8, suportando acentos e caracteres especiais. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a viewport para dispositivos móveis, garantindo escalonamento adequado. -->
+    <title>Projetos 6º Ano: Narrativa Interativa | Scratch EF II</title> <!-- Título exibido na aba do navegador. -->
+    <link rel="stylesheet" href="style.css"> <!-- Vincula o arquivo CSS externo para estilização da página. -->
+</head> <!-- Fim da seção de cabeçalho. -->
+
+<body> <!-- Início do corpo da página, onde todo o conteúdo visível é inserido. -->
+    <header> <!-- Seção de cabeçalho da página, contendo logotipo, título e navegação. -->
+        <div class="header-top"> <!-- Div para a parte superior do cabeçalho (logo e título principal). -->
+            <div class="container"> <!-- Container para centralizar e limitar a largura do conteúdo. -->
+                <div class="logo-container"> <!-- Div que agrupa a imagem da logo e o nome da instituição. -->
+                    <img src="UTFPR_logo.png" alt="UTFPR Logo" class="logo"> <!-- Imagem da logo da UTFPR. -->
+                    <div class="institution-name"> <!-- Nome da universidade e campus. -->
+                        Universidade Tecnológica Federal do Paraná<br> <!-- Linha com o nome completo. -->
+                        <small>Campus Siqueira Campos</small> <!-- Informação do campus em tamanho menor. -->
+                    </div>
+                </div>
+                <div class="header-title"> <!-- Título do material didático. -->
+                    Scratch na Educação Básica<br> <!-- Linha principal. -->
+                    <small>Material Didático para Professores do 6º ao 9º Ano</small> <!-- Subtítulo. -->
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom"> <!-- Parte inferior do cabeçalho, contendo o menu de navegação. -->
+            <div class="container">
+                <nav> <!-- Elemento semântico para agrupar links de navegação. -->
+                    <ul> <!-- Lista não ordenada com os itens do menu. -->
+                        <li><a href="index.html">Página Inicial</a></li> <!-- Link para a página inicial. -->
+                        <li><a href="primeiros_passos.html">Primeiros Passos</a></li>
+                        <!-- Link para guia de primeiros passos. -->
+                        <li><a href="projetos_6_ano.html">Projetos 6º Ano</a></li>
+                        <!-- Link para a página atual (projetos do 6º ano). -->
+                        <li><a href="projetos_7_ano.html">Projetos 7º Ano</a></li>
+                        <!-- Link para projetos do 7º ano. -->
+                        <li><a href="projetos_8_ano.html">Projetos 8º Ano</a></li>
+                        <!-- Link para projetos do 8º ano. -->
+                        <li><a href="projetos_9_ano.html">Projetos 9º Ano</a></li>
+                        <!-- Link para projetos do 9º ano. -->
+                        <li><a href="planos_de_aula.html">Planos de Aula</a></li> <!-- Link para planos de aula. -->
+                        <li><a href="referencias_BNCC.html">Referências BNCC</a></li>
+                        <!-- Link para referências da BNCC. -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header> <!-- Fim do cabeçalho. -->
+
+    <main> <!-- Conteúdo principal da página. -->
+        <div class="container"> <!-- Container para alinhamento e responsividade. -->
+            <div class="page-header"> <!-- Cabeçalho específico da página de projetos. -->
+                <h1>Projetos Didáticos - 6º Ano</h1> <!-- Título principal da página. -->
+                <p class="subtitle">Narrativas Interativas: a arte de contar histórias com código</p>
+                <!-- Subtítulo descritivo. -->
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- PROJETO PRINCIPAL: NARRATIVA INTERATIVA (A AVENTURA DA ESCOLHA) -->
+            <!-- ============================================================ -->
+            <div class="content-section"> <!-- Seção de conteúdo para o projeto principal. -->
+                <h2>🎮 PROJETO 6º ANO: "A AVENTURA DA ESCOLHA"</h2> <!-- Título do projeto com emoji. -->
+
+                <div class="projeto-ano"> <!-- Div específica para detalhes do projeto. -->
+                    <h3>Descrição do Projeto</h3> <!-- Subtítulo. -->
+                    <p>Os alunos criarão uma história interativa onde o usuário toma decisões que afetam o desenrolar da
+                        narrativa. O projeto explora sequências, eventos, sincronização de diálogos e o uso de múltiplos
+                        cenários. Ao final, a história deve ter pelo menos três finais diferentes.</p>
+                    <!-- Parágrafo descritivo. -->
+
+                    <div class="image-container"> <!-- Contêiner para a imagem ilustrativa. -->
+                        <img src="a_aventura_da_escolha.png" alt="A Aventura da escolha" class="content-image">
+                        <!-- Imagem representativa do projeto. -->
+                    </div>
+
+                    <h3>Objetivos de Aprendizagem</h3> <!-- Subtítulo. -->
+                    <ul> <!-- Lista não ordenada com objetivos. -->
+                        <li><strong>Cognitivos:</strong> Desenvolver estrutura narrativa (início, meio, fim),
+                            compreender relações de causa e consequência, expressar ideias através de personagens e
+                            cenários.</li>
+                        <li><strong>Técnicos:</strong> Utilizar blocos de eventos (<code>quando ⚑ for clicado</code>,
+                            <code>quando este sprite for clicado</code>), blocos de aparência (<code>diga</code>,
+                            <code>mude para o cenário</code>), blocos de controle (<code>espere</code>,
+                            <code>se-então</code>) e o bloco <code>pergunte e espere</code>.
+                        </li>
+                        <li><strong>Socioemocionais:</strong> Trabalhar em equipe, planejar em conjunto, respeitar as
+                            escolhas do usuário e avaliar as consequências das decisões.</li>
+                    </ul>
+
+                    <div class="bncc-box"> <!-- Caixa destacada para alinhamento com a BNCC e DCE-PR. -->
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF67LP19</strong> – Planejar e produzir textos digitais (histórias interativas)
+                                considerando recursos hipermidiáticos.</li>
+                            <li><strong>EF69LP46</strong> – Utilizar ferramentas de produção digital (Scratch) para
+                                criar narrativas com múltiplas possibilidades.</li>
+                            <li><strong>EF69LP47</strong> – Analisar e construir textos com escolhas que levem o leitor
+                                a diferentes caminhos.</li>
+                            <li><strong>Competência Geral 5</strong> – Cultura Digital: compreender, usar e criar
+                                tecnologias digitais de forma crítica e significativa.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Passo a Passo do Projeto</h3> <!-- Subtítulo. -->
+
+                    <h4>Fase 1: Planejamento da História (1 aula de 50 min)</h4> <!-- Etapa 1. -->
+                    <p><strong>Atividade:</strong> Os alunos, em duplas ou trios, devem planejar a história usando um
+                        storyboard. O professor fornece um modelo:</p>
+                    <div class="storyboard"> <!-- Bloco com exemplo de storyboard. -->
+                        <p><strong>Storyboard - "A Floresta Misteriosa"</strong></p>
+                        <p><strong>Cena 1:</strong> Personagem principal (uma menina) está na entrada da floresta.</p>
+                        <p>➡️ Escolha: (1) Entrar na floresta / (2) Voltar para casa</p>
+                        <p><strong>Cena 2 (escolha 1):</strong> Dentro da floresta, encontra um animal falante.</p>
+                        <p>➡️ Escolha: (1) Seguir o animal / (2) Ignorar</p>
+                        <p><strong>Cena 3 (escolha 1.1):</strong> O animal leva a um tesouro → Final feliz.</p>
+                        <p><strong>Cena 3 (escolha 1.2):</strong> Se perde e encontra uma cabana → Final surpresa.</p>
+                        <p><strong>Cena 2 (escolha 2):</strong> Volta para casa → Final neutro.</p>
+                    </div>
+                    <p>Os alunos devem desenhar os cenários, listar os sprites (personagens) e escrever os diálogos para
+                        cada escolha.</p>
+
+                    <h4>Fase 2: Implementação no Scratch (2 aulas)</h4> <!-- Etapa 2. -->
+                    <p><strong>Preparação:</strong> Adicionar os sprites (personagens) e os cenários conforme o
+                        storyboard.</p>
+                    <p><strong>Código da Cena Inicial (Sprite Principal):</strong></p>
+                    <div class="scratch-code"> <!-- Bloco de código estilo Scratch (texto pré-formatado). -->
+                        quando ⚑ for clicado<br>
+                        mude para o cenário [cena_inicial]<br>
+                        mostre<br>
+                        diga [Você está na entrada da Floresta Misteriosa. O que deseja fazer?] por 4 segundos<br>
+                        pergunte [1 - Entrar na floresta 2 - Voltar para casa] e espere<br>
+                        se &lt;(resposta) = [1]&gt; então<br>
+                        transmita [entrar_floresta]<br>
+                        senão<br>
+                        transmita [voltar_casa]<br>
+                    </div>
+
+                    <p><strong>Sprite do Cenário (quando a escolha é feita):</strong></p>
+                    <div class="scratch-code">
+                        quando eu receber [entrar_floresta]<br>
+                        mude para o cenário [dentro_floresta]<br>
+                        diga [Você adentra a floresta e avista um animal falante!] por 3 segundos<br>
+                        pergunte [1 - Seguir o animal 2 - Ignorar] e espere<br>
+                        se &lt;(resposta) = [1]&gt; então<br>
+                        transmita [seguir_animal]<br>
+                        senão<br>
+                        transmita [ignorar_animal]<br>
+                    </div>
+
+                    <p><strong>Finais Alternativos:</strong></p>
+                    <div class="scratch-code">
+                        quando eu receber [seguir_animal]<br>
+                        mude para o cenário [tesouro]<br>
+                        diga [O animal te leva até um baú cheio de ouro! Parabéns, você encontrou o tesouro!] por 5
+                        segundos<br>
+                        toque o som [cheer]<br>
+                        pare [todos]<br>
+                        <br>
+                        quando eu receber [ignorar_animal]<br>
+                        mude para o cenário [perdido]<br>
+                        diga [Você se perde e encontra uma cabana assombrada...] por 4 segundos<br>
+                        toque o som [scream]<br>
+                        diga [Fim da aventura!] por 3 segundos<br>
+                        pare [todos]<br>
+                        <br>
+                        quando eu receber [voltar_casa]<br>
+                        mude para o cenário [casa]<br>
+                        diga [Você decide voltar para casa. Que pena! Talvez outro dia você tenha coragem...] por 5
+                        segundos<br>
+                        toque o som [crickets]<br>
+                        pare [todos]<br>
+                    </div>
+
+                    <h4>Fase 3: Teste e Refinamento (1 aula)</h4> <!-- Etapa 3. -->
+                    <p>Os alunos devem testar seus projetos com colegas e ajustar os tempos, os diálogos e corrigir
+                        possíveis erros (debug). O professor circula pela sala oferecendo suporte e incentivando a
+                        criatividade.</p>
+
+                    <h3>Rubrica de Avaliação</h3> <!-- Critérios de avaliação. -->
+                    <ul class="checklist">
+                        <li><strong>✅ Planejamento (2 pontos):</strong> Storyboard completo com início, meio e fim; pelo
+                            menos três finais diferentes.</li>
+                        <li><strong>✅ Funcionalidade (3 pontos):</strong> Projeto executa sem erros; todas as escolhas
+                            funcionam corretamente.</li>
+                        <li><strong>✅ Código (3 pontos):</strong> Uso adequado de blocos de eventos, condicionais e
+                            transmissões; código organizado e comentado.</li>
+                        <li><strong>✅ Criatividade (2 pontos):</strong> Personagens e cenários originais; diálogos
+                            envolventes; elementos surpresa.</li>
+                    </ul>
+
+                    <h3>Extensões e Desafios</h3> <!-- Sugestões de aprofundamento. -->
+                    <ul>
+                        <li><strong>Adicionar pontuação:</strong> Crie uma variável "pontuação" que aumenta conforme o
+                            usuário faz boas escolhas.</li>
+                        <li><strong>Usar o bloco de tempo:</strong> Inclua um cronômetro para que o jogador tenha um
+                            tempo limite para tomar decisões.</li>
+                        <li><strong>Incluir sons ambientes:</strong> Sons de floresta, suspense, etc., para tornar a
+                            experiência mais imersiva.</li>
+                        <li><strong>Transformar em jogo de tabuleiro:</strong> Em grupo, criar uma versão analógica com
+                            cartas e dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- PROJETO MATEMÁTICA: LABIRINTO NUMÉRICO – A JORNADA DO ALGORITMO -->
+            <!-- ============================================================ -->
+            <div class="content-section">
+                <h2>📐 PROJETO 6º ANO: "LABIRINTO NUMÉRICO – A JORNADA DO ALGORITMO"</h2>
+
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos criarão um jogo interativo de labirinto onde o usuário precisa resolver desafios
+                        matemáticos (operações, sequências ou lógica) para avançar. Cada porta ou encruzilhada exige a
+                        resposta correta para prosseguir. O projeto trabalha raciocínio abstrato, representação de
+                        algoritmos e uso de operadores aritméticos e lógicos no Scratch.</p>
+
+                    <div class="image-container">
+                        <img src="labirinto_numerico.png" alt="Labiribto Numerico" class="content-image">
+                    </div>
+
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Desenvolver pensamento computacional por meio da formalização
+                            de sequências e condicionais; aplicar conceitos matemáticos (adição, subtração,
+                            multiplicação, divisão, múltiplos, divisores) em situações-problema.</li>
+                        <li><strong>Técnicos:</strong> Utilizar blocos de operadores (<code>+</code>, <code>-</code>,
+                            <code>*</code>, <code>/</code>, <code>&gt;</code>, <code>&lt;</code>, <code>=</code>),
+                            variáveis, <code>se-então-senão</code>, <code>pergunte e espere</code> e eventos de
+                            transmissão para navegação no labirinto.
+                        </li>
+                        <li><strong>Socioemocionais:</strong> Persistência na resolução de problemas, colaboração para
+                            criar desafios equilibrados e responsabilidade ao testar cenários com diferentes níveis de
+                            dificuldade.</li>
+                    </ul>
+
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF06MA05</strong> – Resolver e elaborar problemas que envolvam as ideias de
+                                múltiplo e divisor.</li>
+                            <li><strong>EF06MA07</strong> – Compreender e utilizar a relação entre divisibilidade e os
+                                conceitos de múltiplo e divisor.</li>
+                            <li><strong>EF06MA28</strong> – Interpretar e construir fluxogramas e algoritmos para
+                                resolver problemas matemáticos.</li>
+                            <li><strong>Competência Geral 4</strong> – Utilizar conhecimentos matemáticos para
+                                compreender e atuar no mundo.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Passo a Passo do Projeto</h3>
+
+                    <h4>Fase 1: Planejamento do Labirinto e Desafios (1 aula)</h4>
+                    <p><strong>Atividade:</strong> Em duplas, os alunos esboçam o labirinto (mínimo 3
+                        salas/encruzilhadas) e definem os desafios matemáticos para cada transição. O professor fornece
+                        um modelo:</p>
+                    <div class="storyboard">
+                        <p><strong>Storyboard - "Labirinto do Minotauro Matemático"</strong></p>
+                        <p><strong>Sala 1:</strong> Entrada do labirinto. O guardião pergunta: "Qual o resultado de 12 ×
+                            7?"</p>
+                        <p>➡️ Resposta correta: abre porta para Sala 2 / Errada: volta ao início.</p>
+                        <p><strong>Sala 2:</strong> Encruzilhada com três caminhos. Desafio: "O número 36 é divisível
+                            por quantos números? Digite a quantidade."</p>
+                        <p>➡️ Acerto: abre caminho para Sala 3 / Erro: perde uma vida ou volta.</p>
+                        <p><strong>Sala 3:</strong> Desafio final: "Complete a sequência: 2, 6, 12, 20, __" (resposta
+                            30).</p>
+                        <p>➡️ Sucesso: saída do labirinto e mensagem de vitória.</p>
+                    </div>
+                    <p>Os alunos devem listar os sprites (personagem, portas, placas) e os valores das respostas
+                        esperadas.</p>
+
+                    <h4>Fase 2: Implementação no Scratch (2 aulas)</h4>
+                    <p><strong>Preparação:</strong> Criar cenários para cada sala e o personagem principal (pode ser um
+                        ponto ou sprite que se movimenta). Usar variáveis para vidas ou pontuação.</p>
+                    <p><strong>Código da Sala 1 (personagem principal):</strong></p>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado<br>
+                        mude para o cenário [sala1]<br>
+                        pergunte [Qual o resultado de 12 × 7?] e espere<br>
+                        se &lt;(resposta) = [84]&gt; então<br>
+                        transmita [abrir_porta2]<br>
+                        senão<br>
+                        diga [Resposta errada! Tente novamente.] por 2 segundos<br>
+                        transmita [voltar_inicio]<br>
+                    </div>
+
+                    <p><strong>Recepção da transmissão (mudança de sala):</strong></p>
+                    <div class="scratch-code">
+                        quando eu receber [abrir_porta2]<br>
+                        mude para o cenário [sala2]<br>
+                        pergunte [O número 36 é divisível por quantos números?] e espere<br>
+                        se &lt;(resposta) = [9]&gt; então<br>
+                        transmita [abrir_porta3]<br>
+                        senão<br>
+                        diga [Errou! Você perde uma vida.] por 2 segundos<br>
+                        altere [vidas] por (-1)<br>
+                        se &lt;(vidas) = [0]&gt; então<br>
+                        transmita [game_over]<br>
+                    </div>
+
+                    <p><strong>Finalização e mensagem de vitória:</strong></p>
+                    <div class="scratch-code">
+                        quando eu receber [abrir_porta3]<br>
+                        mude para o cenário [sala3]<br>
+                        pergunte [Complete a sequência: 2, 6, 12, 20, __] e espere<br>
+                        se &lt;(resposta) = [30]&gt; então<br>
+                        mude para o cenário [saida]<br>
+                        diga [Parabéns! Você escapou do labirinto matemático!] por 4 segundos<br>
+                        pare [todos]<br>
+                        senão<br>
+                        diga [Fim da jornada...] por 2 segundos<br>
+                        pare [todos]<br>
+                    </div>
+
+                    <h4>Fase 3: Teste e Refinamento (1 aula)</h4>
+                    <p>Os alunos testam os jogos com colegas, verificam se as respostas esperadas estão corretas e
+                        ajustam as mensagens de feedback. O professor incentiva a criação de pelo menos três níveis com
+                        operações variadas.</p>
+
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <li><strong>✅ Planejamento (2 pontos):</strong> Labirinto com pelo menos 3 salas/desafios;
+                            respostas matematicamente corretas.</li>
+                        <li><strong>✅ Funcionalidade (3 pontos):</strong> Navegação entre salas funciona; respostas
+                            certas levam adiante, erradas retrocedem ou geram game over.</li>
+                        <li><strong>✅ Código (3 pontos):</strong> Uso adequado de operadores, condicionais e variáveis;
+                            estrutura lógica clara.</li>
+                        <li><strong>✅ Criatividade (2 pontos):</strong> História envolvente, cenários elaborados e
+                            desafios variados.</li>
+                    </ul>
+
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Sistema de pontuação:</strong> Atribuir pontos por acertos e bônus por rapidez.</li>
+                        <li><strong>Níveis de dificuldade:</strong> Permitir que o usuário escolha entre desafios
+                            fáceis, médios ou difíceis.</li>
+                        <li><strong>Uso de sensores:</strong> Adicionar um temporizador que força respostas rápidas.
+                        </li>
+                        <li><strong>Integração com outras disciplinas:</strong> Criar desafios envolvendo padrões
+                            geométricos ou frações.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- PROJETO GEOGRAFIA: DECISÕES TERRITORIAIS – O CUIDADO COM O BIOMA -->
+            <!-- ============================================================ -->
+            <div class="content-section">
+                <h2>🌍 PROJETO 6º ANO: "DECISÕES TERRITORIAIS – O CUIDADO COM O BIOMA"</h2>
+
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos desenvolverão uma simulação interativa onde o usuário assume o papel de gestor
+                        ambiental e precisa tomar decisões sobre uso do solo, conservação de recursos e desenvolvimento
+                        sustentável em um bioma brasileiro (Amazônia, Cerrado ou Mata Atlântica). Cada escolha impacta
+                        indicadores como desmatamento, qualidade da água e qualidade de vida da população, exigindo
+                        raciocínio sistêmico e análise de consequências.</p>
+
+                    <div class="image-container">
+                        <img src="decisoes_territoriais.png" alt="decisoes Territoriais" class="content-image">
+                    </div>
+
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Compreender relações entre ações humanas e impactos ambientais;
+                            identificar conflitos socioambientais e propor soluções equilibradas.</li>
+                        <li><strong>Técnicos:</strong> Utilizar variáveis para armazenar indicadores, blocos
+                            <code>se-então</code> para representar consequências, transmissões para mudar cenários e
+                            <code>pergunte e espere</code> para coletar decisões.
+                        </li>
+                        <li><strong>Socioemocionais:</strong> Desenvolver empatia por comunidades tradicionais,
+                            pensamento crítico sobre sustentabilidade e responsabilidade coletiva.</li>
+                    </ul>
+
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF06GE08</strong> – Analisar a importância da preservação dos biomas brasileiros
+                                e as consequências do uso predatório.</li>
+                            <li><strong>EF06GE11</strong> – Compreender os impactos socioambientais decorrentes de
+                                atividades econômicas.</li>
+                            <li><strong>EF69LP46</strong> – Utilizar ferramentas de produção digital para simular
+                                cenários e comunicar ideias.</li>
+                            <li><strong>Competência Geral 7</strong> – Argumentar com base em fatos e dados para
+                                formular, negociar e defender ideias.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Passo a Passo do Projeto</h3>
+
+                    <h4>Fase 1: Pesquisa e Storyboard (1 aula)</h4>
+                    <p><strong>Atividade:</strong> Cada grupo escolhe um bioma brasileiro e pesquisa seus principais
+                        problemas ambientais. Com base nisso, criam um storyboard com 3 a 4 cenários de decisão. O
+                        professor disponibiliza um modelo:</p>
+                    <div class="storyboard">
+                        <p><strong>Storyboard - "Gestão da Amazônia"</strong></p>
+                        <p><strong>Cenário 1:</strong> Apresentação do bioma e indicadores iniciais (desmatamento: 10%,
+                            qualidade da água: 80%, qualidade de vida: 70%).</p>
+                        <p>➡️ Escolha 1: (1) Permitir exploração madeireira controlada / (2) Criar reserva extrativista.
+                        </p>
+                        <p><strong>Cenário 2 (escolha 1):</strong> Exploração gera empregos, mas aumenta desmatamento.
+                            Nova decisão: (A) Fiscalizar rigorosamente / (B) Ignorar fiscalização.</p>
+                        <p><strong>Cenário 2 (escolha 2):</strong> Reserva protege a floresta, mas gera conflitos com
+                            madeireiros. Decisão: (A) Investir em turismo sustentável / (B) Ceder à pressão.</p>
+                        <p><strong>Cenário Final:</strong> Indicadores atualizados levam a finais distintos (equilíbrio,
+                            colapso ambiental, desenvolvimento sustentável).</p>
+                    </div>
+                    <p>Os alunos devem listar os indicadores (variáveis) que serão afetados e os valores de cada
+                        decisão.</p>
+
+                    <h4>Fase 2: Implementação no Scratch (2 aulas)</h4>
+                    <p><strong>Preparação:</strong> Criar cenários para cada fase e sprites que representem os
+                        personagens (líder comunitário, empresário, etc.).</p>
+                    <p><strong>Código da tela inicial (Sprite Principal):</strong></p>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado<br>
+                        mude para o cenário [apresentacao_amazonia]<br>
+                        diga [Você é o gestor ambiental da Amazônia. Seus indicadores atuais:] por 3 segundos<br>
+                        diga [Desmatamento: 10% | Água: 80% | Qualidade de vida: 70%] por 3 segundos<br>
+                        pergunte [Qual ação inicial? 1 - Explorar madeira 2 - Criar reserva] e espere<br>
+                        se &lt;(resposta) = [1]&gt; então<br>
+                        transmita [exploracao_controlada]<br>
+                        senão<br>
+                        transmita [reserva_extrativista]<br>
+                    </div>
+
+                    <p><strong>Atualização de indicadores e segundo cenário:</strong></p>
+                    <div class="scratch-code">
+                        quando eu receber [exploracao_controlada]<br>
+                        mude para o cenário [pos_exploracao]<br>
+                        altere [desmatamento] por (5)<br>
+                        altere [qualidade_vida] por (10)<br>
+                        diga [Desmatamento subiu para 15%, mas empregos aumentaram!] por 2 segundos<br>
+                        pergunte [Agora, fiscalizar? 1 - Sim, com multas 2 - Não] e espere<br>
+                        se &lt;(resposta) = [1]&gt; então<br>
+                        transmita [fiscalizacao]<br>
+                        senão<br>
+                        transmita [sem_fiscalizacao]<br>
+                    </div>
+
+                    <p><strong>Finalização com análise dos indicadores:</strong></p>
+                    <div class="scratch-code">
+                        quando eu receber [fiscalizacao]<br>
+                        altere [desmatamento] por (-2)<br>
+                        altere [qualidade_agua] por (5)<br>
+                        se &lt;(desmatamento) &lt; [10]&gt; então<br>
+                        diga [Parabéns! Você equilibrou desenvolvimento e conservação. Fim sustentável.] por 4
+                        segundos<br>
+                        senão<br>
+                        diga [Ainda há desafios, mas você melhorou a gestão. Fim aceitável.] por 4 segundos<br>
+                        pare [todos]<br>
+                    </div>
+
+                    <h4>Fase 3: Teste e Refinamento (1 aula)</h4>
+                    <p>Os grupos testam suas simulações, verificam se os indicadores mudam conforme esperado e discutem
+                        se as consequências são realistas. O professor promove uma roda de discussão sobre as diferentes
+                        decisões e seus impactos.</p>
+
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <li><strong>✅ Pesquisa (2 pontos):</strong> Informações corretas sobre o bioma e seus problemas.
+                        </li>
+                        <li><strong>✅ Funcionalidade (3 pontos):</strong> Simulação responde adequadamente às escolhas;
+                            variáveis atualizam conforme regras pré-definidas.</li>
+                        <li><strong>✅ Código (3 pontos):</strong> Uso consistente de condicionais, variáveis e
+                            transmissões.</li>
+                        <li><strong>✅ Reflexão (2 pontos):</strong> Discussão final sobre os resultados obtidos e suas
+                            relações com a realidade.</li>
+                    </ul>
+
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Mais indicadores:</strong> Adicionar variáveis como biodiversidade, índice de
+                            pobreza, etc.</li>
+                        <li><strong>Relatório final:</strong> Gerar um texto automático com base nos valores finais.
+                        </li>
+                        <li><strong>Integração com outras disciplinas:</strong> Trabalhar dados reais do IBGE ou INPE
+                            para calibrar os indicadores.</li>
+                        <li><strong>Multijogador:</strong> Dois grupos competem para ver quem alcança o melhor
+                            equilíbrio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- PROJETO CIÊNCIAS: MISSÃO CIENTÍFICA – EXPERIMENTO INTERATIVO -->
+            <!-- ============================================================ -->
+            <div class="content-section">
+                <h2>🔬 PROJETO 6º ANO: "MISSÃO CIENTÍFICA – EXPERIMENTO INTERATIVO"</h2>
+
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos criarão um laboratório virtual onde o usuário deve realizar um experimento científico
+                        (por exemplo, verificar as condições para germinação de sementes ou misturar substâncias e
+                        observar reações). Através de escolhas sobre variáveis (luz, água, temperatura, quantidade de
+                        reagente), o usuário descobre as relações de causa e efeito. O projeto estimula o método
+                        científico e o raciocínio hipotético-dedutivo.</p>
+
+                    <div class="image-container">
+                        <img src="missao_cientifica.png" alt="Missao Cientifica" class="content-image">
+                    </div>
+
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Formular hipóteses, identificar variáveis controladas e
+                            dependentes, analisar resultados experimentais e tirar conclusões.</li>
+                        <li><strong>Técnicos:</strong> Utilizar variáveis para representar parâmetros experimentais,
+                            condicionais para verificar hipóteses, operadores lógicos e <code>pergunte e espere</code>
+                            para coletar escolhas.</li>
+                        <li><strong>Socioemocionais:</strong> Desenvolver curiosidade científica, persistência na
+                            tentativa e erro, e comunicação de resultados.</li>
+                    </ul>
+
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF06CI01</strong> – Investigar e classificar diferentes formas de reprodução e
+                                crescimento de plantas.</li>
+                            <li><strong>EF06CI04</strong> – Planejar e realizar experimentos que evidenciem fatores que
+                                influenciam a germinação.</li>
+                            <li><strong>EF06CI06</strong> – Analisar e descrever fenômenos físicos e químicos em
+                                situações cotidianas.</li>
+                            <li><strong>Competência Geral 2</strong> – Exercitar a curiosidade intelectual e utilizar as
+                                ciências para compreender o mundo.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Passo a Passo do Projeto</h3>
+
+                    <h4>Fase 1: Planejamento do Experimento (1 aula)</h4>
+                    <p><strong>Atividade:</strong> Cada grupo escolhe um fenômeno científico (ex.: germinação de feijão,
+                        dissolução de açúcar, reação de bicarbonato com vinagre). Elaboram um roteiro onde o usuário
+                        pode escolher os valores das variáveis (ex.: quantidade de água, luz, temperatura). Definem qual
+                        será o resultado para cada combinação.</p>
+                    <div class="storyboard">
+                        <p><strong>Storyboard - "Germinação do Feijão"</strong></p>
+                        <p><strong>Fase 1 – Escolha das condições:</strong></p>
+                        <p>➡️ Variável 1: Água (0 = sem água, 1 = pouca, 2 = ideal, 3 = encharcada)</p>
+                        <p>➡️ Variável 2: Luz (0 = escuro total, 1 = luz indireta, 2 = luz direta)</p>
+                        <p>➡️ Variável 3: Temperatura (0 = frio, 1 = ambiente, 2 = quente)</p>
+                        <p><strong>Fase 2 – Resultado:</strong> O programa avalia as variáveis e mostra:</p>
+                        <p>- "Germinação perfeita!" (água=2, luz=1, temp=1)</p>
+                        <p>- "Não germinou – falta água"</p>
+                        <p>- "Apodreceu – excesso de água"</p>
+                        <p>- "Não germinou – temperatura inadequada"</p>
+                    </div>
+                    <p>Os alunos devem listar todas as combinações possíveis e os respectivos feedbacks.</p>
+
+                    <h4>Fase 2: Implementação no Scratch (2 aulas)</h4>
+                    <p><strong>Preparação:</strong> Criar cenários que representem o ambiente do experimento. Usar
+                        variáveis para armazenar as escolhas.</p>
+                    <p><strong>Código principal (Sprite do experimento):</strong></p>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado<br>
+                        mude para o cenário [laboratorio]<br>
+                        pergunte [Quantidade de água? 0=nenhuma, 1=pouca, 2=ideal, 3=encharcada] e espere<br>
+                        altere [agua] para (resposta)<br>
+                        pergunte [Luz? 0=escuro, 1=indireta, 2=direta] e espere<br>
+                        altere [luz] para (resposta)<br>
+                        pergunte [Temperatura? 0=frio, 1=ambiente, 2=quente] e espere<br>
+                        altere [temp] para (resposta)<br>
+                        transmita [avaliar_germinacao]<br>
+                    </div>
+
+                    <p><strong>Avaliação das condições (usando condicionais aninhadas):</strong></p>
+                    <div class="scratch-code">
+                        quando eu receber [avaliar_germinacao]<br>
+                        se &lt;(agua) = [2]&gt; e &lt;(luz) = [1]&gt; e &lt;(temp) = [1]&gt; então<br>
+                        diga [Germinação perfeita! Planta saudável.] por 3 segundos<br>
+                        senão<br>
+                        se &lt;(agua) = [0]&gt; então<br>
+                        diga [Não germinou – falta água.] por 3 segundos<br>
+                        senão<br>
+                        se &lt;(agua) = [3]&gt; então<br>
+                        diga [Apodreceu – excesso de água.] por 3 segundos<br>
+                        senão<br>
+                        se &lt;(luz) = [0]&gt; ou &lt;(luz) = [2]&gt; então<br>
+                        diga [Não germinou – luz inadequada.] por 3 segundos<br>
+                        senão<br>
+                        se &lt;(temp) = [0]&gt; ou &lt;(temp) = [2]&gt; então<br>
+                        diga [Não germinou – temperatura inadequada.] por 3 segundos<br>
+                        senão<br>
+                        diga [Condições ruins. Tente novamente!] por 3 segundos<br>
+                    </div>
+
+                    <h4>Fase 3: Teste e Refinamento (1 aula)</h4>
+                    <p>Os alunos testam todas as combinações possíveis e verificam se os feedbacks estão corretos.
+                        Discutem a importância de controlar variáveis em experimentos reais. Podem aprimorar o projeto
+                        com gráficos ou animações que ilustrem o resultado.</p>
+
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <li><strong>✅ Planejamento (2 pontos):</strong> Roteiro científico claro, com definição das
+                            variáveis e resultados esperados.</li>
+                        <li><strong>✅ Funcionalidade (3 pontos):</strong> O programa responde corretamente para todas as
+                            combinações de entrada; feedbacks condizem com o conhecimento científico.</li>
+                        <li><strong>✅ Código (3 pontos):</strong> Uso adequado de condicionais, operadores lógicos e
+                            variáveis; código comentado.</li>
+                        <li><strong>✅ Criatividade e apresentação (2 pontos):</strong> Interface amigável, uso de
+                            sons/imagens e explicação do método científico.</li>
+                    </ul>
+
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Mais variáveis:</strong> Incluir pH do solo, tipo de solo, etc.</li>
+                        <li><strong>Registro de tentativas:</strong> Criar um diário de bordo que armazena hipóteses e
+                            resultados.</li>
+                        <li><strong>Níveis de experimentação:</strong> Permitir que o usuário faça múltiplos
+                            experimentos e veja gráficos.</li>
+                        <li><strong>Integração com ciências:</strong> Simular um experimento sobre cadeia alimentar ou
+                            reciclagem.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- OUTROS PROJETOS PARA 6º ANO (SUGESTÕES) -->
+            <!-- ============================================================ -->
+            <div class="content-section">
+                <h2>Outras Ideias de Projetos para o 6º Ano</h2>
+                <div class="card-grid">
+                    <div class="nav-card">
+                        <h3>Diário de Bordo</h3>
+                        <p>O aluno cria um diário interativo onde cada dia representa uma nova cena. Pode incluir
+                            efeitos sonoros e mudanças de cenário conforme o “tempo” passa.</p>
+                    </div>
+                    <div class="nav-card">
+                        <h3>Conto Coletivo</h3>
+                        <p>Em grupo, cada aluno programa um pedaço da história e usa transmissões para conectar as
+                            partes, formando um conto colaborativo.</p>
+                    </div>
+                    <div class="nav-card">
+                        <h3>Adaptação de Fábula</h3>
+                        <p>Escolher uma fábula conhecida (A Cigarra e a Formiga, A Raposa e as Uvas) e criar uma versão
+                            interativa onde o leitor pode escolher o comportamento dos personagens.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- MATERIAL DE APOIO AO PROFESSOR -->
+            <!-- ============================================================ -->
+            <div class="content-section">
+                <h2>Material de Apoio para o Professor</h2>
+                <div class="info-box">
+                    <h4>📌 Dicas para Gerenciar a Atividade</h4>
+                    <ul>
+                        <li><strong>Formação de duplas:</strong> Incentive a programação em pares (um escreve, outro
+                            observa e sugere).</li>
+                        <li><strong>Checklist de verificação:</strong> Forneça uma lista com os elementos obrigatórios
+                            (mínimo de 3 finais, uso de pelo menos 2 cenários, etc.).</li>
+                        <li><strong>Roda de apresentação:</strong> Reserve 15 minutos finais para que alguns grupos
+                            apresentem suas histórias, compartilhando as decisões de design.</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h4>📚 Sugestões de Leitura para os Alunos</h4>
+                    <ul>
+                        <li><em>“Escolha sua própria aventura”</em> – livros interativos que inspiram o formato.</li>
+                        <li><em>“O jogo da vida”</em> – discussão sobre como escolhas afetam o rumo da narrativa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- NAVEGAÇÃO ADICIONAL (LINKS PARA OUTRAS PÁGINAS) -->
+            <!-- ============================================================ -->
+            <div class="content-section">
+                <h2>Navegação</h2>
+                <div class="card-grid">
+                    <a href="primeiros_passos.html" class="nav-card">
+                        <h3>Primeiros Passos</h3>
+                        <p>Guia Completo para Professores – do Básico ao Avançado
+                        </p>
+                    </a>
+                    <a href="index.html" class="nav-card">
+                        <h3>Página Inicial</h3>
+                        <p>Voltar à cartilha principal</p>
+                    </a>
+                    <a href="projetos_7_ano.html" class="nav-card">
+                        <h3>Projetos 7º Ano</h3>
+                        <p>Jogos de Perguntas e Respostas</p>
+                    </a>
+                </div>
+            </div>
+        </div> <!-- Fim do container principal. -->
+    </main> <!-- Fim do conteúdo principal. -->
+
+    <footer> <!-- Rodapé da página. -->
+        <div class="container">
+            <div class="footer-content"> <!-- Div que organiza as seções do rodapé. -->
+                <div class="footer-section"> <!-- Seção sobre a universidade. -->
+                    <h3>UTFPR - Campus Siqueira Campos</h3>
+                    <p>Universidade Tecnológica Federal do Paraná</p>
+                    <p>Departamento de Computação</p>
+                </div>
+                <div class="footer-section"> <!-- Seção com links para recursos Scratch. -->
+                    <h3>Recursos Scratch</h3>
+                    <ul>
+                        <li><a href="https://scratch.mit.edu" target="_blank" rel="noopener noreferrer">Site Oficial do
+                                Scratch</a></li>
+                        <li><a href="https://scratch.mit.edu/educators" target="_blank" rel="noopener noreferrer">Para
+                                Educadores</a></li>
+                        <li><a href="https://scratch.mit.edu/parents" target="_blank" rel="noopener noreferrer">Para
+                                Pais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section"> <!-- Seção de contato com e-mails dos autores. -->
+                    <h3>Contato</h3>
+                    <p>Email: giseleacn@gmail.com</p>
+                    <p>Email: barbosa.rodrigo.1979@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright"> <!-- Direitos autorais. -->
+                &copy; 2026 UTFPR - Desenvolvido por Gisele Nunes e Rodrigo Barbosa. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer> <!-- Fim do rodapé. -->
+
+    <button class="theme-toggle" id="themeToggle" aria-pressed="false"
+        aria-label="Alternar tema claro e escuro">🌙</button> <!-- Botão para alternar entre tema claro/escuro. -->
+    <script src="script.js"></script> <!-- Inclusão do arquivo JavaScript para funcionalidades interativas. -->
+</body> <!-- Fim do corpo da página. -->
+
+</html> <!-- Fim do documento HTML. -->

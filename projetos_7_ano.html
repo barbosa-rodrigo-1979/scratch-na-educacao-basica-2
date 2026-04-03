@@ -1,0 +1,780 @@
+===================================================================
+Projetos 7º Ano: Quiz Educativo | Scratch EF II
+===================================================================
+Objetivo: Apresentar o projeto didático para o 7º ano do Ensino Fundamental II - Scratch na Educação Básica
+Autor : Gisele Nunes, Rodrigo Barbosa
+Data : 2026
+===================================================================
+<!DOCTYPE html>
+<!-- Declara o tipo de documento como HTML5, garantindo que o navegador interprete o conteúdo corretamente -->
+<html lang="pt-BR">
+<!-- Define o idioma da página como português do Brasil, auxiliando mecanismos de busca e leitores de tela -->
+
+<head>
+    <!-- Início da seção de cabeçalho, que contém metadados e links para recursos externos -->
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8, suportando acentos e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a viewport para dispositivos móveis: largura igual à largura do dispositivo e zoom inicial em 100% -->
+    <title>Projetos 7º Ano: Quiz Educativo | Scratch EF II</title>
+    <!-- Define o título da página, exibido na aba do navegador -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Vincula o arquivo CSS externo (style.css) para estilização visual da página -->
+</head>
+<!-- Fim da seção de cabeçalho -->
+
+<body>
+    <!-- Início do corpo da página, conteúdo visível ao usuário -->
+
+    <header>
+        <!-- Seção de cabeçalho do site, contendo logotipo, título principal e navegação -->
+        <div class="header-top">
+            <!-- Div para a parte superior do cabeçalho, com logotipo e título institucional -->
+            <div class="container">
+                <!-- Contêiner centralizador, alinha o conteúdo horizontalmente -->
+                <div class="logo-container">
+                    <!-- Div que agrupa a imagem da logo e o nome da instituição -->
+                    <img src="UTFPR_logo.png" alt="UTFPR Logo" class="logo">
+                    <!-- Imagem da logo da UTFPR; atributo alt fornece texto alternativo para acessibilidade -->
+                    <div class="institution-name">
+                        <!-- Div com o nome completo da universidade -->
+                        Universidade Tecnológica Federal do Paraná<br>
+                        <!-- Nome da universidade, com quebra de linha -->
+                        <small>Campus Siqueira Campos</small>
+                        <!-- Texto menor especificando o campus -->
+                    </div>
+                </div>
+                <div class="header-title">
+                    <!-- Div que exibe o título principal do material didático -->
+                    Scratch na Educação Básica<br>
+                    <small>Material Didático para Professores do 6º ao 9º Ano</small>
+                    <!-- Subtítulo explicativo -->
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <!-- Parte inferior do cabeçalho, contendo o menu de navegação -->
+            <div class="container">
+                <!-- Contêiner centralizador -->
+                <nav>
+                    <!-- Elemento de navegação que agrupa os links do menu -->
+                    <ul>
+                        <!-- Lista não ordenada com os itens do menu -->
+                        <li><a href="index.html">Página Inicial</a></li>
+                        <!-- Item da lista: link para a página inicial -->
+                        <li><a href="primeiros_passos.html">Primeiros Passos</a></li>
+                        <!-- Link para a página de primeiros passos -->
+                        <li><a href="projetos_6_ano.html">Projetos 6º Ano</a></li>
+                        <!-- Link para projetos do 6º ano -->
+                        <li><a href="projetos_7_ano.html">Projetos 7º Ano</a></li>
+                        <!-- Link para projetos do 7º ano (página atual, destacada) -->
+                        <li><a href="projetos_8_ano.html">Projetos 8º Ano</a></li>
+                        <!-- Link para projetos do 8º ano -->
+                        <li><a href="projetos_9_ano.html">Projetos 9º Ano</a></li>
+                        <!-- Link para projetos do 9º ano -->
+                        <li><a href="planos_de_aula.html">Planos de Aula</a></li>
+                        <!-- Link para planos de aula -->
+                        <li><a href="referencias_BNCC.html">Referências BNCC</a></li>
+                        <!-- Link para referências da BNCC -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Fim do cabeçalho -->
+
+    <main>
+        <!-- Elemento principal que agrupa o conteúdo central da página -->
+        <div class="container">
+            <!-- Contêiner centralizador para o conteúdo principal -->
+
+            <div class="page-header">
+                <!-- Div de cabeçalho da página, com título e subtítulo -->
+                <h1>Projetos Didáticos - 7º Ano</h1>
+                <!-- Título principal da página -->
+                <p class="subtitle">Quiz Educativo, Desafios Matemáticos, Simulações Geográficas e Ecológicas</p>
+                <!-- Subtítulo descrevendo os tipos de projetos -->
+            </div>
+
+            <button id="printProjetos7Btn" class="print-button" style="margin-bottom: 20px;">🖨️ Imprimir
+                Projetos</button>
+            <!-- Botão para acionar a impressão dos projetos; possui ID único para manipulação no script.js e estilo inline de margem inferior -->
+
+            <!-- PROJETO PRINCIPAL: QUIZ "DESAFIO DO CONHECIMENTO" -->
+            <div class="content-section">
+                <!-- Seção de conteúdo, agrupa um projeto completo -->
+                <h2>📝 PROJETO 7º ANO: "DESAFIO DO CONHECIMENTO"</h2>
+                <!-- Título do primeiro projeto -->
+
+                <div class="projeto-ano">
+                    <!-- Div específica para detalhes do projeto -->
+                    <h3>Descrição do Projeto</h3>
+                    <!-- Subtítulo: descrição -->
+                    <p>Os alunos criarão um quiz interativo sobre um tema de sua escolha (matemática, ciências,
+                        história, cultura pop, etc.). O projeto deve conter pelo menos 5 perguntas, com feedback
+                        imediato (acerto/erro), pontuação acumulada e uma tela final com o resultado. O foco é no uso de
+                        <strong>variáveis</strong>, <strong>condicionais</strong>, <strong>operadores de
+                            comparação</strong> e <strong>transmissões</strong> para organizar o fluxo das perguntas.
+                    </p>
+                    <!-- Parágrafo explicativo do projeto, com ênfase em palavras-chave usando <strong> -->
+
+                    <div class="image-container">
+                        <!-- Div que envolve a imagem ilustrativa do projeto -->
+                        <img src="desafio_do_conhecimento.png" alt="Desafio do conhecimento" class="content-image">
+                        <!-- Imagem representativa do quiz; alt descritivo -->
+                    </div>
+
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <!-- Subtítulo para objetivos -->
+                    <ul>
+                        <!-- Lista não ordenada com os objetivos -->
+                        <li><strong>Cognitivos:</strong> Reforçar conteúdos de outras disciplinas, compreender o
+                            conceito de variável, aplicar operadores de comparação.</li>
+                        <li><strong>Técnicos:</strong> Criar e manipular variáveis (<code>pontuação</code>,
+                            <code>pergunta_atual</code>), usar blocos <code>se-então</code> e <code>senão</code>,
+                            utilizar blocos de perguntas (<code>pergunte e espere</code>) e transmissões
+                            (<code>transmita</code>).
+                        </li>
+                        <li><strong>Socioemocionais:</strong> Desenvolver a capacidade de formular perguntas claras, dar
+                            feedback construtivo e trabalhar em equipe para construir o banco de questões.</li>
+                    </ul>
+
+                    <div class="bncc-box">
+                        <!-- Div com estilo especial para alinhamento à BNCC -->
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF07MA06</strong> – Resolver problemas envolvendo operações com números inteiros
+                                (pode ser aplicado nas perguntas).</li>
+                            <li><strong>EF07CI01</strong> – Elaborar questionamentos sobre a realidade (criação de
+                                perguntas).</li>
+                            <li><strong>EF69LP47</strong> – Analisar e construir textos com escolhas que levem o leitor
+                                a diferentes caminhos (feedback e pontuação).</li>
+                            <li><strong>Competência Geral 5</strong> – Cultura Digital: usar tecnologias para criar
+                                conhecimento.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Passo a Passo do Projeto</h3>
+                    <!-- Subtítulo para o passo a passo -->
+
+                    <h4>Fase 1: Planejamento do Quiz (1 aula de 50 min)</h4>
+                    <p><strong>Atividade:</strong> Em duplas, os alunos devem escolher um tema e elaborar um conjunto de
+                        5 perguntas, cada uma com 3 opções de resposta (apenas uma correta). Eles também devem definir o
+                        sistema de pontuação (ex.: 10 pontos por acerto, 0 por erro) e o feedback para cada resposta.
+                    </p>
+                    <div class="quiz-box">
+                        <!-- Div com estilo de caixa para exemplos de perguntas -->
+                        <h4>📋 Modelo de Banco de Perguntas</h4>
+                        <p><strong>Tema: Sistema Solar</strong></p>
+                        <ol>
+                            <!-- Lista ordenada de perguntas -->
+                            <li><strong>Pergunta:</strong> Qual é o planeta mais próximo do Sol?<br>
+                                A) Vênus B) Mercúrio C) Marte<br>
+                                <strong>Resposta correta:</strong> B
+                            </li>
+                            <li><strong>Pergunta:</strong> Quantos planetas existem no Sistema Solar?<br>
+                                A) 8 B) 9 C) 7<br>
+                                <strong>Resposta correta:</strong> A
+                            </li>
+                        </ol>
+                    </div>
+
+                    <h4>Fase 2: Implementação no Scratch (2 aulas)</h4>
+                    <p><strong>Preparação:</strong> Criar as variáveis <code>pontuação</code> e
+                        <code>pergunta_atual</code>. Adicionar sprites (um personagem que fará as perguntas) e cenários
+                        (pode ser um único cenário com fundo temático).
+                    </p>
+
+                    <p><strong>Código de Inicialização:</strong></p>
+                    <div class="scratch-code">
+                        <!-- Div que exibe blocos de código estilo Scratch (texto pré-formatado) -->
+                        quando ⚑ for clicado
+                        mude [pontuação] para [0]
+                        mude [pergunta_atual] para [1]
+                        mude para o cenário [quiz_fundo]
+                        transmita [pergunta_1]
+                    </div>
+
+                    <p><strong>Estrutura de uma Pergunta:</strong></p>
+                    <div class="scratch-code">
+                        quando eu receber [pergunta_1]
+                        se &lt;(pergunta_atual) = [1]&gt; então
+                        pergunte [Qual é o planeta mais próximo do Sol? A) Vênus B) Mercúrio C) Marte] e espere
+                        se &lt;(resposta) = [B]&gt; então
+                        adicione [10] a [pontuação]
+                        diga [✅ Correto! +10 pontos] por 2 segundos
+                        senão
+                        diga [❌ Resposta correta: B (Mercúrio)] por 2 segundos
+                        mude [pergunta_atual] para [2]
+                        espere 2 segundos
+                        transmita [pergunta_2]
+                    </div>
+
+                    <p><strong>Controlador de Perguntas:</strong> Repetir o padrão para as 5 perguntas, alterando o
+                        texto e a resposta correta.</p>
+
+                    <p><strong>Tela Final:</strong></p>
+                    <div class="scratch-code">
+                        quando eu receber [fim_quiz]
+                        se &lt;(pontuação) = [50]&gt; então
+                        diga [🎉 Parabéns! Pontuação máxima!] por 3 segundos
+                        senão se &lt;(pontuação) &gt; [30]&gt; então
+                        diga [👍 Bom trabalho! Você acertou a maioria!] por 3 segundos
+                        senão
+                        diga [📚 Estude mais e tente novamente!] por 3 segundos
+                        toque o som [cheer] // se for pontuação alta
+                    </div>
+
+                    <h4>Fase 3: Teste e Refinamento (1 aula)</h4>
+                    <p>Os alunos devem testar seus quizzes com colegas, corrigir eventuais erros de lógica (ex.:
+                        resposta que não é reconhecida) e ajustar os tempos de espera. O professor pode promover um
+                        "campeonato de quizzes", onde os alunos jogam os projetos uns dos outros.</p>
+
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <!-- Lista com classe checklist para estilização de critérios -->
+                        <li><strong>✅ Conteúdo (2 pontos):</strong> Perguntas adequadas ao tema, sem erros factuais.
+                        </li>
+                        <li><strong>✅ Funcionalidade (3 pontos):</strong> Quiz executa todas as perguntas, calcula
+                            pontuação corretamente e mostra feedback adequado.</li>
+                        <li><strong>✅ Código (3 pontos):</strong> Uso adequado de variáveis, condicionais e
+                            transmissões; código organizado.</li>
+                        <li><strong>✅ Interface (2 pontos):</strong> Instruções claras, feedback visual, sons ou efeitos
+                            que tornem o quiz atraente.</li>
+                    </ul>
+
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Adicionar temporizador:</strong> Incluir uma variável <code>tempo</code> que diminui
+                            a cada segundo e encerra o quiz se o tempo acabar.</li>
+                        <li><strong>Sistema de vidas:</strong> Em vez de pontuação, usar vidas que diminuem com
+                            respostas erradas.</li>
+                        <li><strong>Perguntas aleatórias:</strong> Usar uma lista para armazenar perguntas e sortear a
+                            ordem.</li>
+                        <li><strong>Diferentes níveis de dificuldade:</strong> Criar um seletor no início (fácil, médio,
+                            difícil) que altera a pontuação ou o tempo.</li>
+                        <li><strong>Integração com outra disciplina:</strong> Criar um quiz sobre um conteúdo que estão
+                            estudando em Ciências ou Geografia.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PROJETO: MATEMÁTICA "DESAFIO NUMÉRICO" -->
+            <div class="content-section">
+                <h2>🧮 PROJETO 7º ANO: "DESAFIO NUMÉRICO"</h2>
+
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos desenvolverão um jogo interativo de desafios matemáticos, onde o jogador deve resolver
+                        problemas que envolvem números inteiros, frações, equações simples e raciocínio lógico. O jogo
+                        apresentará cinco problemas com dificuldade crescente, feedback imediato, pontuação acumulada e
+                        uma tela de resultados. O projeto explora <strong>variáveis</strong>,
+                        <strong>condicionais</strong>, <strong>operadores aritméticos</strong> e
+                        <strong>transmissões</strong> para controlar o fluxo dos problemas.
+                    </p>
+
+                    <div class="image-container">
+                        <img src="desafio_numerico.png" alt="Desafio numerico" class="content-image">
+                    </div>
+
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Reforçar conceitos matemáticos (operações com inteiros,
+                            frações, resolução de equações), desenvolver raciocínio abstrato e sistemático para
+                            solucionar problemas.</li>
+                        <li><strong>Técnicos:</strong> Utilizar variáveis para armazenar pontuação e controle de etapas,
+                            empregar condicionais aninhadas para verificar respostas, usar operadores de comparação e
+                            aritméticos.</li>
+                        <li><strong>Socioemocionais:</strong> Incentivar a persistência diante de desafios, promover
+                            trabalho colaborativo na criação dos problemas e na validação das soluções.</li>
+                    </ul>
+
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF07MA01</strong> – Resolver problemas envolvendo operações com números
+                                inteiros.</li>
+                            <li><strong>EF07MA02</strong> – Utilizar a adição e a subtração de números inteiros para
+                                resolver situações‑problema.</li>
+                            <li><strong>EF07MA03</strong> – Resolver problemas que envolvam frações e suas operações.
+                            </li>
+                            <li><strong>EF07MA18</strong> – Resolver equações do 1º grau com uma incógnita.</li>
+                            <li><strong>Competência Geral 5</strong> – Cultura Digital: criar soluções computacionais
+                                para problemas reais.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Passo a Passo do Projeto</h3>
+
+                    <h4>Fase 1: Planejamento dos Desafios (1 aula)</h4>
+                    <p>Em duplas, os alunos devem criar cinco problemas matemáticos com diferentes níveis de
+                        dificuldade. Cada problema deve ter um enunciado claro, um campo para resposta numérica e a
+                        resposta correta. Exemplos:</p>
+                    <div class="quiz-box">
+                        <h4>📋 Modelo de Banco de Problemas</h4>
+                        <p><strong>Problema 1 (Fácil):</strong> Calcule: (-3) × (+5) = ?<br>
+                            <strong>Resposta correta:</strong> -15
+                        </p>
+                        <p><strong>Problema 2 (Médio):</strong> Resolva a equação: 2x + 5 = 15. Qual o valor de x?<br>
+                            <strong>Resposta correta:</strong> 5
+                        </p>
+                        <p><strong>Problema 3 (Difícil):</strong> João tinha 2/3 de uma pizza e comeu 1/4 do que tinha.
+                            Que fração da pizza ele comeu?<br>
+                            <strong>Resposta correta:</strong> 1/6 (ou 0,1666...)
+                        </p>
+                    </div>
+
+                    <h4>Fase 2: Implementação no Scratch (2 aulas)</h4>
+                    <p><strong>Preparação:</strong> Criar as variáveis <code>pontuação</code>,
+                        <code>problema_atual</code>. Adicionar um sprite "Professor" que apresenta os problemas e um
+                        cenário de sala de aula.
+                    </p>
+
+                    <p><strong>Código de Inicialização:</strong></p>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado
+                        mude [pontuação] para [0]
+                        mude [problema_atual] para [1]
+                        transmita [problema_1]
+                    </div>
+
+                    <p><strong>Estrutura de um Problema:</strong></p>
+                    <div class="scratch-code">
+                        quando eu receber [problema_1]
+                        se &lt;(problema_atual) = [1]&gt; então
+                        pergunte [Calcule: (-3) × (+5) = ?] e espere
+                        se &lt;(resposta) = [-15]&gt; então
+                        adicione [10] a [pontuação]
+                        diga [✅ Correto! +10 pontos] por 2 segundos
+                        senão
+                        diga [❌ Errado! A resposta correta é -15.] por 2 segundos
+                        mude [problema_atual] para [2]
+                        espere 2 segundos
+                        transmita [problema_2]
+                    </div>
+
+                    <p><strong>Controle de Fluxo:</strong> Repetir a estrutura para os cinco problemas. No último, após
+                        a verificação, transmitir <code>[fim_jogo]</code>.</p>
+
+                    <p><strong>Tela Final:</strong></p>
+                    <div class="scratch-code">
+                        quando eu receber [fim_jogo]
+                        se &lt;(pontuação) = [50]&gt; então
+                        diga [🏆 Parabéns! Você é um mestre da matemática!] por 3 segundos
+                        senão se &lt;(pontuação) &gt; [30]&gt; então
+                        diga [👍 Bom trabalho! Continue praticando.] por 3 segundos
+                        senão
+                        diga [📚 Revisar os conceitos e tente novamente!] por 3 segundos
+                    </div>
+
+                    <h4>Fase 3: Teste e Refinamento (1 aula)</h4>
+                    <p>Os alunos devem testar o jogo com colegas, identificar se as respostas são reconhecidas
+                        corretamente (especialmente frações) e ajustar os feedbacks. O professor pode organizar uma
+                        competição amigável para ver quem obtém a maior pontuação.</p>
+
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <li><strong>✅ Conteúdo Matemático (2 pontos):</strong> Problemas bem formulados, sem erros
+                            conceituais.</li>
+                        <li><strong>✅ Funcionalidade (3 pontos):</strong> Jogo executa todos os problemas, calcula a
+                            pontuação corretamente e fornece feedback adequado.</li>
+                        <li><strong>✅ Código (3 pontos):</strong> Uso correto de variáveis, condicionais, operadores
+                            aritméticos e transmissões; código limpo.</li>
+                        <li><strong>✅ Interface (2 pontos):</strong> Instruções claras, personagem interativo, elementos
+                            visuais que facilitam a compreensão.</li>
+                    </ul>
+
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Níveis de dificuldade:</strong> Criar um seletor no início (fácil, médio, difícil)
+                            que altera o valor da pontuação ou a complexidade dos problemas.</li>
+                        <li><strong>Gerador de problemas:</strong> Utilizar listas e números aleatórios para criar
+                            problemas diferentes a cada partida.</li>
+                        <li><strong>Sistema de dicas:</strong> Adicionar um botão que, ao ser pressionado, mostra uma
+                            dica para o problema atual (reduz a pontuação).</li>
+                        <li><strong>Integração com outras disciplinas:</strong> Adaptar o formato para problemas de
+                            Física (velocidade, distância) ou Química (balanceamento).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PROJETO: GEOGRAFIA "PLANEJADOR URBANO" -->
+            <div class="content-section">
+                <h2>🌎 PROJETO 7º ANO: "PLANEJADOR URBANO"</h2>
+
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos criarão um simulador interativo que permite ao jogador planejar uma cidade, gerenciando
+                        variáveis como população, área verde, infraestrutura e qualidade de vida. O jogador toma
+                        decisões que afetam os indicadores, e o simulador fornece feedback sobre as consequências. O
+                        projeto trabalha <strong>variáveis globais</strong>, <strong>condicionais complexas</strong>,
+                        <strong>operadores lógicos</strong> e <strong>eventos</strong> para modelar um sistema de
+                        planejamento urbano.
+                    </p>
+
+                    <div class="image-container">
+                        <img src="planejador_urbano.png" alt="Planejador urbano" class="content-image">
+                    </div>
+
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Compreender conceitos geográficos como urbanização,
+                            sustentabilidade, distribuição de recursos; desenvolver raciocínio sistêmico e tomada de
+                            decisão baseada em dados.</li>
+                        <li><strong>Técnicos:</strong> Manipular múltiplas variáveis, usar condicionais para avaliar
+                            combinações de variáveis, criar interações com botões e sprites, implementar lógica de
+                            simulação.</li>
+                        <li><strong>Socioemocionais:</strong> Refletir sobre impactos das decisões humanas no meio
+                            ambiente e na sociedade, trabalhar em equipe para calibrar o modelo de simulação.</li>
+                    </ul>
+
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF07GE01</strong> – Analisar a formação territorial do Brasil e suas
+                                transformações.</li>
+                            <li><strong>EF07GE06</strong> – Discutir os processos de urbanização e suas consequências.
+                            </li>
+                            <li><strong>EF07GE10</strong> – Identificar e analisar problemas ambientais urbanos e suas
+                                soluções.</li>
+                            <li><strong>Competência Geral 5</strong> – Cultura Digital: utilizar tecnologias para
+                                simular fenômenos.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Passo a Passo do Projeto</h3>
+
+                    <h4>Fase 1: Planejamento do Simulador (1 aula)</h4>
+                    <p>Em grupos, os alunos definem os indicadores que serão monitorados: <code>população</code>,
+                        <code>área_verde</code>, <code>infraestrutura</code>, <code>qualidade_vida</code> (calculada a
+                        partir dos outros). Eles também criam cenários de decisão (ex.: construir um parque, construir
+                        um shopping, aumentar a coleta de lixo) e definem os impactos de cada escolha sobre as
+                        variáveis.
+                    </p>
+                    <div class="quiz-box">
+                        <h4>📋 Exemplo de Decisões e Impactos</h4>
+                        <ul>
+                            <li><strong>Construir Parque:</strong> +10 área_verde, -5 infraestrutura, +5 qualidade_vida
+                            </li>
+                            <li><strong>Construir Shopping:</strong> +15 infraestrutura, -5 área_verde, +3 população
+                            </li>
+                            <li><strong>Investir em Saneamento:</strong> +20 qualidade_vida, -10 orçamento (se
+                                implementado)</li>
+                        </ul>
+                    </div>
+
+                    <h4>Fase 2: Implementação no Scratch (2 aulas)</h4>
+                    <p><strong>Preparação:</strong> Criar variáveis para cada indicador e um sprite "Prefeito" que
+                        apresenta as opções. Criar botões para cada ação (usando sprites com blocos de clique).</p>
+
+                    <p><strong>Código de Inicialização:</strong></p>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado
+                        mude [população] para [1000]
+                        mude [área_verde] para [50]
+                        mude [infraestrutura] para [70]
+                        mude [qualidade_vida] para [60]
+                        transmita [atualizar_tela]
+                    </div>
+
+                    <p><strong>Lógica de uma Decisão (ex.: botão "Construir Parque"):</strong></p>
+                    <div class="scratch-code">
+                        quando este sprite for clicado
+                        se &lt;(área_verde) > [0]&gt; então
+                        adicione [10] a [área_verde]
+                        adicione [-5] a [infraestrutura]
+                        mude [qualidade_vida] para ((((área_verde) + (infraestrutura)) / [2]) + (população) / [100])
+                        diga [Você construiu um parque! Área verde aumentou.] por 2 segundos
+                        transmita [atualizar_tela]
+                        senão
+                        diga [Recursos insuficientes para construir um parque.] por 2 segundos
+                    </div>
+
+                    <p><strong>Atualização da Tela:</strong> Um sprite exibe os valores das variáveis e um feedback
+                        sobre a situação da cidade (ex.: "Cidade sustentável", "Alerta de poluição").</p>
+                    <div class="scratch-code">
+                        quando eu receber [atualizar_tela]
+                        mude para o cenário [urbano]
+                        diga (junte [População: ] [população]) por 0.5 segundos
+                        diga (junte [Área Verde: ] [área_verde]) por 0.5 segundos
+                        diga (junte [Qualidade de Vida: ] [qualidade_vida]) por 0.5 segundos
+                        se &lt;(qualidade_vida) < [30]&gt; então diga [Cidade em crise! Tome medidas urgentes.] por 2
+                            segundos </div>
+
+                            <h4>Fase 3: Teste e Refinamento (1 aula)</h4>
+                            <p>Os alunos testam diferentes sequências de decisões, verificam se os impactos são
+                                coerentes e ajustam a fórmula de cálculo da qualidade de vida. Podem também adicionar um
+                                botão de "Relatório" que mostra um histórico das decisões.</p>
+
+                            <h3>Rubrica de Avaliação</h3>
+                            <ul class="checklist">
+                                <li><strong>✅ Modelagem (2 pontos):</strong> As variáveis e seus relacionamentos são
+                                    realistas e bem definidos.</li>
+                                <li><strong>✅ Funcionalidade (3 pontos):</strong> As decisões alteram corretamente os
+                                    indicadores; o feedback é claro e consistente.</li>
+                                <li><strong>✅ Código (3 pontos):</strong> Uso adequado de variáveis, condicionais
+                                    aninhadas, operadores lógicos e transmissões.</li>
+                                <li><strong>✅ Interface (2 pontos):</strong> Botões intuitivos, cenário que reflete o
+                                    estado da cidade, instruções claras.</li>
+                            </ul>
+
+                            <h3>Extensões e Desafios</h3>
+                            <ul>
+                                <li><strong>Eventos aleatórios:</strong> Criar um sistema que, a cada 10 cliques, gera
+                                    um evento (enchente, descoberta de área verde) que altera os indicadores.</li>
+                                <li><strong>Objetivos múltiplos:</strong> O jogador deve atingir metas (ex.: área_verde
+                                    > 80 e qualidade_vida > 70) dentro de um número limitado de ações.</li>
+                                <li><strong>Gráficos simples:</strong> Usar sprites para representar barras de progresso
+                                    que se alongam conforme os valores aumentam.</li>
+                                <li><strong>Comparação com dados reais:</strong> Pesquisar indicadores de uma cidade
+                                    real e tentar aproximar o simulador dessa realidade.</li>
+                            </ul>
+                    </div>
+                </div>
+
+                <!-- PROJETO: CIÊNCIAS "ECOSIM - EQUILÍBRIO ECOLÓGICO" -->
+                <div class="content-section">
+                    <h2>🌿 PROJETO 7º ANO: "ECOSIM - EQUILÍBRIO ECOLÓGICO"</h2>
+
+                    <div class="projeto-ano">
+                        <h3>Descrição do Projeto</h3>
+                        <p>Os alunos desenvolverão um simulador de ecossistema onde o jogador pode alterar populações de
+                            espécies (plantas, herbívoros, predadores) e observar o equilíbrio dinâmico. O sistema
+                            utiliza equações simplificadas de predação e crescimento populacional, exigindo que o
+                            jogador encontre um ponto de equilíbrio sustentável. O projeto explora
+                            <strong>variáveis</strong>, <strong>operadores aritméticos</strong>,
+                            <strong>condicionais</strong>, <strong>listas</strong> (para histórico) e <strong>laços de
+                                repetição</strong> para simular a passagem do tempo.
+                        </p>
+
+                        <div class="image-container">
+                            <img src="ecosim.png" alt="Ecosim" class="content-image">
+                        </div>
+
+                        <h3>Objetivos de Aprendizagem</h3>
+                        <ul>
+                            <li><strong>Cognitivos:</strong> Compreender conceitos de ecologia (cadeia alimentar,
+                                capacidade de suporte, equilíbrio), aplicar raciocínio sistêmico e resolver problemas de
+                                otimização.</li>
+                            <li><strong>Técnicos:</strong> Utilizar laços de repetição (<code>repita até</code>) para
+                                simular ciclos, criar listas para armazenar histórico de populações, empregar fórmulas
+                                matemáticas para modelar crescimento e predação.</li>
+                            <li><strong>Socioemocionais:</strong> Desenvolver senso de responsabilidade ambiental,
+                                colaborar na calibração do modelo e na análise dos resultados.</li>
+                        </ul>
+
+                        <div class="bncc-box">
+                            <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                            <ul>
+                                <li><strong>EF07CI07</strong> – Analisar as relações entre os seres vivos e os fatores
+                                    abióticos em ecossistemas.</li>
+                                <li><strong>EF07CI08</strong> – Simular e avaliar o impacto de intervenções humanas em
+                                    um ecossistema.</li>
+                                <li><strong>EF07CI09</strong> – Propor soluções para problemas ambientais considerando a
+                                    sustentabilidade.</li>
+                                <li><strong>Competência Geral 5</strong> – Cultura Digital: criar simulações para
+                                    compreender fenômenos naturais.</li>
+                            </ul>
+                        </div>
+
+                        <h3>Passo a Passo do Projeto</h3>
+
+                        <h4>Fase 1: Planejamento do Modelo Ecológico (1 aula)</h4>
+                        <p>Os alunos escolhem um ecossistema (ex.: floresta, savana) e definem três espécies: produtores
+                            (plantas), herbívoros e predadores. Estabelecem equações simples para a dinâmica:</p>
+                        <div class="formula-box">
+                            <strong>Crescimento das plantas:</strong> plantas = plantas + (taxa_crescimento * plantas) -
+                            (consumo * herbívoros)<br>
+                            <strong>Herbívoros:</strong> herbívoros = herbívoros + (taxa_nascimento * herbívoros) -
+                            (predação * predadores) - (mortalidade * herbívoros)<br>
+                            <strong>Predadores:</strong> predadores = predadores + (taxa_reprodução * predadores) -
+                            (mortalidade_pred * predadores)
+                        </div>
+                        <p>Os alunos definem os valores iniciais e as taxas, e criam um plano de interface com botões
+                            para ajustar as taxas e um botão "Simular" que executa um ciclo.</p>
+
+                        <h4>Fase 2: Implementação no Scratch (2 aulas)</h4>
+                        <p><strong>Preparação:</strong> Criar variáveis para as três populações e para as taxas. Criar
+                            um sprite "Cientista" que explica o simulador e botões de controle.</p>
+
+                        <p><strong>Código de Inicialização:</strong></p>
+                        <div class="scratch-code">
+                            quando ⚑ for clicado
+                            mude [plantas] para [200]
+                            mude [herbívoros] para [30]
+                            mude [predadores] para [10]
+                            mude [taxa_crescimento] para [0.1]
+                            mude [consumo] para [0.05]
+                            mude [taxa_nascimento] para [0.08]
+                            mude [predação] para [0.02]
+                            mude [mortalidade] para [0.05]
+                            mude [taxa_reprodução] para [0.04]
+                            mude [mortalidade_pred] para [0.03]
+                            transmita [atualizar_tela]
+                        </div>
+
+                        <p><strong>Lógica de Simulação (um ciclo):</strong></p>
+                        <div class="scratch-code">
+                            quando eu receber [ciclo]
+                            mude [plantas] para ( (plantas) + ((taxa_crescimento) * (plantas)) - ((consumo) *
+                            (herbívoros)) )
+                            mude [herbívoros] para ( (herbívoros) + ((taxa_nascimento) * (herbívoros)) - ((predação) *
+                            (predadores)) - ((mortalidade) * (herbívoros)) )
+                            mude [predadores] para ( (predadores) + ((taxa_reprodução) * (predadores)) -
+                            ((mortalidade_pred) * (predadores)) )
+                            se &lt;(plantas) < [0]&gt; então mude [plantas] para [0] se &lt;(herbívoros) < [0]&gt; então
+                                mude [herbívoros] para [0] se &lt;(predadores) < [0]&gt; então mude [predadores] para
+                                [0] adicione (plantas) à lista [histórico_plantas] adicione (herbívoros) à lista
+                                [histórico_herbívoros] adicione (predadores) à lista [histórico_predadores] transmita
+                                [atualizar_tela] </div>
+
+                                <p><strong>Botão "Simular 10 ciclos":</strong> Repete o bloco de receber [ciclo] 10
+                                    vezes.</p>
+
+                                <h4>Fase 3: Teste e Refinamento (1 aula)</h4>
+                                <p>Os alunos executam simulações variando as taxas e observam se ocorre extinção ou
+                                    explosão populacional. Ajustam os valores para que o sistema tenha um comportamento
+                                    realista. Criar um gráfico simples com sprites ou um relatório final.</p>
+
+                                <h3>Rubrica de Avaliação</h3>
+                                <ul class="checklist">
+                                    <li><strong>✅ Modelagem Ecológica (2 pontos):</strong> As relações entre as espécies
+                                        são coerentes e as equações representam adequadamente o equilíbrio.</li>
+                                    <li><strong>✅ Funcionalidade (3 pontos):</strong> A simulação calcula corretamente
+                                        as novas populações, não permite valores negativos e o histórico é registrado.
+                                    </li>
+                                    <li><strong>✅ Código (3 pontos):</strong> Uso de variáveis, operadores aritméticos,
+                                        listas, laços de repetição e condicionais de forma organizada.</li>
+                                    <li><strong>✅ Interface (2 pontos):</strong> Controles intuitivos, exibição clara
+                                        dos valores e do histórico, feedback visual sobre o estado do ecossistema.</li>
+                                </ul>
+
+                                <h3>Extensões e Desafios</h3>
+                                <ul>
+                                    <li><strong>Gráficos dinâmicos:</strong> Usar sprites para desenhar gráficos de
+                                        linhas com base nas listas históricas.</li>
+                                    <li><strong>Intervenção humana:</strong> Adicionar botões para "Desmatar",
+                                        "Introduzir espécie invasora" e ver os efeitos.</li>
+                                    <li><strong>Relatório científico:</strong> O programa gera um resumo com
+                                        recomendações para manter o equilíbrio.</li>
+                                    <li><strong>Comparação com dados reais:</strong> Pesquisar um ecossistema ameaçado e
+                                        ajustar os parâmetros para simular cenários reais.</li>
+                                </ul>
+                        </div>
+                    </div>
+
+                    <!-- OUTRAS IDEIAS DE PROJETOS -->
+                    <div class="content-section">
+                        <h2>Outras Ideias de Projetos para o 7º Ano</h2>
+                        <div class="card-grid">
+                            <!-- Grade de cartões com sugestões adicionais -->
+                            <div class="nav-card">
+                                <h3>Jogo de Tabuada</h3>
+                                <p>Um jogo onde o jogador deve responder corretamente a tabuada de um número sorteado.
+                                    Pode incluir cronômetro e pontuação.</p>
+                            </div>
+                            <div class="nav-card">
+                                <h3>Quiz Interdisciplinar</h3>
+                                <p>Em grupos, cada aluno fica responsável por um bloco de perguntas de uma disciplina
+                                    diferente, e o quiz final combina todas.</p>
+                            </div>
+                            <div class="nav-card">
+                                <h3>Simulador de Provas</h3>
+                                <p>O aluno programa um "simulador" com perguntas de um vestibular ou prova de concurso,
+                                    com gabarito e correção automática.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MATERIAL DE APOIO AO PROFESSOR -->
+                    <div class="content-section">
+                        <h2>Material de Apoio para o Professor</h2>
+                        <div class="info-box">
+                            <h4>📌 Dicas para a Atividade</h4>
+                            <ul>
+                                <li><strong>Revisão de variáveis:</strong> Antes de iniciar, faça uma atividade rápida
+                                    com cartões físicos simulando variáveis.</li>
+                                <li><strong>Banco de perguntas compartilhado:</strong> Crie um documento colaborativo
+                                    onde cada dupla registra suas perguntas; assim, os alunos podem se inspirar ou
+                                    trocar ideias.</li>
+                                <li><strong>Encoraje a correção entre pares:</strong> Após o teste, peça que os alunos
+                                    escrevam sugestões para os colegas.</li>
+                            </ul>
+                        </div>
+                        <div class="info-box">
+                            <h4>📚 Conexões Curriculares</h4>
+                            <ul>
+                                <li><strong>Matemática:</strong> Uso de operações, comparações e lógica booleana.</li>
+                                <li><strong>Ciências:</strong> Elaboração de perguntas sobre conteúdos estudados.</li>
+                                <li><strong>Língua Portuguesa:</strong> Clareza na formulação das perguntas e feedback.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SEÇÃO DE NAVEGAÇÃO ENTRE ANOS -->
+                    <div class="content-section">
+                        <h2>Navegação</h2>
+                        <div class="card-grid">
+                            <a href="projetos_6_ano.html" class="nav-card">
+                                <h3>6º Ano</h3>
+                                <p>Narrativas Interativas</p>
+                            </a>
+                            <a href="index.html" class="nav-card">
+                                <h3>Página Inicial</h3>
+                                <p>Voltar à cartilha principal</p>
+                            </a>
+                            <a href="projetos_8_ano.html" class="nav-card">
+                                <h3>8º Ano</h3>
+                                <p>Simulações e Clones</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    </main>
+    <!-- Fim do conteúdo principal -->
+
+    <footer>
+        <!-- Rodapé da página -->
+        <div class="container">
+            <div class="footer-content">
+                <!-- Agrupa as seções do rodapé -->
+                <div class="footer-section">
+                    <h3>UTFPR - Campus Siqueira Campos</h3>
+                    <p>Universidade Tecnológica Federal do Paraná</p>
+                    <p>Departamento de Computação</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos Scratch</h3>
+                    <ul>
+                        <li><a href="https://scratch.mit.edu" target="_blank" rel="noopener noreferrer">Site Oficial do
+                                Scratch</a></li>
+                        <li><a href="https://scratch.mit.edu/educators" target="_blank" rel="noopener noreferrer">Para
+                                Educadores</a></li>
+                        <li><a href="https://scratch.mit.edu/parents" target="_blank" rel="noopener noreferrer">Para
+                                Pais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: giseleacn@gmail.com</p>
+                    <p>Email: barbosa.rodrigo.1979@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 UTFPR - Desenvolvido por Gisele Nunes e Rodrigo Barbosa. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    <!-- Fim do rodapé -->
+
+    <button class="theme-toggle" id="themeToggle" aria-pressed="false"
+        aria-label="Alternar tema claro e escuro">🌙</button>
+    <!-- Botão flutuante para alternar entre tema claro e escuro; atributos ARIA para acessibilidade -->
+    <script src="script.js"></script>
+    <!-- Inclusão do arquivo JavaScript externo (script.js) para funcionalidades interativas (tema, impressão, etc.) -->
+</body>
+<!-- Fim do corpo da página -->
+
+</html>
+<!-- Fim do documento HTML -->

@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<!-- ===================================================================
+     Projetos 9º Ano: Super Trunfo e Python | Scratch EF II
+     ===================================================================
+     Objetivo: Fornecer material didático para professores do 9º ano com projetos
+               integrando Scratch, Matemática, Geografia e Ciências, utilizando listas,
+               blocos personalizados e transição para Python.
+     Autor : Gisele Nunes, Rodrigo Barbosa
+     Data  : 2026
+     ===================================================================
+-->
+<!-- Declaração do tipo de documento e idioma português do Brasil -->
+<html lang="pt-BR">
+<!-- Início do cabeçalho da página: metadados, título e links para recursos externos -->
+
+<head>
+    <!-- Codificação de caracteres UTF-8 para suporte a acentos e símbolos -->
+    <meta charset="UTF-8">
+    <!-- Configuração de viewport para garantir responsividade em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título exibido na aba do navegador -->
+    <title>Projetos 9º Ano: Super Trunfo e Python | Scratch EF II</title>
+    <!-- Link para o arquivo CSS externo que define o estilo visual da página -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Corpo da página: todo o conteúdo visível ao usuário -->
+
+<body>
+    <!-- Cabeçalho principal da página: contém logo, identificação da universidade e navegação -->
+    <header>
+        <!-- Primeira linha do cabeçalho: logo e título institucional -->
+        <div class="header-top">
+            <!-- Container para alinhar conteúdo centralizado -->
+            <div class="container">
+                <!-- Container da logo e nome da universidade -->
+                <div class="logo-container">
+                    <!-- Imagem da logo da UTFPR (caminho relativo) -->
+                    <img src="UTFPR_logo.png" alt="UTFPR Logo" class="logo">
+                    <!-- Nome da universidade com pequeno ajuste para o campus -->
+                    <div class="institution-name">
+                        Universidade Tecnológica Federal do Paraná<br>
+                        <small>Campus Siqueira Campos</small>
+                    </div>
+                </div>
+                <!-- Título principal do material didático -->
+                <div class="header-title">
+                    Scratch na Educação Básica<br>
+                    <small>Material Didático para Professores do 6º ao 9º Ano</small>
+                </div>
+            </div>
+        </div>
+        <!-- Segunda linha do cabeçalho: barra de navegação com links para as demais páginas -->
+        <div class="header-bottom">
+            <div class="container">
+                <nav>
+                    <!-- Lista não ordenada com os itens do menu -->
+                    <ul>
+                        <li><a href="index.html">Página Inicial</a></li>
+                        <li><a href="primeiros_passos.html">Primeiros Passos</a></li>
+                        <li><a href="projetos_6_ano.html">Projetos 6º Ano</a></li>
+                        <li><a href="projetos_7_ano.html">Projetos 7º Ano</a></li>
+                        <li><a href="projetos_8_ano.html">Projetos 8º Ano</a></li>
+                        <li><a href="projetos_9_ano.html">Projetos 9º Ano</a></li>
+                        <li><a href="planos_de_aula.html">Planos de Aula</a></li>
+                        <li><a href="referencias_BNCC.html">Referências BNCC</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Conteúdo principal da página -->
+    <main>
+        <!-- Container para alinhar e limitar a largura do conteúdo -->
+        <div class="container">
+            <!-- Cabeçalho da seção principal com título e subtítulo -->
+            <div class="page-header">
+                <h1>Projetos Didáticos - 9º Ano</h1>
+                <p class="subtitle">Super Trunfo, Matemática, Geografia e Ciências: estruturas de dados e algoritmos</p>
+            </div>
+
+            <!-- ==================== PROJETO PRINCIPAL: SUPER TRUNFO ==================== -->
+            <!-- Seção que descreve o projeto do jogo Super Trunfo no Scratch -->
+            <div class="content-section">
+                <h2>🃏 PROJETO 9º ANO: "SUPER TRUNFO SCRATCH"</h2>
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos criarão uma versão do jogo Super Trunfo, onde cada carta possui atributos (ex.: força,
+                        inteligência, velocidade). O jogador enfrenta o computador, escolhendo um atributo para
+                        comparar. O projeto utiliza <strong>listas</strong> para armazenar as cartas e <strong>blocos
+                            personalizados (Meus Blocos)</strong> para organizar a lógica de comparação. É o projeto
+                        mais complexo da sequência, servindo como ponte para linguagens textuais como Python.</p>
+                    <!-- Container para imagem ilustrativa do projeto -->
+                    <div class="image-container">
+                        <img src="super_trunfo.png" alt="Super Trunfo" class="content-image">
+                    </div>
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Compreender o uso de listas como estrutura de dados, aplicar
+                            algoritmos de comparação, desenvolver pensamento abstrato.</li>
+                        <li><strong>Técnicos:</strong> Criar e manipular listas, utilizar blocos personalizados
+                            (procedimentos), implementar lógica de jogo com múltiplas condições.</li>
+                        <li><strong>Socioemocionais:</strong> Trabalhar em equipe, discutir estratégias de jogo,
+                            refletir sobre a transição para linguagens textuais.</li>
+                    </ul>
+                    <!-- Caixa destacada com alinhamento à BNCC e DCE-PR -->
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF09MA10</strong> – Resolver problemas envolvendo probabilidade (pode ser
+                                aplicado no sorteio de cartas).</li>
+                            <li><strong>EF09LP26</strong> – Produzir textos digitais (instruções, regras do jogo).</li>
+                            <li><strong>Competência Geral 5</strong> – Cultura Digital: compreender e criar tecnologias
+                                digitais.</li>
+                            <li><strong>Competência Geral 4</strong> – Comunicação: utilizar diferentes linguagens para
+                                expressar ideias.</li>
+                        </ul>
+                    </div>
+                    <h3>Passo a Passo do Projeto</h3>
+                    <h4>Fase 1: Planejamento das Cartas (1 aula)</h4>
+                    <p><strong>Atividade:</strong> Em grupos, os alunos definem o tema das cartas (ex.: animais, carros,
+                        personagens) e criam pelo menos 6 cartas, cada uma com 3 atributos numéricos. Exemplo:</p>
+                    <!-- Simulação de lista de cartas no Scratch -->
+                    <div class="list-demo">
+                        <strong>Lista de cartas (Scratch):</strong><br>
+                        carta1: "Leão, 8, 7, 9"<br>
+                        carta2: "Águia, 6, 9, 8"<br>
+                        carta3: "Tubarão, 9, 6, 7"<br>
+                        etc.
+                    </div>
+                    <p>Os atributos podem ser: Força, Inteligência, Velocidade. Os alunos devem definir o valor mínimo e
+                        máximo.</p>
+                    <h4>Fase 2: Implementação no Scratch (3 aulas)</h4>
+                    <p><strong>Preparação:</strong> Criar as listas <code>nomes</code>, <code>atributo1</code>,
+                        <code>atributo2</code>, <code>atributo3</code> ou uma única lista com os dados. Optamos por
+                        listas separadas para facilitar o acesso.
+                    </p>
+                    <h5>1. Criando as listas e preenchendo com os dados das cartas:</h5>
+                    <!-- Bloco de código simulando comandos do Scratch -->
+                    <div class="scratch-code">
+                        quando ⚑ for clicado
+                        apague todos os itens de [nomes]
+                        apague todos os itens de [força]
+                        apague todos os itens de [inteligencia]
+                        apague todos os itens de [velocidade]
+
+                        // Adicionar carta 1
+                        adicione [Leão] a [nomes]
+                        adicione [8] a [força]
+                        adicione [7] a [inteligencia]
+                        adicione [9] a [velocidade]
+
+                        // Repetir para as demais cartas
+                    </div>
+                    <h5>2. Sorteio de cartas (jogador e computador):</h5>
+                    <div class="scratch-code">
+                        defina [carta_jogador] como (número aleatório entre (1) e (6))
+                        defina [carta_computador] como (número aleatório entre (1) e (6))
+                        // Evitar que seja a mesma carta
+                        repita até &lt;não &lt;(carta_jogador) = (carta_computador)&gt;&gt;
+                        defina [carta_computador] como (número aleatório entre (1) e (6))
+                    </div>
+                    <h5>3. Bloco personalizado "comparar atributo":</h5>
+                    <div class="scratch-code">
+                        // Criar um bloco "comparar (atributo) entre (carta1) e (carta2)"
+                        // Dentro do bloco:
+                        se &lt;(atributo) = [força]&gt; então
+                        se &lt;(item (carta1) de [força]) &gt; (item (carta2) de [força])&gt; então
+                        retorne [1] // jogador vence
+                        senão se &lt;(item (carta1) de [força]) &lt; (item (carta2) de [força])&gt; então
+                        retorne [2] // computador vence
+                        senão
+                        retorne [0] // empate
+                    </div>
+                    <p>Repetir para os outros atributos.</p>
+                    <h5>4. Lógica principal do jogo:</h5>
+                    <div class="scratch-code">
+                        pergunte [Escolha um atributo: 1-Força 2-Inteligência 3-Velocidade] e espere
+                        defina [resultado] como [comparar (resposta) entre (carta_jogador) e (carta_computador)]
+                        se &lt;(resultado) = [1]&gt; então
+                        diga [Você venceu esta rodada!] por 2 segundos
+                        mude [pontos_jogador] para (pontos_jogador + 1)
+                        senão se &lt;(resultado) = [2]&gt; então
+                        diga [O computador venceu!] por 2 segundos
+                        mude [pontos_computador] para (pontos_computador + 1)
+                        senão
+                        diga [Empate!] por 2 segundos
+                    </div>
+                    <h5>5. Fim do jogo (após 5 rodadas):</h5>
+                    <div class="scratch-code">
+                        se &lt;(rodada) = [5]&gt; então
+                        se &lt;(pontos_jogador) &gt; (pontos_computador)&gt; então
+                        diga [Você venceu o campeonato!] por 3 segundos
+                        senão
+                        diga [O computador venceu!] por 3 segundos
+                        pare [todos]
+                    </div>
+                    <h4>Fase 3: Ponte para Python (1 aula)</h4>
+                    <p>Após o projeto pronto, o professor apresenta uma versão simples do mesmo jogo em Python,
+                        destacando as semelhanças e diferenças:</p>
+                    <!-- Comparação de código Scratch vs Python -->
+                    <div class="code-comparison">
+                        <div class="code-box">
+                            <h4>Scratch (bloco personalizado)</h4>
+                            <pre>definir comparar (atributo) entre (carta1) e (carta2)
+se <(atributo) = [força]> então
+    se <(item (carta1) de [força]) > (item (carta2) de [força])> então
+        retorne [1]
+    ...
+</pre>
+                        </div>
+                        <div class="code-box">
+                            <h4>Python (função)</h4>
+                            <pre>def comparar(atributo, carta1, carta2):
+    if atributo == "força":
+        if carta1["força"] > carta2["força"]:
+            return 1
+        elif carta1["força"] < carta2["força"]:
+            return 2
+        else:
+            return 0
+    ...</pre>
+                        </div>
+                    </div>
+                    <p>Os alunos devem identificar os elementos equivalentes: listas (arrays), blocos personalizados
+                        (funções), condicionais e operadores. Essa discussão ajuda a desmistificar a transição para
+                        linguagens textuais.</p>
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <li><strong>✅ Estrutura de Dados (2 pontos):</strong> Uso correto de listas para armazenar as
+                            cartas.</li>
+                        <li><strong>✅ Blocos Personalizados (2 pontos):</strong> Criação de blocos para comparar
+                            atributos e organizar o código.</li>
+                        <li><strong>✅ Lógica do Jogo (3 pontos):</strong> Funcionamento correto da comparação, pontuação
+                            e finalização.</li>
+                        <li><strong>✅ Criatividade (1 ponto):</strong> Tema original, cartas balanceadas.</li>
+                        <li><strong>✅ Reflexão (2 pontos):</strong> Capacidade de explicar como o código seria escrito
+                            em Python.</li>
+                    </ul>
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Adicionar mais atributos:</strong> Incluir novos atributos como "magia" ou
+                            "resistência".</li>
+                        <li><strong>Sistema de dificuldade:</strong> O computador escolhe o melhor atributo
+                            automaticamente.</li>
+                        <li><strong>Gráficos com o Python:</strong> Usar a biblioteca Turtle para desenhar as cartas.
+                        </li>
+                        <li><strong>Exportar dados:</strong> Salvar as cartas em um arquivo CSV e carregar no Python.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ==================== PROJETO DE MATEMÁTICA: SIMULADOR DE JUROS COMPOSTOS ==================== -->
+            <div class="content-section">
+                <h2>📊 PROJETO 9º ANO: "SIMULADOR DE JUROS COMPOSTOS E PLANEJAMENTO FINANCEIRO"</h2>
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos desenvolverão um simulador financeiro que calcula o montante acumulado em aplicações
+                        com juros compostos, considerando aportes mensais e diferentes taxas. O projeto utiliza
+                        <strong>listas</strong> para armazenar o histórico de saldos, <strong>variáveis</strong> para
+                        controlar o tempo e a taxa, e <strong>blocos personalizados</strong> para as fórmulas
+                        matemáticas. Os alunos deverão comparar diferentes cenários (ex: poupança vs CDI) e tomar
+                        decisões de investimento, aplicando raciocínio abstrato e resolução sistemática de problemas.
+                    </p>
+                    <div class="image-container">
+                        <img src="simulador_de_juros.png" alt="Simulador de juros" class="content-image">
+                    </div>
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Compreender e aplicar a fórmula de juros compostos (<em>M = C ×
+                                (1+i)^t</em>), analisar a evolução de investimentos ao longo do tempo, comparar
+                            diferentes taxas e períodos.</li>
+                        <li><strong>Técnicos:</strong> Implementar expressões aritméticas e potenciação no Scratch,
+                            utilizar listas para registro histórico, criar blocos personalizados para reutilização da
+                            lógica financeira.</li>
+                        <li><strong>Socioemocionais:</strong> Desenvolver educação financeira, trabalhar em equipe para
+                            definir metas de economia, refletir sobre a importância do planejamento de longo prazo.</li>
+                    </ul>
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF09MA05</strong> – Resolver problemas envolvendo porcentagens, juros simples e
+                                compostos.</li>
+                            <li><strong>EF09MA06</strong> – Compreender e aplicar a noção de função, analisando variação
+                                de grandezas.</li>
+                            <li><strong>EF09MA07</strong> – Utilizar modelos matemáticos para compreender situações do
+                                cotidiano.</li>
+                            <li><strong>Competência Geral 5</strong> – Cultura Digital: simular e analisar cenários
+                                financeiros com ferramentas computacionais.</li>
+                            <li><strong>Competência Geral 7</strong> – Argumentação: justificar a escolha do melhor
+                                investimento com base nos dados.</li>
+                        </ul>
+                    </div>
+                    <h3>Passo a Passo do Projeto</h3>
+                    <h4>Fase 1: Estudo da Fórmula e Planejamento (1 aula)</h4>
+                    <p><strong>Atividade:</strong> Apresentar a fórmula dos juros compostos e discutir exemplos práticos
+                        (poupança, tesouro direto). Os alunos, em grupos, definem três cenários de investimento com
+                        diferentes taxas mensais (ex: 0,5%, 1%, 1,5%) e um valor inicial (ex: R$ 1000,00). Decidem o
+                        período de simulação (12, 24 ou 36 meses).</p>
+                    <div class="list-demo">
+                        <strong>Dados de entrada planejados:</strong><br>
+                        Capital inicial: R$ 1000,00<br>
+                        Taxa mensal: 0,5% , 1,0% , 1,5%<br>
+                        Período: 12 meses<br>
+                        Aporte mensal opcional: R$ 100,00
+                    </div>
+                    <h4>Fase 2: Implementação no Scratch (3 aulas)</h4>
+                    <h5>1. Variáveis e listas principais:</h5>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado
+                        defina [capital_inicial] como [1000]
+                        defina [taxa_mensal] como [0.5] // em percentual
+                        defina [periodo_meses] como [12]
+                        defina [aporte_mensal] como [100]
+
+                        apague todos os itens de [historico_saldos]
+                        adicione (capital_inicial) a [historico_saldos]
+                    </div>
+                    <h5>2. Bloco personalizado "calcular_montante":</h5>
+                    <div class="scratch-code">
+                        definir calcular_montante (capital) (taxa) (meses)
+                        defina [montante] como (capital)
+                        repita (meses) vezes
+                        defina [montante] como (montante) * (1 + (taxa) / 100)
+                        retorne (montante)
+                    </div>
+                    <p><strong>Observação:</strong> Para simular aportes mensais, o cálculo deve ser feito mês a mês,
+                        adicionando o aporte antes de aplicar o juros do próximo mês.</p>
+                    <h5>3. Simulação mês a mês com histórico:</h5>
+                    <div class="scratch-code">
+                        defina [saldo_atual] como (capital_inicial)
+                        defina [mes] como [1]
+                        repita até (mes) > (periodo_meses)
+                        // Aplica juros do mês
+                        defina [saldo_atual] como (saldo_atual) * (1 + (taxa_mensal) / 100)
+                        // Adiciona aporte (se houver)
+                        defina [saldo_atual] como (saldo_atual) + (aporte_mensal)
+                        // Armazena histórico
+                        adicione (saldo_atual) a [historico_saldos]
+                        defina [mes] como (mes) + 1
+                    </div>
+                    <h5>4. Comparação de diferentes cenários:</h5>
+                    <div class="scratch-code">
+                        // Usando o mesmo bloco personalizado para múltiplas taxas
+                        defina [taxa1] como [0.5]
+                        defina [taxa2] como [1.0]
+                        defina [taxa3] como [1.5]
+
+                        defina [montante1] como (calcular_montante (capital_inicial) (taxa1) (periodo_meses))
+                        defina [montante2] como (calcular_montante (capital_inicial) (taxa2) (periodo_meses))
+                        defina [montante3] como (calcular_montante (capital_inicial) (taxa3) (periodo_meses))
+
+                        diga (junte [Montante com 0,5%: R$ ] (arredondar (montante1)))
+                        diga (junte [Montante com 1,0%: R$ ] (arredondar (montante2)))
+                        diga (junte [Montante com 1,5%: R$ ] (arredondar (montante3)))
+                    </div>
+                    <h5>5. Interface com o usuário – perguntas e respostas:</h5>
+                    <div class="scratch-code">
+                        pergunte [Qual o valor inicial?] e espere
+                        defina [capital_inicial] como (resposta)
+                        pergunte [Taxa mensal (% a.m.)?] e espere
+                        defina [taxa_mensal] como (resposta)
+                        pergunte [Quantos meses?] e espere
+                        defina [periodo_meses] como (resposta)
+                        // Executa simulação e exibe gráfico de barras simples (com repetição de blocos)
+                    </div>
+                    <h4>Fase 3: Ponte para Python e Análise de Resultados (1 aula)</h4>
+                    <p>Após a simulação, os alunos transferem a lógica para um script Python que gera um gráfico de
+                        evolução do patrimônio usando <code>matplotlib</code>. Compara-se a abordagem visual do Scratch
+                        com a textual do Python, destacando estruturas de repetição, listas e funções.</p>
+                    <div class="code-comparison">
+                        <div class="code-box">
+                            <h4>Scratch (bloco de repetição)</h4>
+                            <pre>defina [mes] como [1]
+repita até (mes) > (periodo_meses)
+    defina [saldo] como (saldo) * (1+taxa/100)
+    adicione (saldo) a [historico]
+    defina [mes] como (mes) + 1</pre>
+                        </div>
+                        <div class="code-box">
+                            <h4>Python (loop for)</h4>
+                            <pre>saldo = capital_inicial
+historico = [saldo]
+for mes in range(periodo_meses):
+    saldo = saldo * (1 + taxa/100)
+    historico.append(saldo)</pre>
+                        </div>
+                    </div>
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <li><strong>✅ Compreensão da fórmula (2 pts):</strong> Implementação correta dos juros compostos
+                            no bloco personalizado.</li>
+                        <li><strong>✅ Uso de listas (2 pts):</strong> Histórico de saldos armazenado e exibido
+                            corretamente.</li>
+                        <li><strong>✅ Simulação interativa (2 pts):</strong> Programa permite entrada de dados e mostra
+                            resultados comparativos.</li>
+                        <li><strong>✅ Análise crítica (2 pts):</strong> Alunos justificam qual cenário é mais vantajoso
+                            e explicam os motivos.</li>
+                        <li><strong>✅ Criatividade (1 pt):</strong> Inclusão de elementos visuais (gráfico de barras no
+                            palco) ou novos recursos (aporte variável).</li>
+                        <li><strong>✅ Reflexão Python (1 pt):</strong> Capacidade de transpor a lógica para código
+                            textual.</li>
+                    </ul>
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Inflação:</strong> Incorporar uma taxa de inflação para calcular o ganho real.</li>
+                        <li><strong>Simulador de metas:</strong> O usuário informa o objetivo (ex: R$ 5000,00) e o
+                            programa calcula quantos meses serão necessários.</li>
+                        <li><strong>Gráfico no Scratch:</strong> Desenhar um gráfico de barras da evolução do saldo
+                            usando caneta.</li>
+                        <li><strong>Comparação com juros simples:</strong> Criar um segundo bloco e comparar os dois
+                            regimes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ==================== PROJETO DE GEOGRAFIA: SIMULADOR DE DINÂMICA POPULACIONAL ==================== -->
+            <div class="content-section">
+                <h2>🌍 PROJETO 9º ANO: "SIMULADOR DE DINÂMICA POPULACIONAL E INDICADORES SOCIAIS"</h2>
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos criarão um simulador que modela o crescimento populacional de um país com base em taxas
+                        de natalidade, mortalidade e migração. Utilizando <strong>listas</strong> para armazenar dados
+                        demográficos anuais e <strong>blocos personalizados</strong> para calcular indicadores como IDH
+                        (Índice de Desenvolvimento Humano) e densidade demográfica. O projeto exige raciocínio abstrato
+                        para compreender variáveis interdependentes e resolução sistemática de problemas para ajustar
+                        políticas públicas (ex: investimento em educação reduz mortalidade infantil).</p>
+                    <div class="image-container">
+                        <img src="simulador_de_dinamica_populacional.png" alt="Simulador de dinamica populacional"
+                            class="content-image">
+                    </div>
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Compreender conceitos demográficos (crescimento vegetativo,
+                            saldo migratório, pirâmide etária) e indicadores sociais (IDH, coeficiente de Gini).</li>
+                        <li><strong>Técnicos:</strong> Modelar sistemas dinâmicos com equações de recorrência, utilizar
+                            listas multidimensionais (ex: população por faixa etária), criar blocos para simulações de
+                            cenários "o que aconteceria se...".</li>
+                        <li><strong>Socioemocionais:</strong> Desenvolver pensamento crítico sobre desafios
+                            populacionais, trabalho em equipe para propor soluções baseadas em dados, empatia ao
+                            analisar realidades socioeconômicas.</li>
+                    </ul>
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF09GE06</strong> – Analisar a dinâmica populacional e as migrações no mundo
+                                contemporâneo.</li>
+                            <li><strong>EF09GE07</strong> – Identificar e interpretar indicadores sociais e econômicos
+                                (IDH, PIB per capita, etc.).</li>
+                            <li><strong>EF09GE10</strong> – Compreender a relação entre população, recursos naturais e
+                                sustentabilidade.</li>
+                            <li><strong>Competência Geral 3</strong> – Pensamento científico, crítico e criativo:
+                                simular cenários e avaliar impactos de decisões.</li>
+                        </ul>
+                    </div>
+                    <h3>Passo a Passo do Projeto</h3>
+                    <h4>Fase 1: Pesquisa e Definição dos Parâmetros (1 aula)</h4>
+                    <p>Os grupos escolhem um país real (ex: Brasil, Nigéria, Japão) e pesquisam dados demográficos
+                        atuais: população total, taxa de natalidade (‰), taxa de mortalidade (‰), saldo migratório
+                        anual, expectativa de vida, escolaridade. Com base nisso, definem as variáveis iniciais para a
+                        simulação em um período de 20 anos.</p>
+                    <div class="list-demo">
+                        <strong>Exemplo de parâmetros para o Brasil (2025):</strong><br>
+                        População inicial: 215.000.000<br>
+                        Taxa de natalidade: 13/1000<br>
+                        Taxa de mortalidade: 7/1000<br>
+                        Migração líquida anual: +30.000<br>
+                        Expectativa de vida: 76 anos<br>
+                        IDH inicial: 0,760
+                    </div>
+                    <h4>Fase 2: Implementação no Scratch (3 aulas)</h4>
+                    <h5>1. Variáveis e listas para armazenar séries históricas:</h5>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado
+                        apague todos os itens de [populacao_ano]
+                        apague todos os itens de [idh_ano]
+                        adicione (populacao_inicial) a [populacao_ano]
+                        adicione (idh_inicial) a [idh_ano]
+
+                        defina [ano] como [0]
+                        defina [natalidade] como [13] // por 1000
+                        defina [mortalidade] como [7]
+                        defina [migracao] como [30000]
+                    </div>
+                    <h5>2. Bloco personalizado "atualizar_populacao":</h5>
+                    <div class="scratch-code">
+                        definir atualizar_populacao (pop_ant) (taxa_nasc) (taxa_mort) (mig)
+                        defina [nascimentos] como (pop_ant) * (taxa_nasc) / 1000
+                        defina [obitos] como (pop_ant) * (taxa_mort) / 1000
+                        defina [pop_nova] como (pop_ant) + (nascimentos) - (obitos) + (mig)
+                        retorne (pop_nova)
+                    </div>
+                    <h5>3. Bloco para cálculo do IDH simplificado (média da renda, longevidade e educação):</h5>
+                    <div class="scratch-code">
+                        definir calcular_idh (renda_per_capita) (expectativa_vida) (anos_estudo)
+                        defina [indice_renda] como (ln(renda_per_capita) - ln(100)) / (ln(75000) - ln(100))
+                        defina [indice_vida] como (expectativa_vida - 20) / (85 - 20)
+                        defina [indice_educacao] como (anos_estudo) / 15
+                        retorne ((indice_renda + indice_vida + indice_educacao) / 3)
+                    </div>
+                    <p><strong>Nota:</strong> No Scratch, a função <code>ln</code> está disponível em Operadores → log
+                        natural.</p>
+                    <h5>4. Simulação ano a ano:</h5>
+                    <div class="scratch-code">
+                        repita (20) vezes
+                        defina [pop_atual] como (item (último) de [populacao_ano])
+                        defina [nova_pop] como (atualizar_populacao (pop_atual) (natalidade) (mortalidade) (migracao))
+                        adicione (nova_pop) a [populacao_ano]
+
+                        // Atualiza IDH com base em melhorias hipotéticas
+                        defina [novo_idh] como (calcular_idh (renda) (expectativa_vida+0.1) (escolaridade+0.05))
+                        adicione (novo_idh) a [idh_ano]
+                    </div>
+                    <h5>5. Interface interativa – cenários "E se...":</h5>
+                    <div class="scratch-code">
+                        pergunte [Aumentar investimento em saúde? (sim/não)] e espere
+                        se &lt;(resposta) = [sim]&gt; então
+                        defina [mortalidade] como (mortalidade) * 0.95 // reduz 5%
+                        diga [Taxa de mortalidade reduzida!]
+                    </div>
+                    <h4>Fase 3: Ponte para Python e Análise Comparativa (1 aula)</h4>
+                    <p>Os alunos implementam o mesmo modelo em Python, utilizando dicionários para armazenar os dados do
+                        país e a biblioteca <code>matplotlib</code> para gerar gráficos de evolução populacional e do
+                        IDH. Discute-se como a abstração em listas e funções se traduz naturalmente para linguagens
+                        textuais.</p>
+                    <div class="code-comparison">
+                        <div class="code-box">
+                            <h4>Scratch (bloco atualizar_populacao)</h4>
+                            <pre>definir atualizar_populacao (pop, nasc, mort, mig)
+retorne pop + (pop*nasc/1000) - (pop*mort/1000) + mig</pre>
+                        </div>
+                        <div class="code-box">
+                            <h4>Python (função)</h4>
+                            <pre>def atualizar_populacao(pop, nasc, mort, mig):
+    return pop + pop*nasc/1000 - pop*mort/1000 + mig</pre>
+                        </div>
+                    </div>
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <li><strong>✅ Coleta de dados (1 pt):</strong> Parâmetros reais pesquisados e utilizados.</li>
+                        <li><strong>✅ Modelagem matemática (3 pts):</strong> Blocos personalizados implementados
+                            corretamente (população e IDH).</li>
+                        <li><strong>✅ Listas e histórico (2 pts):</strong> Armazenamento e exibição da evolução anual.
+                        </li>
+                        <li><strong>✅ Cenários interativos (2 pts):</strong> Capacidade de alterar variáveis e ver o
+                            impacto imediato.</li>
+                        <li><strong>✅ Reflexão crítica (2 pts):</strong> Relatório explicando as tendências observadas e
+                            possíveis políticas públicas.</li>
+                    </ul>
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Pirâmide etária:</strong> Dividir a população em faixas etárias (0-14, 15-64, 65+) e
+                            aplicar taxas específicas.</li>
+                        <li><strong>Capacidade de carga:</strong> Incluir um limite máximo de população (recursos
+                            naturais) que reduz o crescimento.</li>
+                        <li><strong>Mapa interativo:</strong> Utilizar a extensão "Caneta" para desenhar um gráfico de
+                            barras ou até um mapa de calor.</li>
+                        <li><strong>Comparação entre países:</strong> Criar uma lista de países e simular todos
+                            simultaneamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ==================== PROJETO DE CIÊNCIAS: SIMULADOR DE HEREDITARIEDADE ==================== -->
+            <div class="content-section">
+                <h2>🧬 PROJETO 9º ANO: "SIMULADOR DE HEREDITARIEDADE E PROBABILIDADES GENÉTICAS"</h2>
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos construirão um simulador genético que permite cruzar organismos com características
+                        determinadas por alelos dominantes e recessivos (ex: ervilhas de Mendel, grupos sanguíneos,
+                        herança de características humanas). O programa utiliza <strong>listas</strong> para armazenar
+                        os genótipos da população, <strong>blocos personalizados</strong> para calcular probabilidades
+                        de herança e <strong>números aleatórios</strong> para simular a segregação independente. O
+                        projeto exige raciocínio abstrato para compreender padrões de herança e resolução sistemática de
+                        problemas para validar as leis de Mendel.</p>
+                    <div class="image-container">
+                        <img src="simulador_de_hereditariedade.png" alt="Simulador de hereditariedade"
+                            class="content-image">
+                    </div>
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Compreender os conceitos de genótipo, fenótipo, alelos
+                            dominantes/recessivos, herança mendeliana e probabilidade genética.</li>
+                        <li><strong>Técnicos:</strong> Implementar sorteios aleatórios com diferentes probabilidades,
+                            manipular listas de pares de alelos, criar funções para o quadro de Punnett.</li>
+                        <li><strong>Socioemocionais:</strong> Trabalhar em equipe para testar hipóteses (ex: "se
+                            cruzarmos dois heterozigotos, quantos descendentes terão o fenótipo recessivo?"),
+                            desenvolver persistência na depuração de algoritmos.</li>
+                    </ul>
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF09CI08</strong> – Associar os mecanismos de hereditariedade à diversidade de
+                                características dos seres vivos.</li>
+                            <li><strong>EF09CI09</strong> – Discutir a importância da variabilidade genética para a
+                                evolução e adaptação.</li>
+                            <li><strong>EF09CI10</strong> – Utilizar conceitos de probabilidade para prever proporções
+                                genotípicas e fenotípicas.</li>
+                            <li><strong>Competência Geral 2</strong> – Pensamento científico e investigativo: formular
+                                hipóteses e testá-las por meio de simulações.</li>
+                        </ul>
+                    </div>
+                    <h3>Passo a Passo do Projeto</h3>
+                    <h4>Fase 1: Revisão de Genética Mendeliana (1 aula)</h4>
+                    <p>Os alunos revisam os experimentos de Mendel, os conceitos de homozigoto/heterozigoto,
+                        dominante/recessivo e o quadro de Punnett. Cada grupo escolhe uma característica para simular
+                        (ex: cor da semente – amarela dominante A, verde recessiva a; ou tipo sanguíneo ABO). Definir os
+                        alelos possíveis e as regras de herança.</p>
+                    <div class="list-demo">
+                        <strong>Exemplo: característica "cor da flor em ervilhas"</strong><br>
+                        Alelo dominante: V (violeta)<br>
+                        Alelo recessivo: v (branca)<br>
+                        Genótipos possíveis: VV, Vv, vv<br>
+                        Fenótipos: violeta (VV ou Vv), branca (vv)
+                    </div>
+                    <h4>Fase 2: Implementação no Scratch (3 aulas)</h4>
+                    <h5>1. Representação do genótipo como uma lista de dois alelos:</h5>
+                    <div class="scratch-code">
+                        // Exemplo: genótipo Vv
+                        apague todos os itens de [genotipo_individuo]
+                        adicione [V] a [genotipo_individuo]
+                        adicione [v] a [genotipo_individuo]
+                    </div>
+                    <h5>2. Bloco personalizado "cruzar" – retorna o genótipo do descendente:</h5>
+                    <div class="scratch-code">
+                        definir cruzar (genotipo_pai) (genotipo_mae)
+                        // Escolhe alelo aleatório do pai
+                        defina [indice_pai] como (número aleatório entre (1) e (2))
+                        defina [alelo_pai] como (item (indice_pai) de [genotipo_pai])
+
+                        // Escolhe alelo aleatório da mãe
+                        defina [indice_mae] como (número aleatório entre (1) e (2))
+                        defina [alelo_mae] como (item (indice_mae) de [genotipo_mae])
+
+                        // Cria lista do genótipo do filho
+                        apague todos os itens de [genotipo_filho]
+                        adicione (alelo_pai) a [genotipo_filho]
+                        adicione (alelo_mae) a [genotipo_filho]
+                        retorne (genotipo_filho)
+                    </div>
+                    <h5>3. Bloco para determinar fenótipo com base nas regras de dominância:</h5>
+                    <div class="scratch-code">
+                        definir fenotipo (genotipo)
+                        se &lt;(item (1) de [genotipo]) = [V]&gt; ou &lt;(item (2) de [genotipo]) = [V]&gt; então
+                        retorne [violeta]
+                        senão
+                        retorne [branca]
+                    </div>
+                    <h5>4. Simular uma população e múltiplos cruzamentos:</h5>
+                    <div class="scratch-code">
+                        // Inicializa dois pais: pai Vv, mãe Vv
+                        defina [pai] como [V,v]
+                        defina [mae] como [V,v]
+
+                        defina [num_descendentes] como [100]
+                        defina [contador_violeta] como [0]
+                        defina [contador_branca] como [0]
+
+                        repita (num_descendentes) vezes
+                        defina [desc_gen] como (cruzar (pai) (mae))
+                        se &lt;(fenotipo (desc_gen)) = [violeta]&gt; então
+                        mude [contador_violeta] por (1)
+                        senão
+                        mude [contador_branca] por (1)
+                        // Exibe proporções
+                        diga (junte [Proporção violeta: ] (contador_violeta / num_descendentes))
+                    </div>
+                    <h5>5. Interface para o usuário escolher os genótipos dos pais:</h5>
+                    <div class="scratch-code">
+                        pergunte [Genótipo do pai (ex: VV, Vv, vv):] e espere
+                        // Função para converter string em lista
+                        // Exemplo de tratamento: se resposta = "Vv", cria lista [V, v]
+                        pergunte [Genótipo da mãe:] e espere
+                        pergunte [Número de descendentes:] e espere
+                        // Executa simulação e mostra resultado em porcentagem
+                    </div>
+                    <h4>Fase 3: Ponte para Python e Análise de Dados (1 aula)</h4>
+                    <p>Os alunos traduzem o simulador para Python, utilizando listas e a biblioteca <code>random</code>.
+                        Podem gerar gráficos de barras comparando as proporções esperadas (3:1 no cruzamento de
+                        heterozigotos) com as obtidas na simulação, discutindo a lei dos grandes números.</p>
+                    <div class="code-comparison">
+                        <div class="code-box">
+                            <h4>Scratch (bloco cruzar)</h4>
+                            <pre>definir cruzar (pai) (mae)
+    defina [a] como item (aleatório 1-2) de (pai)
+    defina [b] como item (aleatório 1-2) de (mae)
+    retorne [a, b]</pre>
+                        </div>
+                        <div class="code-box">
+                            <h4>Python (função)</h4>
+                            <pre>def cruzar(pai, mae):
+    a = random.choice(pai)
+    b = random.choice(mae)
+    return [a, b]</pre>
+                        </div>
+                    </div>
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <li><strong>✅ Modelagem genética (3 pts):</strong> Blocos de cruzamento e fenótipo corretos,
+                            respeitando as leis de Mendel.</li>
+                        <li><strong>✅ Aleatoriedade e listas (2 pts):</strong> Uso adequado de números aleatórios e
+                            listas para representar genótipos.</li>
+                        <li><strong>✅ Simulação estatística (2 pts):</strong> Capacidade de executar múltiplos
+                            cruzamentos e calcular proporções.</li>
+                        <li><strong>✅ Interface e usabilidade (1 pt):</strong> Programa permite entrada do usuário e
+                            exibe resultados de forma clara.</li>
+                        <li><strong>✅ Análise científica (2 pts):</strong> Comparação dos resultados simulados com as
+                            proporções teóricas (ex: 3:1).</li>
+                    </ul>
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Herança ligada ao sexo:</strong> Simular características como daltonismo,
+                            considerando cromossomos X e Y.</li>
+                        <li><strong>Alelos múltiplos:</strong> Implementar o sistema ABO com três alelos (IA, IB, i).
+                        </li>
+                        <li><strong>Dominância incompleta:</strong> Flores rosas quando heterozigoto (VV' → rosa).</li>
+                        <li><strong>Evolução de uma população:</strong> Adicionar seleção natural e ver como as
+                            frequências alélicas mudam ao longo das gerações.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- OUTROS PROJETOS PARA 9º ANO (ideias adicionais) -->
+            <div class="content-section">
+                <h2>Outras Ideias de Projetos para o 9º Ano</h2>
+                <div class="card-grid">
+                    <div class="nav-card">
+                        <h3>Agenda Telefônica</h3>
+                        <p>Usando listas e blocos personalizados, criar um programa que armazena nomes e telefones, com
+                            opções de adicionar, pesquisar e remover contatos.</p>
+                    </div>
+                    <div class="nav-card">
+                        <h3>Simulador de Dados</h3>
+                        <p>Gerar números aleatórios, armazenar histórico em listas e calcular probabilidades. Comparar
+                            com Python.</p>
+                    </div>
+                    <div class="nav-card">
+                        <h3>Jogo da Velha com IA</h3>
+                        <p>Implementar um jogo da velha onde o computador toma decisões baseadas em uma lista de jogadas
+                            possíveis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MATERIAL DE APOIO PARA O PROFESSOR -->
+            <div class="content-section">
+                <h2>Material de Apoio para o Professor</h2>
+                <div class="info-box">
+                    <h4>📌 Dicas para a Transição para Python</h4>
+                    <ul>
+                        <li><strong>Use analogias:</strong> "Listas são como arrays em Python" e "Blocos personalizados
+                            são como funções".</li>
+                        <li><strong>Mostre código equivalente:</strong> Prepare um pequeno script Python que faz a mesma
+                            comparação de atributos.</li>
+                        <li><strong>Ambiente:</strong> Se possível, instale o Python no laboratório e faça uma atividade
+                            "desplugada" antes de codificar.</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h4>📚 Recursos para Aprofundamento</h4>
+                    <ul>
+                        <li><a href="https://docs.python.org/3/tutorial/" target="_blank">Tutorial oficial do Python</a>
+                        </li>
+                        <li><a href="https://www.cursoemvideo.com/curso/python-3-mundo-1/" target="_blank">Curso de
+                                Python do Curso em Vídeo</a></li>
+                        <li><a href="https://scratch.mit.edu/discuss/topic/258401/" target="_blank">Fórum Scratch:
+                                Discussões sobre Python</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SEÇÃO DE NAVEGAÇÃO ENTRE PÁGINAS -->
+            <div class="content-section">
+                <h2>Navegação</h2>
+                <div class="card-grid">
+                    <a href="projetos_8_ano.html" class="nav-card">
+                        <h3>Anterior: 8º Ano</h3>
+                        <p>Simulações e Clones</p>
+                    </a>
+                    <a href="index.html" class="nav-card">
+                        <h3>Página Inicial</h3>
+                        <p>Voltar à cartilha principal</p>
+                    </a>
+                    <a href="planos_de_aula.html" class="nav-card">
+                        <h3>Planos de Aula</h3>
+                        <p>Detalhamento para 9º ano</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ DA PÁGINA -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UTFPR - Campus Siqueira Campos</h3>
+                    <p>Universidade Tecnológica Federal do Paraná</p>
+                    <p>Departamento de Computação</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos Scratch</h3>
+                    <ul>
+                        <li><a href="https://scratch.mit.edu" target="_blank" rel="noopener noreferrer">Site Oficial do
+                                Scratch</a></li>
+                        <li><a href="https://scratch.mit.edu/educators" target="_blank" rel="noopener noreferrer">Para
+                                Educadores</a></li>
+                        <li><a href="https://scratch.mit.edu/parents" target="_blank" rel="noopener noreferrer">Para
+                                Pais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: giseleacn@gmail.com</p>
+                    <p>Email: barbosa.rodrigo.1979@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 UTFPR - Desenvolvido por Gisele Nunes e Rodrigo Barbosa. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão para alternar entre tema claro e escuro (JavaScript externo) -->
+    <button class="theme-toggle" id="themeToggle" aria-pressed="false"
+        aria-label="Alternar tema claro e escuro">🌙</button>
+    <!-- Arquivo JavaScript externo para funcionalidades dinâmicas (tema, interações) -->
+    <script src="script.js"></script>
+</body>
+
+</html>

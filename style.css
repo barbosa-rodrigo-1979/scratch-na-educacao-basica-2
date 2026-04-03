@@ -1,0 +1,4389 @@
+/*
+===================================================================
+    Folha de Estilos Global — Scratch na Educação Básica
+===================================================================
+    Objetivo: Padronizar a apresentação visual dos elementos HTML do
+              projeto Scratch na Educação Básica, definindo variáveis
+              de cor, tipografia, layout responsivo, componentes de
+              interface, modos claro/escuro e estilos de impressão.
+    Autor : Gisele Nunes, Rodrigo Barbosa
+    Data  : 2026
+===================================================================
+*/
+
+/* ===================================================================
+   SEÇÃO 1 — VARIÁVEIS CSS (CSS Custom Properties)
+   Define tokens de design reutilizáveis em todo o projeto.
+   Alterar um valor aqui reflete automaticamente em todos os seletores
+   que o referenciam via var().
+   =================================================================== */
+:root {
+
+    /* --- Paleta oficial da UTFPR (base amarela) --- */
+    --utfpr-Yellow: #FFD200;
+    /* Amarelo primário da identidade UTFPR */
+    --utfpr-Yellow-light: #FFE84D;
+    /* Variação clara do amarelo, usada em estados hover */
+    --utfpr-Yellow-dark: #E9B400;
+    /* Variação escura do amarelo, usada em bordas e ênfases */
+    --utfpr-Yellow-darker: #C99700;
+    /* Variação ainda mais escura, usada em detalhes finos */
+
+    /* --- Escala de cinza (textos e fundos neutros) --- */
+    --utfpr-white: #ffffff;
+    /* Branco puro — fundos de cards e seções limpas */
+    --utfpr-gray-light: #f8f9fa;
+    /* Cinza muito claro — fundo suave de seções secundárias */
+    --utfpr-gray: #e9ecef;
+    /* Cinza claro — cor padrão de bordas não-enfatizadas */
+    --utfpr-gray-medium: #dee2e6;
+    /* Cinza médio — elementos de UI como divisórias e inputs */
+    --utfpr-gray-dark: #6c757d;
+    /* Cinza escuro — textos secundários e legendas */
+    --utfpr-black: #212529;
+    /* Quase-preto — cor principal de textos de corpo */
+
+    /* --- Cores temáticas do Scratch (mapeadas às categorias de blocos) --- */
+    --scratch-motion: #4a6cd4;
+    /* Azul — representa blocos de Movimento */
+    --scratch-looks: #8a55d7;
+    /* Roxo — representa blocos de Aparência */
+    --scratch-sound: #bb42c3;
+    /* Rosa/Magenta — representa blocos de Som */
+    --scratch-events: #ffbf00;
+    /* Âmbar — representa blocos de Eventos */
+    --scratch-control: #ff8c1a;
+    /* Laranja — representa blocos de Controle */
+    --scratch-sensing: #2ca5a2;
+    /* Verde-água — representa blocos de Sensores */
+    --scratch-operators: #5cb712;
+    /* Verde — representa blocos de Operadores */
+
+    /* --- Tokens utilitários para componentes genéricos --- */
+    --card-bg: #ffffff;
+    /* Cor de fundo padrão para cards */
+    --border-color: #dee2e6;
+    /* Cor padrão para bordas de elementos */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave padrão (deslocamento, desfoque, opacidade) */
+    --success-color: #28a745;
+    /* Verde semântico para indicações de sucesso */
+}
+
+/* ===================================================================
+   SEÇÃO 2 — RESET GLOBAL E CONFIGURAÇÕES BASE
+   Remove estilos padrão do navegador para garantir consistência
+   visual entre diferentes plataformas e browsers.
+   =================================================================== */
+
+/* Aplica box-sizing e zera margens/paddings em TODOS os elementos */
+* {
+    margin: 0;
+    /* Remove a margem externa padrão de qualquer elemento */
+    padding: 0;
+    /* Remove o preenchimento interno padrão de qualquer elemento */
+    box-sizing: border-box;
+    /* Faz com que padding e border sejam incluídos no cálculo de width/height */
+}
+
+/* Estilização do elemento raiz da página (body) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Pilha de fontes sans-serif modernas e legíveis */
+    line-height: 1.6;
+    /* Altura de linha aumentada para melhorar a legibilidade do texto */
+    color: var(--utfpr-black);
+    /* Cor de texto principal usando a variável de preto da paleta */
+    background: linear-gradient(135deg, var(--utfpr-gray-dark) 0%, #343a40 100%);
+    /* Gradiente diagonal cinza escuro como fundo da página */
+}
+
+/* ===================================================================
+   SEÇÃO 3 — LAYOUT CONTAINER
+   Define o wrapper central que limita a largura do conteúdo e
+   centraliza horizontalmente o layout principal.
+   =================================================================== */
+
+/* Container genérico de largura máxima centralizada */
+.container {
+    max-width: 1200px;
+    /* Limita a largura do bloco de conteúdo a 1200px */
+    margin: 0 auto;
+    /* Centraliza horizontalmente com margens automáticas nas laterais */
+    padding: 0 20px;
+    /* Adiciona espaçamento lateral de 20px para evitar colagem nas bordas */
+}
+
+/* ===================================================================
+   SEÇÃO 4 — CABEÇALHO SUPERIOR (header-top)
+   Barra superior da página com logo, nome da instituição e título.
+   =================================================================== */
+
+/* Bloco principal do cabeçalho */
+.header-top {
+    background: linear-gradient(135deg, var(--utfpr-gray-dark) 0%, var(--utfpr-gray-medium) 100%);
+    /* Gradiente diagonal de cinza escuro a médio */
+    color: var(--utfpr-black);
+    /* Cor do texto usando variável de cor escura */
+    padding: 20px 0;
+    /* Espaçamento vertical interno de 20px; sem espaçamento horizontal (controlado pelo .container) */
+    box-shadow: 0 2px 15px rgba(35, 31, 32, 0.4);
+    /* Sombra projetada abaixo com cor base quase-preta e 40% de opacidade */
+    border-bottom: 4px solid var(--utfpr-Yellow-dark);
+    /* Linha de destaque inferior com 4px na cor amarela escura da paleta */
+}
+
+/* Container flexível dentro do cabeçalho */
+.header-top .container {
+    display: flex;
+    /* Ativa o layout Flexbox para posicionamento dos filhos */
+    justify-content: space-between;
+    /* Distribui os filhos com espaço máximo entre eles (logo à esquerda, título à direita) */
+    align-items: center;
+    /* Alinha todos os filhos verticalmente ao centro do eixo cruzado */
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem para a linha seguinte em telas estreitas */
+}
+
+/* Wrapper que agrupa a imagem da logo com o nome da instituição */
+.logo-container {
+    display: flex;
+    /* Layout Flexbox para alinhar horizontalmente logo e texto */
+    align-items: center;
+    /* Alinha logo e texto ao centro do eixo vertical */
+    gap: 15px;
+    /* Espaçamento de 15px entre a logo e o bloco de texto */
+}
+
+/* Imagem da logo da instituição */
+.logo {
+    height: 65px;
+    /* Altura fixa de 65px para a logo */
+    width: auto;
+    /* Largura calculada automaticamente para preservar a proporção original */
+    filter: brightness(0) invert(1);
+    /* Filtro CSS: escurece totalmente (brightness 0) e inverte as cores, resultando em versão branca da logo */
+}
+
+/* Bloco de texto com o nome completo da instituição */
+.institution-name {
+    font-size: 0.95rem;
+    /* Tamanho de fonte ligeiramente abaixo do padrão (1rem) */
+    line-height: 1.3;
+    /* Altura de linha compacta para o bloco de duas linhas */
+    font-weight: 600;
+    /* Peso semi-negrito para destaque do nome */
+    color: var(--utfpr-black);
+    /* Cor do texto principal */
+}
+
+/* Linha secundária (subtítulo) dentro do nome da instituição */
+.institution-name small {
+    font-size: 0.85rem;
+    /* Tamanho de fonte menor que o elemento pai */
+    opacity: 0.95;
+    /* Leve transparência para hierarquia visual sutil */
+    font-weight: normal;
+    /* Peso normal, sem negrito, diferenciando do nome principal */
+    color: var(--utfpr-black);
+    /* Cor do texto mantida igual ao elemento pai */
+}
+
+/* Bloco de título alinhado à direita do cabeçalho */
+.header-title {
+    text-align: right;
+    /* Alinhamento do texto à direita */
+    font-size: 1.15rem;
+    /* Tamanho de fonte levemente maior que o padrão */
+    font-weight: bold;
+    /* Texto em negrito para destacar o título */
+    color: var(--utfpr-black);
+    /* Cor do texto principal */
+}
+
+/* Subtítulo dentro do título do cabeçalho */
+.header-title small {
+    font-size: 0.9rem;
+    /* Tamanho de fonte reduzido em relação ao elemento pai */
+    font-weight: normal;
+    /* Sem negrito para diferenciar do título principal */
+    opacity: 0.95;
+    /* Leve transparência para diferenciação hierárquica */
+    color: var(--utfpr-black);
+    /* Cor do texto mantida */
+}
+
+/* ===================================================================
+   SEÇÃO 5 — CABEÇALHO INFERIOR / BARRA DE NAVEGAÇÃO (header-bottom)
+   Contém o menu principal de navegação entre as páginas do projeto.
+   =================================================================== */
+
+/* Faixa que envolve a navegação principal */
+.header-bottom {
+    background-color: var(--utfpr-gray-dark);
+    /* Fundo cinza escuro para separar visualmente do header-top */
+    border-bottom: 3px solid var(--utfpr-Yellow-darker);
+    /* Linha de destaque inferior com cor amarela mais escura */
+}
+
+/* Lista de itens de navegação (elemento <ul> dentro de <nav>) */
+nav ul {
+    display: flex;
+    /* Flexbox para criar menu horizontal */
+    list-style: none;
+    /* Remove os marcadores de lista padrão (bolinhas ou números) */
+    justify-content: center;
+    /* Centraliza os itens no eixo principal horizontal */
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem em múltiplas linhas em viewports estreitas */
+}
+
+/* Cada item individual da lista de navegação */
+nav li {
+    margin: 0;
+    /* Remove qualquer margem padrão aplicada pelo browser ao <li> */
+}
+
+/* Link de navegação (elemento <a> dentro de cada <li>) */
+nav a {
+    display: block;
+    /* Torna o link um bloco para que o padding seja clicável em toda a área */
+    padding: 16px 22px;
+    /* Espaçamento interno vertical 16px e horizontal 22px para área de clique generosa */
+    color: var(--utfpr-black);
+    /* Cor do texto do link */
+    text-decoration: none;
+    /* Remove o sublinhado padrão de hiperlinks */
+    font-weight: 500;
+    /* Peso médio-negrito para melhor legibilidade */
+    transition: all 0.3s ease;
+    /* Transição suave de 300ms para todas as propriedades no hover */
+    border-bottom: 3px solid transparent;
+    /* Borda inferior invisível que será animada no hover/active */
+}
+
+/* Estado hover do link de navegação */
+nav a:hover {
+    background-color: var(--utfpr-Yellow-dark);
+    /* Fundo amarelo escuro ao passar o mouse */
+    color: var(--utfpr-black);
+    /* Mantém a cor do texto escura para contraste */
+    border-bottom-color: var(--utfpr-Yellow-light);
+    /* Revela a borda inferior com cor amarela clara */
+}
+
+/* Estado ativo do link (página atual) */
+nav a.active {
+    background-color: var(--utfpr-Yellow);
+    /* Fundo amarelo primário para indicar item selecionado */
+    border-bottom-color: var(--utfpr-black);
+    /* Borda inferior preta para contraste no item ativo */
+    font-weight: bold;
+    /* Negrito para reforçar o item atual */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra interna sutil para efeito de "pressão" */
+    color: var(--utfpr-black);
+    /* Cor de texto escura para legibilidade sobre o fundo amarelo */
+}
+
+/* ===================================================================
+   SEÇÃO 6 — CONTEÚDO PRINCIPAL (main)
+   Área central da página onde o conteúdo de cada seção é exibido.
+   =================================================================== */
+
+/* Elemento semântico <main> que engloba o conteúdo central */
+main {
+    padding: 30px 0;
+    /* Espaçamento vertical de 30px; sem espaçamento horizontal (controlado pelo .container) */
+    background: linear-gradient(135deg, var(--utfpr-gray-medium) 0%, var(--utfpr-gray-dark) 100%);
+    /* Gradiente diagonal de cinza médio a escuro */
+    min-height: calc(100vh - 200px);
+    /* Altura mínima calculada: viewport inteira menos ~200px reservados para header e footer */
+}
+
+/* ===================================================================
+   SEÇÃO 7 — CABEÇALHO DA PÁGINA (page-header)
+   Bloco de destaque com título, subtítulo e autores no topo de
+   cada página de conteúdo.
+   =================================================================== */
+
+/* Bloco decorativo de cabeçalho de página */
+.page-header {
+    text-align: center;
+    /* Centraliza todo o conteúdo interno */
+    margin-bottom: 40px;
+    /* Espaçamento de 40px abaixo do bloco */
+    padding: 35px 0;
+    /* Espaçamento interno vertical de 35px */
+    background: var(--utfpr-white);
+    /* Fundo branco para contraste com o main cinza */
+    border-radius: 12px;
+    /* Bordas arredondadas de 12px para aspecto moderno */
+    box-shadow: 0 4px 15px rgba(35, 31, 32, 0.3);
+    /* Sombra de elevação para destacar o bloco */
+    border: 2px solid var(--utfpr-gray);
+    /* Borda sutil ao redor do card */
+}
+
+/* Título principal (h1) dentro do cabeçalho de página */
+.page-header h1 {
+    color: var(--utfpr-Yellow);
+    /* Cor amarela primária UTFPR */
+    font-size: 2.6rem;
+    /* Tamanho de fonte grande para hierarquia visual */
+    margin-bottom: 12px;
+    /* Espaçamento abaixo do título antes do subtítulo */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    /* Sombra de texto sutil para profundidade */
+}
+
+/* Texto de subtítulo da página */
+.subtitle {
+    font-size: 1.25rem;
+    /* Tamanho médio, menor que o h1 */
+    color: var(--utfpr-gray-dark);
+    /* Cinza escuro para diferenciação hierárquica */
+    margin-bottom: 18px;
+    /* Espaçamento abaixo do subtítulo */
+    font-weight: 500;
+    /* Peso médio para destaque sem ser tão forte quanto o h1 */
+}
+
+/* Linha de autores do conteúdo */
+.authors {
+    font-style: italic;
+    /* Itálico para diferenciar visualmente dos demais textos */
+    color: var(--utfpr-gray-dark);
+    /* Cinza escuro para hierarquia mais baixa */
+    font-size: 0.95rem;
+    /* Tamanho ligeiramente menor que o padrão */
+}
+
+/* ===================================================================
+   SEÇÃO 8 — SEÇÕES DE CONTEÚDO (content-section)
+   Cards brancos que organizam os blocos de texto, listas, imagens e
+   demais conteúdos de cada tópico.
+   =================================================================== */
+
+/* Card principal de seção de conteúdo */
+.content-section {
+    background: var(--utfpr-white);
+    /* Fundo branco para separar do fundo cinza do main */
+    padding: 32px;
+    /* Espaçamento interno generoso em todos os lados */
+    margin-bottom: 32px;
+    /* Espaçamento abaixo para separar seções consecutivas */
+    border-radius: 12px;
+    /* Bordas arredondadas para aspecto suave */
+    box-shadow: 0 3px 12px rgba(35, 31, 32, 0.1);
+    /* Sombra leve de elevação */
+    border-left: 5px solid var(--utfpr-Yellow-dark);
+    /* Borda de destaque de 5px na esquerda em amarelo escuro */
+    border: 1px solid var(--utfpr-gray-medium);
+    /* Borda completa sutil ao redor do card */
+    text-align: justify;
+    /* Texto justificado para alinhamento bilateral */
+    hyphens: auto;
+    /* Hifenização automática para melhor quebra de palavras longas */
+}
+
+/* Título de nível 2 dentro de seções de conteúdo */
+.content-section h2 {
+    color: var(--utfpr-Yellow);
+    /* Cor amarela primária para destaque */
+    margin-bottom: 22px;
+    /* Espaçamento abaixo do título */
+    font-size: 1.9rem;
+    /* Tamanho grande para hierarquia de seção */
+    border-bottom: 2px solid var(--utfpr-Yellow-light);
+    /* Linha decorativa abaixo do título */
+    padding-bottom: 12px;
+    /* Espaçamento entre o texto e a linha inferior */
+}
+
+/* Título de nível 3 dentro de seções de conteúdo */
+.content-section h3 {
+    color: var(--utfpr-Yellow-dark);
+    /* Amarelo escuro para sub-hierarquia */
+    margin: 28px 0 16px 0;
+    /* Margem: 28px acima, 0 à direita, 16px abaixo, 0 à esquerda */
+    font-size: 1.45rem;
+    /* Tamanho médio-grande */
+    border-left: 3px solid var(--utfpr-Yellow);
+    /* Barra vertical decorativa à esquerda em amarelo */
+    padding-left: 12px;
+    /* Recuo do texto para afastar da barra vertical */
+}
+
+/* Título de nível 4 dentro de seções de conteúdo */
+.content-section h4 {
+    color: var(--utfpr-Yellow);
+    /* Amarelo primário */
+    margin: 22px 0 12px 0;
+    /* Margens superior 22px e inferior 12px */
+    font-size: 1.25rem;
+    /* Tamanho médio */
+}
+
+/* Título de nível 5 dentro de seções de conteúdo */
+.content-section h5 {
+    color: var(--utfpr-Yellow-dark);
+    /* Amarelo escuro para sub-hierarquia menor */
+    margin: 18px 0 10px 0;
+    /* Margens: 18px acima e 10px abaixo */
+    font-size: 1.1rem;
+    /* Tamanho levemente acima do padrão */
+    font-weight: 600;
+    /* Semi-negrito para diferenciação de texto corrido */
+}
+
+/* Parágrafos dentro de seções de conteúdo */
+.content-section p {
+    margin-bottom: 16px;
+    /* Espaçamento de 16px abaixo de cada parágrafo */
+    line-height: 1.7;
+    /* Altura de linha aumentada para texto de corpo legível */
+}
+
+/* Listas não-ordenadas e ordenadas dentro de seções de conteúdo */
+.content-section ul,
+.content-section ol {
+    margin: 18px 0;
+    /* Espaçamento vertical de 18px acima e abaixo da lista */
+    padding-left: 32px;
+    /* Recuo interno à esquerda para o marcador/número ficar visível */
+}
+
+/* Itens de lista dentro de seções de conteúdo */
+.content-section li {
+    margin-bottom: 10px;
+    /* Espaçamento entre cada item da lista */
+    line-height: 1.6;
+    /* Altura de linha para legibilidade de itens longos */
+}
+
+/* Listas aninhadas (lista dentro de lista) */
+.content-section ul ul,
+.content-section ol ol {
+    margin: 8px 0;
+    /* Margem reduzida para listas de segundo nível */
+    padding-left: 20px;
+    /* Recuo menor que o primeiro nível para indicar hierarquia */
+}
+
+/* Itens de lista com estilo explicitamente definido como "none" via atributo style */
+.content-section ul li[style*="list-style-type: none"] {
+    list-style-type: none !important;
+    /* Remove o marcador de lista com !important para sobrepor inline style */
+    margin-left: 0;
+    /* Remove margem esquerda remanescente */
+    padding-left: 0;
+    /* Remove padding esquerdo remanescente */
+}
+
+/* Links dentro de seções de conteúdo */
+.content-section a {
+    color: var(--utfpr-Yellow-dark);
+    /* Cor amarela escura para diferenciar links de texto comum */
+    text-decoration: none;
+    /* Remove sublinhado padrão de hiperlinks */
+    border-bottom: 1px solid transparent;
+    /* Borda inferior invisível que será revelada no hover */
+    transition: border-color 0.3s ease;
+    /* Transição suave de 300ms para a borda inferior */
+}
+
+/* Estado hover de links dentro de seções */
+.content-section a:hover {
+    border-bottom-color: var(--utfpr-Yellow-dark);
+    /* Revela a borda inferior amarela escura ao passar o mouse */
+}
+
+/* ===================================================================
+   SEÇÃO 9 — COMPONENTES DE INTERFACE
+   Elementos reutilizáveis como badges, palavras-chave, resumos,
+   caixas informativas, passo a passo e caixas de prática.
+   =================================================================== */
+
+/* Badge/etiqueta inline para rótulos e destaques */
+.badge {
+    display: inline-block;
+    /* Elemento inline com suporte a padding e margin */
+    padding: 5px 14px;
+    /* Espaçamento interno: 5px vertical, 14px horizontal */
+    background: linear-gradient(135deg, var(--utfpr-Yellow) 0%, var(--utfpr-Yellow-light) 100%);
+    /* Gradiente diagonal de amarelo primário a claro */
+    color: var(--utfpr-black);
+    /* Texto escuro para contraste sobre fundo amarelo */
+    border-radius: 20px;
+    /* Bordas completamente arredondadas para formato de pílula */
+    font-size: 0.82rem;
+    /* Tamanho de fonte pequeno para etiqueta */
+    font-weight: bold;
+    /* Negrito para destacar o rótulo */
+    margin-left: 12px;
+    /* Espaçamento à esquerda para separar do elemento anterior */
+    vertical-align: middle;
+    /* Alinha verticalmente ao centro do texto ao redor */
+    box-shadow: 0 2px 4px rgba(35, 31, 32, 0.3);
+    /* Sombra sutil para elevação */
+}
+
+/* Container flexível para lista de palavras-chave */
+.keywords {
+    display: flex;
+    /* Layout Flexbox para organizar tags em linha */
+    flex-wrap: wrap;
+    /* Permite quebra de linha quando as tags não cabem em uma linha */
+    gap: 10px;
+    /* Espaçamento uniforme de 10px entre cada tag */
+    margin: 20px 0;
+    /* Margem vertical de 20px acima e abaixo do bloco */
+}
+
+/* Cada palavra-chave individual */
+.keyword {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza muito claro */
+    padding: 8px 16px;
+    /* Espaçamento interno: 8px vertical, 16px horizontal */
+    border-radius: 20px;
+    /* Formato de pílula arredondada */
+    font-size: 0.9rem;
+    /* Tamanho de fonte ligeiramente menor que o padrão */
+    border: 1px solid var(--utfpr-gray-medium);
+    /* Borda sutil ao redor da tag */
+    color: var(--utfpr-gray-dark);
+    /* Cor de texto cinza escuro */
+}
+
+/* Grid responsivo para o resumo executivo */
+.executive-summary {
+    display: grid;
+    /* Layout CSS Grid para organização em colunas */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Colunas automáticas com largura mínima de 250px e máxima de 1 fração */
+    gap: 20px;
+    /* Espaçamento de 20px entre células do grid */
+    margin: 25px 0;
+    /* Margem vertical de 25px */
+}
+
+/* Item individual dentro do resumo executivo */
+.summary-item {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    padding: 20px;
+    /* Espaçamento interno de 20px em todos os lados */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque de 4px na esquerda em amarelo */
+}
+
+/* Caixa de informação destacada */
+.info-box {
+    background: var(--utfpr-gray-medium);
+    /* Fundo cinza médio */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque de 4px na esquerda em amarelo */
+    padding: 20px;
+    /* Espaçamento interno de 20px */
+    border-radius: 8px;
+    /* Bordas arredondadas de 8px */
+    margin: 20px 0;
+    /* Margem vertical de 20px */
+}
+
+/* Bloco de instrução passo a passo */
+.step-by-step {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza muito claro */
+    border: 2px dashed var(--utfpr-Yellow);
+    /* Borda tracejada de 2px em amarelo para indicar sequência */
+    padding: 20px;
+    /* Espaçamento interno de 20px */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    margin: 20px 0;
+    /* Margem vertical de 20px */
+}
+
+/* Caixa de exercício prático */
+.practice-box {
+    background: linear-gradient(135deg, var(--utfpr-gray-medium), var(--utfpr-gray));
+    /* Gradiente sutil de cinza médio a claro */
+    border: 2px solid var(--utfpr-gray-dark);
+    /* Borda sólida cinza escuro */
+    padding: 20px;
+    /* Espaçamento interno de 20px */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    margin: 20px 0;
+    /* Margem vertical de 20px */
+}
+
+/* ===================================================================
+   SEÇÃO 10 — COMPONENTES ESPECÍFICOS DO PROJETO
+   Blocos de projeto por ano, conexões curriculares e tabelas de
+   progressão pedagógica.
+   =================================================================== */
+
+/* Seção de projeto organizada por ano escolar */
+.projeto-ano {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza muito claro */
+    padding: 25px;
+    /* Espaçamento interno de 25px */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    margin: 25px 0;
+    /* Margem vertical de 25px */
+    border: 1px solid var(--utfpr-gray-medium);
+    /* Borda sutil ao redor */
+}
+
+/* Bloco de conexão com o currículo escolar */
+.curriculum-connection {
+    background: white;
+    /* Fundo branco para máximo contraste */
+    padding: 15px;
+    /* Espaçamento interno de 15px */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    margin: 15px 0;
+    /* Margem vertical de 15px */
+    border-left: 4px solid var(--success-color);
+    /* Barra verde de 4px na esquerda para indicação positiva/curricular */
+}
+
+/* Wrapper para a tabela de progressão de conteúdo */
+.progression-table {
+    margin: 30px 0;
+    /* Margem vertical de 30px para separar da seção */
+    overflow-x: auto;
+    /* Habilita scroll horizontal em viewports menores que a tabela */
+}
+
+/* Elemento <table> dentro do wrapper de progressão */
+.progression-table table {
+    width: 100%;
+    /* Tabela ocupa 100% da largura do wrapper pai */
+    border-collapse: collapse;
+    /* Colapsa as bordas das células para remover espaços duplos */
+    background: white;
+    /* Fundo branco */
+    border-radius: 8px;
+    /* Bordas arredondadas (visível com overflow: hidden no wrapper) */
+    overflow: hidden;
+    /* Esconde os cantos das células nos arredondamentos */
+    box-shadow: var(--shadow);
+    /* Sombra padrão da variável CSS */
+}
+
+/* Células de cabeçalho da tabela de progressão */
+.progression-table th {
+    background: var(--utfpr-Yellow);
+    /* Fundo amarelo primário para destaque do cabeçalho */
+    color: var(--utfpr-black);
+    /* Texto preto para contraste sobre amarelo */
+    padding: 12px;
+    /* Espaçamento interno de 12px */
+    text-align: left;
+    /* Alinhamento do texto à esquerda */
+    font-weight: bold;
+    /* Negrito para o cabeçalho */
+}
+
+/* Células de dados da tabela de progressão */
+.progression-table td {
+    padding: 10px 12px;
+    /* Espaçamento interno: 10px vertical, 12px horizontal */
+    border-bottom: 1px solid var(--utfpr-gray);
+    /* Linha divisória inferior entre linhas da tabela */
+}
+
+/* Linhas pares da tabela com fundo alternado (zebragem) */
+.progression-table tr:nth-child(even) {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro para linhas de índice par */
+}
+
+/* ===================================================================
+   SEÇÃO 11 — PLANOS DE AULA
+   Componentes específicos para estruturar planos pedagógicos.
+   =================================================================== */
+
+/* Container principal do plano de aula */
+.plano-aula {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    padding: 25px;
+    /* Espaçamento interno de 25px */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    margin: 25px 0;
+    /* Margem vertical de 25px */
+    border: 2px solid var(--utfpr-gray-medium);
+    /* Borda sólida cinza médio */
+}
+
+/* Detalhes descritivos do plano de aula */
+.plano-details {
+    background: white;
+    /* Fundo branco para sub-seção */
+    padding: 20px;
+    /* Espaçamento interno de 20px */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    margin-top: 15px;
+    /* Margem superior de 15px para separar do cabeçalho do plano */
+}
+
+/* Bloco de informações resumidas do plano de aula */
+.plano-info {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza muito claro */
+    padding: 15px;
+    /* Espaçamento interno de 15px */
+    border-radius: 6px;
+    /* Bordas arredondadas sutis */
+    margin-bottom: 20px;
+    /* Margem inferior de 20px */
+}
+
+/* ===================================================================
+   SEÇÃO 12 — FICHAS DE ATIVIDADE
+   Componentes para a criação de fichas impressas ou digitais de
+   atividades para os alunos.
+   =================================================================== */
+
+/* Card principal da ficha de atividade (modelo para impressão) */
+.ficha-modelo {
+    background: white;
+    /* Fundo branco para simulação de papel */
+    border: 2px solid var(--utfpr-gray-dark);
+    /* Borda cinza escuro visível para delimitação */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    padding: 25px;
+    /* Espaçamento interno de 25px */
+    margin: 20px 0;
+    /* Margem vertical de 20px */
+    box-shadow: var(--shadow);
+    /* Sombra padrão da variável CSS */
+}
+
+/* Cabeçalho interno da ficha com título e metadados */
+.ficha-header {
+    display: flex;
+    /* Flexbox para distribuir elementos */
+    justify-content: space-between;
+    /* Espaço máximo entre título e metadados */
+    align-items: center;
+    /* Alinhamento vertical centralizado */
+    margin-bottom: 20px;
+    /* Margem inferior de 20px */
+    padding-bottom: 15px;
+    /* Espaçamento interno inferior de 15px */
+    border-bottom: 2px solid var(--utfpr-gray);
+    /* Linha divisória inferior */
+}
+
+/* Container de metadados (tempo + nível) */
+.ficha-info {
+    display: flex;
+    /* Flexbox para alinhamento horizontal de tempo e nível */
+    gap: 10px;
+    /* Espaçamento de 10px entre cada badge de metadado */
+}
+
+/* Badges de tempo e nível de dificuldade da ficha */
+.ficha-tempo,
+.ficha-nivel {
+    background: var(--utfpr-Yellow);
+    /* Fundo amarelo primário */
+    color: var(--utfpr-black);
+    /* Texto preto para contraste */
+    padding: 5px 10px;
+    /* Espaçamento interno compacto */
+    border-radius: 15px;
+    /* Formato de pílula */
+    font-size: 0.8rem;
+    /* Fonte pequena para metadado */
+    font-weight: bold;
+    /* Negrito para destaque */
+}
+
+/* Área de conteúdo principal da ficha */
+.ficha-content {
+    line-height: 1.8;
+    /* Altura de linha generosa para melhor legibilidade em fichas */
+}
+
+/* Container da seção de desafios dentro da ficha */
+.ficha-desafios {
+    margin: 20px 0;
+    /* Margem vertical de 20px */
+}
+
+/* Bloco de desafio individual */
+.desafio {
+    margin: 15px 0;
+    /* Margem vertical de 15px entre desafios */
+}
+
+/* Linha tracejada para o aluno escrever a resposta */
+.space-resposta {
+    border-bottom: 1px dashed var(--utfpr-gray-dark);
+    /* Linha tracejada cinza escuro simulando espaço de escrita */
+    min-height: 25px;
+    /* Altura mínima de 25px para a linha */
+    margin: 5px 0 15px 0;
+    /* Margens: 5px acima e 15px abaixo */
+}
+
+/* Seção de checklist de verificação ao final da ficha */
+.ficha-checkpoint {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro para destacar o checkpoint */
+    padding: 15px;
+    /* Espaçamento interno de 15px */
+    border-radius: 6px;
+    /* Bordas arredondadas sutis */
+    margin-top: 20px;
+    /* Margem superior de 20px */
+}
+
+/* Lista de verificação (checklist) sem marcadores padrão */
+.checklist {
+    list-style: none;
+    /* Remove os marcadores padrão de lista */
+    padding-left: 0;
+    /* Remove o recuo padrão de lista */
+}
+
+/* Itens da lista de verificação */
+.checklist li {
+    padding: 5px 0;
+    /* Espaçamento vertical de 5px entre itens */
+    display: flex;
+    /* Flexbox para alinhar o marcador customizado ao lado do texto */
+    align-items: center;
+    /* Alinhamento vertical centralizado para marcador e texto */
+}
+
+/* ===================================================================
+   SEÇÃO 13 — CARTÕES DO SCRATCH (cartoes-container)
+   Grid de cartões que exibem os blocos de programação do Scratch
+   organizados por categorias.
+   =================================================================== */
+
+/* Grid responsivo para os cartões do Scratch */
+.cartoes-container {
+    display: grid;
+    /* Layout CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Colunas automáticas com mínimo de 300px */
+    gap: 20px;
+    /* Espaçamento de 20px entre cartões */
+    margin: 25px 0;
+    /* Margem vertical de 25px */
+}
+
+/* Card de uma categoria de cartões do Scratch */
+.categoria-cartoes {
+    background: white;
+    /* Fundo branco */
+    padding: 20px;
+    /* Espaçamento interno de 20px */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela à esquerda */
+    box-shadow: var(--shadow);
+    /* Sombra padrão */
+}
+
+/* Lista de cartões dentro de uma categoria (sem marcadores) */
+.categoria-cartoes ul {
+    list-style: none;
+    /* Remove marcadores de lista */
+    padding-left: 0;
+    /* Remove o recuo de lista */
+}
+
+/* Item individual de cartão dentro de uma categoria */
+.categoria-cartoes li {
+    padding: 8px 0;
+    /* Espaçamento vertical de 8px */
+    border-bottom: 1px dashed var(--utfpr-gray);
+    /* Linha divisória tracejada entre itens */
+    font-family: 'Courier New', monospace;
+    /* Fonte monoespaçada para exibir código/blocos */
+}
+
+/* Remove a borda inferior do último item da lista de cartões */
+.categoria-cartoes li:last-child {
+    border-bottom: none;
+    /* Sem linha divisória no último item */
+}
+
+/* ===================================================================
+   SEÇÃO 14 — GLOSSÁRIO
+   Componentes para listar e definir termos técnicos do projeto.
+   =================================================================== */
+
+/* Container do glossário completo */
+.glossario {
+    margin: 25px 0;
+    /* Margem vertical de 25px */
+}
+
+/* Card de cada termo do glossário */
+.termo-glossario {
+    background: white;
+    /* Fundo branco */
+    padding: 20px;
+    /* Espaçamento interno de 20px */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    margin-bottom: 15px;
+    /* Margem inferior de 15px entre termos */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela à esquerda */
+    box-shadow: var(--shadow);
+    /* Sombra padrão */
+}
+
+/* ===================================================================
+   SEÇÃO 15 — IMAGENS E MULTIMÍDIA
+   Estilos para exibição responsiva e padronizada de imagens de
+   diferentes contextos (logo, contextual, interface, blocos, projeto).
+   =================================================================== */
+
+/* Container centralizado para imagens */
+.image-container {
+    display: flex;
+    /* Flexbox para centralizar a imagem */
+    justify-content: center;
+    /* Centralização horizontal */
+    margin: 25px 0;
+    /* Margem vertical de 25px */
+    padding: 15px;
+    /* Espaçamento interno de 15px */
+    background-color: var(--utfpr-gray-light);
+    /* Fundo cinza claro para suporte da imagem */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    border: 1px solid var(--utfpr-gray-medium);
+    /* Borda sutil ao redor */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil de elevação */
+}
+
+/* Estilo base para imagens de conteúdo */
+.content-image {
+    max-width: 100%;
+    /* Largura máxima responsiva (nunca ultrapassa o pai) */
+    height: auto;
+    /* Altura calculada automaticamente para preservar a proporção */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    /* Sombra de elevação moderada */
+    transition: all 0.3s ease;
+    /* Transição suave de 300ms para todos os efeitos hover */
+    border: 2px solid var(--utfpr-white);
+    /* Borda branca discreta ao redor da imagem */
+}
+
+/* Efeito de zoom suave ao passar o mouse sobre imagens */
+.content-image:hover {
+    transform: scale(1.02);
+    /* Escala levemente a imagem (aumento de 2%) */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    /* Aumenta a sombra para reforçar o zoom */
+}
+
+/* Variante para imagens de logotipos */
+.logo-image {
+    max-width: 300px;
+    /* Largura máxima de 300px para logos */
+    padding: 10px;
+    /* Espaçamento interno de 10px */
+    background-color: var(--utfpr-white);
+    /* Fundo branco para a área de padding da logo */
+}
+
+/* Variante para imagens contextuais de ilustração */
+.contextual-image {
+    max-width: 500px;
+    /* Largura máxima de 500px */
+    border: 3px solid var(--utfpr-Yellow-light);
+    /* Borda amarela clara espessa */
+}
+
+/* Variante para capturas de tela de interface */
+.interface-image {
+    max-width: 600px;
+    /* Largura máxima de 600px */
+    border: 2px dashed var(--utfpr-gray-dark);
+    /* Borda tracejada cinza escuro para indicar screenshot */
+}
+
+/* Variante para imagens de blocos de programação */
+.blocks-image {
+    max-width: 400px;
+    /* Largura máxima de 400px */
+    border: 2px solid var(--utfpr-gray);
+    /* Borda sólida cinza */
+    background-color: var(--utfpr-white);
+    /* Fundo branco para contraste dos blocos */
+    padding: 15px;
+    /* Espaçamento interno de 15px */
+}
+
+/* Variante para imagens de projetos finalizados */
+.project-image {
+    max-width: 550px;
+    /* Largura máxima de 550px */
+    border: 3px solid var(--utfpr-Yellow);
+    /* Borda amarela primária espessa para destaque */
+    background-color: var(--utfpr-white);
+    /* Fundo branco */
+    padding: 10px;
+    /* Espaçamento interno de 10px */
+}
+
+/* Legenda descritiva abaixo das imagens */
+.image-caption {
+    text-align: center;
+    /* Texto centralizado */
+    font-style: italic;
+    /* Itálico para identificar a legenda */
+    color: var(--utfpr-gray-dark);
+    /* Cinza escuro para hierarquia visual inferior */
+    margin-top: 8px;
+    /* Espaçamento de 8px acima da legenda */
+    font-size: 0.9rem;
+    /* Fonte ligeiramente menor para indicar que é texto auxiliar */
+}
+
+/* ===================================================================
+   SEÇÃO 16 — CÓDIGO E PRÉ-FORMATAÇÃO
+   Estilos para blocos de código e código inline.
+   =================================================================== */
+
+/* Bloco de código pré-formatado */
+pre {
+    background-color: var(--utfpr-gray-light);
+    /* Fundo cinza claro para diferenciação */
+    padding: 22px;
+    /* Espaçamento interno generoso */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    margin: 18px 0;
+    /* Margem vertical de 18px */
+    overflow-x: auto;
+    /* Scroll horizontal para código longo */
+    border-left: 5px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela à esquerda */
+    border: 1px solid var(--utfpr-gray-medium);
+    /* Borda completa sutil */
+    font-size: 0.95rem;
+    /* Tamanho de fonte ligeiramente menor para código */
+}
+
+/* Código inline dentro de textos */
+code {
+    background-color: var(--utfpr-gray-light);
+    /* Fundo cinza claro para diferenciar do texto */
+    padding: 3px 8px;
+    /* Espaçamento interno compacto */
+    border-radius: 5px;
+    /* Bordas arredondadas sutis */
+    font-family: 'Courier New', monospace;
+    /* Fonte monoespaçada para código */
+    font-size: 0.92rem;
+    /* Fonte ligeiramente menor */
+    border: 1px solid var(--utfpr-gray);
+    /* Borda sutil ao redor */
+    color: var(--utfpr-Yellow-dark);
+    /* Cor amarela escura para o código */
+}
+
+/* ===================================================================
+   SEÇÃO 17 — CARDS DE NAVEGAÇÃO (nav-card)
+   Cards interativos usados para navegação entre as seções do projeto.
+   =================================================================== */
+
+/* Grid responsivo para os cards de navegação */
+.card-grid {
+    display: grid;
+    /* Layout CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Colunas automáticas com mínimo de 320px */
+    gap: 24px;
+    /* Espaçamento de 24px entre cards */
+    margin-top: 24px;
+    /* Margem superior de 24px */
+}
+
+/* Card individual de navegação */
+.nav-card {
+    background: linear-gradient(135deg, var(--utfpr-white) 0%, var(--utfpr-gray) 100%);
+    /* Gradiente de branco a cinza claro */
+    padding: 28px;
+    /* Espaçamento interno generoso */
+    border-radius: 12px;
+    /* Bordas arredondadas */
+    text-decoration: none;
+    /* Remove sublinhado (o card é um <a>) */
+    color: inherit;
+    /* Herda a cor do texto do elemento pai */
+    border: 2px solid var(--utfpr-gray);
+    /* Borda cinza ao redor */
+    transition: all 0.3s ease;
+    /* Transição suave para todos os efeitos */
+    display: block;
+    /* Bloco para que o link ocupe toda a área */
+    box-shadow: 0 3px 10px rgba(35, 31, 32, 0.3);
+    /* Sombra de elevação */
+}
+
+/* Efeito hover no card de navegação */
+.nav-card:hover {
+    transform: translateY(-5px);
+    /* Move o card 5px para cima ao hover */
+    box-shadow: 0 8px 25px rgba(35, 31, 32, 0.3);
+    /* Aumenta a sombra para reforçar a elevação */
+    border-color: var(--utfpr-Yellow);
+    /* Muda a borda para amarelo */
+    background: linear-gradient(135deg, var(--utfpr-white) 0%, #f0f7ff 100%);
+    /* Gradiente azulado sutil no hover */
+}
+
+/* ===================================================================
+   SEÇÃO 18 — RODAPÉ (footer)
+   =================================================================== */
+
+/* Elemento semântico <footer> da página */
+footer {
+    background: linear-gradient(135deg, var(--utfpr-gray-medium) 0%, var(--utfpr-gray-dark) 100%);
+    /* Gradiente de cinza médio a escuro */
+    color: var(--utfpr-black);
+    /* Cor do texto escura */
+    padding: 45px 0 25px 0;
+    /* Espaçamento interno: 45px acima, 25px abaixo */
+    border-top: 5px solid var(--utfpr-Yellow);
+    /* Linha de destaque amarela no topo do rodapé */
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra interna no topo para profundidade */
+}
+
+/* Grid de colunas do rodapé */
+.footer-content {
+    display: grid;
+    /* Layout CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    /* Colunas automáticas com mínimo de 260px */
+    gap: 35px;
+    /* Espaçamento de 35px entre colunas */
+    margin-bottom: 35px;
+    /* Margem inferior antes do copyright */
+}
+
+/* Título de cada seção do rodapé */
+.footer-section h3 {
+    color: var(--utfpr-black);
+    /* Cor do texto */
+    margin-bottom: 18px;
+    /* Margem inferior de 18px */
+    font-size: 1.25rem;
+    /* Tamanho de fonte para título de seção */
+    border-bottom: 2px solid var(--utfpr-Yellow-light);
+    /* Linha decorativa abaixo */
+    padding-bottom: 8px;
+    /* Espaçamento entre texto e linha */
+    display: inline-block;
+    /* Largura proporcional ao conteúdo para a borda não se extender */
+}
+
+/* Parágrafos e itens de lista dentro das seções do rodapé */
+.footer-section p,
+.footer-section li {
+    margin-bottom: 10px;
+    /* Espaçamento de 10px entre cada parágrafo/item */
+    opacity: 0.95;
+    /* Leve transparência para hierarquia visual */
+    line-height: 1.6;
+    /* Altura de linha para legibilidade */
+    color: var(--utfpr-black);
+    /* Cor do texto */
+}
+
+/* Links dentro das seções do rodapé */
+.footer-section a {
+    color: var(--utfpr-black);
+    /* Cor do link igual ao texto para integração visual */
+    text-decoration: none;
+    /* Remove sublinhado */
+    transition: all 0.3s ease;
+    /* Transição suave */
+    border-bottom: 1px solid transparent;
+    /* Borda inferior invisível que será revelada no hover */
+}
+
+/* Efeito hover nos links do rodapé */
+.footer-section a:hover {
+    opacity: 0.9;
+    /* Leve transparência no hover */
+    border-bottom-color: var(--utfpr-black);
+    /* Revela sublinhado preto no hover */
+}
+
+/* Lista de links no rodapé (sem marcadores) */
+.footer-section ul {
+    list-style: none;
+    /* Remove marcadores de lista */
+    padding: 0;
+    /* Remove recuo padrão */
+}
+
+/* Linha de copyright no final do rodapé */
+.copyright {
+    text-align: center;
+    /* Texto centralizado */
+    padding-top: 25px;
+    /* Espaçamento superior de 25px */
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    /* Linha divisória semi-transparente */
+    opacity: 0.9;
+    /* Leve transparência para hierarquia inferior */
+    font-size: 0.92rem;
+    /* Fonte ligeiramente menor */
+    color: var(--utfpr-black);
+    /* Cor do texto */
+}
+
+/* ===================================================================
+   SEÇÃO 19 — CARTÕES SCRATCH ESPECÍFICOS (cartoes-scratch-section)
+   Seção dedicada à exibição dos cartões de referência de blocos do
+   Scratch, organizados em um grid temático por categoria de bloco.
+   =================================================================== */
+
+/* Seção principal dos cartões Scratch */
+.cartoes-scratch-section {
+    margin: 30px 0;
+    /* Margem vertical de 30px */
+}
+
+/* Bloco introdutório antes do grid de cartões */
+.cartoes-intro {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    padding: 20px;
+    /* Espaçamento interno de 20px */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    margin-bottom: 25px;
+    /* Margem inferior de 25px */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela à esquerda */
+}
+
+/* Grid responsivo para os cartões Scratch individuais */
+.cartoes-grid {
+    display: grid;
+    /* Layout CSS Grid */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    /* Colunas automáticas com mínimo de 280px */
+    gap: 20px;
+    /* Espaçamento de 20px entre cartões */
+    margin: 25px 0;
+    /* Margem vertical de 25px */
+}
+
+/* Card individual representando um bloco Scratch */
+.cartao-scratch {
+    background: white;
+    /* Fundo branco */
+    border-radius: 12px;
+    /* Bordas arredondadas */
+    padding: 20px;
+    /* Espaçamento interno de 20px */
+    box-shadow: var(--shadow);
+    /* Sombra padrão */
+    border-top: 5px solid;
+    /* Borda superior colorida (cor definida por classe modificadora) */
+    position: relative;
+    /* Contexto de posicionamento para pseudo-elementos */
+    min-height: 180px;
+    /* Altura mínima para uniformidade visual */
+    display: flex;
+    /* Flexbox para organização interna */
+    flex-direction: column;
+    /* Direção de coluna (empilhamento vertical) */
+    justify-content: space-between;
+    /* Distribui o conteúdo verticalmente com espaço entre cabeçalho e rodapé */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transições suaves para transform e sombra no hover */
+}
+
+/* Efeito hover no cartão Scratch */
+.cartao-scratch:hover {
+    transform: translateY(-5px);
+    /* Move o cartão 5px para cima */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* Aumenta a sombra para reforçar a elevação */
+}
+
+/* --- Modificadores de cor por categoria de bloco Scratch --- */
+
+.cartao-scratch.movimento {
+    border-top-color: var(--scratch-motion);
+    /* Borda superior azul para blocos de Movimento */
+}
+
+.cartao-scratch.aparencia {
+    border-top-color: var(--scratch-looks);
+    /* Borda superior roxa para blocos de Aparência */
+}
+
+.cartao-scratch.som {
+    border-top-color: var(--scratch-sound);
+    /* Borda superior rosa/magenta para blocos de Som */
+}
+
+.cartao-scratch.eventos {
+    border-top-color: var(--scratch-events);
+    /* Borda superior âmbar para blocos de Eventos */
+}
+
+.cartao-scratch.controle {
+    border-top-color: var(--scratch-control);
+    /* Borda superior laranja para blocos de Controle */
+}
+
+.cartao-scratch.operadores {
+    border-top-color: var(--scratch-operators);
+    /* Borda superior verde para blocos de Operadores */
+}
+
+.cartao-scratch.valores {
+    border-top-color: var(--utfpr-gray-dark);
+    /* Borda superior cinza para blocos de Valores/Variáveis */
+}
+
+/* Cabeçalho interno do cartão com o nome da categoria */
+.cartao-header {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    padding: 8px 12px;
+    /* Espaçamento interno compacto */
+    border-radius: 6px;
+    /* Bordas arredondadas */
+    margin-bottom: 15px;
+    /* Margem inferior de 15px */
+    text-align: center;
+    /* Texto centralizado */
+    font-weight: bold;
+    /* Negrito para o nome da categoria */
+    font-size: 0.9rem;
+    /* Tamanho de fonte ligeiramente menor */
+}
+
+/* Área principal de conteúdo do cartão */
+.cartao-content {
+    flex-grow: 1;
+    /* Ocupa o espaço restante disponível no flex container */
+    display: flex;
+    /* Flexbox para centralização interna */
+    flex-direction: column;
+    /* Direção de coluna */
+    justify-content: center;
+    /* Centraliza verticalmente */
+    align-items: center;
+    /* Centraliza horizontalmente */
+    text-align: center;
+    /* Texto centralizado */
+    font-family: 'Courier New', monospace;
+    /* Fonte monoespaçada para representar código */
+    font-size: 0.95rem;
+    /* Tamanho de fonte */
+    line-height: 1.4;
+    /* Altura de linha para legibilidade de comandos */
+}
+
+/* Campo de input simulado dentro do cartão */
+.cartao-input {
+    display: inline-block;
+    /* Elemento inline com suporte a dimensionamento */
+    background: var(--utfpr-gray);
+    /* Fundo cinza claro */
+    border: 1px solid var(--utfpr-gray-medium);
+    /* Borda sutil */
+    border-radius: 4px;
+    /* Bordas levemente arredondadas */
+    padding: 2px 6px;
+    /* Espaçamento interno mínimo */
+    margin: 0 2px;
+    /* Margem lateral de 2px para separar do texto */
+    min-width: 30px;
+    /* Largura mínima de 30px */
+    text-align: center;
+    /* Texto centralizado no campo */
+}
+
+/* Rodapé descritivo do cartão */
+.cartao-footer {
+    margin-top: 10px;
+    /* Margem superior de 10px */
+    font-size: 0.8rem;
+    /* Fonte pequena para texto de suporte */
+    color: var(--utfpr-gray-dark);
+    /* Cor cinza escuro */
+    text-align: center;
+    /* Texto centralizado */
+    font-style: italic;
+    /* Itálico para indicar descrição complementar */
+}
+
+/* ===================================================================
+   SEÇÃO 20 — ATIVIDADES E SUGESTÕES
+   Blocos de sugestões de atividades e tags de cartões necessários.
+   =================================================================== */
+
+/* Container de atividades sugeridas */
+.atividades-sugestoes {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    padding: 25px;
+    /* Espaçamento interno de 25px */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    margin-top: 30px;
+    /* Margem superior de 30px */
+    border: 2px dashed var(--utfpr-Yellow);
+    /* Borda tracejada amarela para indicar sugestão */
+}
+
+/* Item individual de atividade */
+.atividade-item {
+    background: white;
+    /* Fundo branco */
+    padding: 20px;
+    /* Espaçamento interno de 20px */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    margin-bottom: 20px;
+    /* Margem inferior de 20px */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela à esquerda */
+}
+
+/* Grupo de tags de cartões necessários para a atividade */
+.cartoes-necessarios {
+    display: flex;
+    /* Flexbox para layout em linha */
+    flex-wrap: wrap;
+    /* Permite quebra de linha */
+    gap: 8px;
+    /* Espaçamento de 8px entre tags */
+    margin: 10px 0;
+    /* Margem vertical de 10px */
+}
+
+/* Tag individual indicando um cartão necessário */
+.cartao-tag {
+    background: var(--utfpr-Yellow-light);
+    /* Fundo amarelo claro */
+    color: var(--utfpr-black);
+    /* Texto preto para contraste */
+    padding: 4px 10px;
+    /* Espaçamento interno compacto */
+    border-radius: 15px;
+    /* Formato de pílula */
+    font-size: 0.8rem;
+    /* Fonte pequena */
+    font-weight: bold;
+    /* Negrito para destaque */
+}
+
+/* ===================================================================
+   SEÇÃO 21 — BOTÃO DE ALTERNÂNCIA DE TEMA (theme-toggle)
+   Botão flutuante para alternar entre modo claro e modo escuro.
+   =================================================================== */
+
+/* Botão circular fixo no canto inferior direito */
+.theme-toggle {
+    position: fixed;
+    /* Posicionamento fixo em relação à viewport */
+    bottom: 20px;
+    /* 20px acima da borda inferior */
+    right: 20px;
+    /* 20px da borda direita */
+    background-color: var(--utfpr-gray-dark);
+    /* Fundo cinza escuro */
+    color: var(--utfpr-gray-dark);
+    /* Cor do ícone/texto */
+    border: none;
+    /* Sem borda */
+    border-radius: 50%;
+    /* Formato circular perfeito */
+    width: 50px;
+    /* Largura fixa de 50px */
+    height: 50px;
+    /* Altura fixa de 50px (igual à largura para círculo) */
+    font-size: 1.2rem;
+    /* Tamanho do ícone SVG/emoji */
+    cursor: pointer;
+    /* Cursor de mão para indicar clicabilidade */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra de elevação */
+    z-index: 1000;
+    /* Sobrepõe todos os outros elementos da página */
+}
+
+/* ===================================================================
+   SEÇÃO 22 — ACESSIBILIDADE
+   Estilos para melhorar a usabilidade por teclado e configurações
+   de preferência do sistema operacional.
+   =================================================================== */
+
+/* Outline visível para foco via teclado em links e botões */
+a:focus,
+button:focus {
+    outline: 3px solid var(--utfpr-Yellow);
+    /* Contorno amarelo de 3px com alto contraste */
+    outline-offset: 2px;
+    /* Espaçamento de 2px entre o elemento e o outline */
+}
+
+/* Comportamento de scroll suave para âncoras de navegação interna */
+html {
+    scroll-behavior: smooth;
+    /* Animação suave ao navegar para âncoras (#id) */
+}
+
+/* ===================================================================
+   SEÇÃO 23 — RESPONSIVIDADE: TABLETS (max-width: 768px)
+   Adaptações de layout para viewports com até 768px de largura,
+   correspondendo aproximadamente a tablets em modo retrato.
+   =================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Empilha logo e título verticalmente no header */
+    .header-top .container {
+        flex-direction: column;
+        /* Muda a direção do flex para coluna */
+        text-align: center;
+        /* Centraliza o texto */
+        gap: 18px;
+        /* Espaçamento de 18px entre os itens empilhados */
+    }
+
+    /* Centraliza o título do header em tablets */
+    .header-title {
+        text-align: center;
+        /* Alinhamento centralizado */
+    }
+
+    /* Menu de navegação muda para vertical */
+    nav ul {
+        flex-direction: column;
+        /* Itens do menu empilhados verticalmente */
+    }
+
+    /* Ajusta o link de navegação para telas menores */
+    nav a {
+        padding: 14px 20px;
+        /* Reduz o espaçamento interno */
+        text-align: center;
+        /* Centraliza o texto do link */
+    }
+
+    /* Reduz o tamanho do título principal em tablets */
+    .page-header h1 {
+        font-size: 2.2rem;
+        /* Reduz de 2.6rem para 2.2rem */
+    }
+
+    /* Reduz o padding das seções de conteúdo */
+    .content-section {
+        padding: 25px;
+        /* Reduz de 32px para 25px */
+    }
+
+    /* Grid de cards passa a uma coluna única */
+    .card-grid {
+        grid-template-columns: 1fr;
+        /* Uma coluna única */
+    }
+
+    /* Colunas do rodapé passam a uma coluna */
+    .footer-content {
+        grid-template-columns: 1fr;
+        /* Uma coluna única */
+        text-align: center;
+        /* Texto centralizado */
+    }
+
+    /* Grid do resumo executivo passa a uma coluna */
+    .executive-summary {
+        grid-template-columns: 1fr;
+        /* Uma coluna única */
+    }
+
+    /* Grid de cartões passa a uma coluna */
+    .cartoes-container {
+        grid-template-columns: 1fr;
+        /* Uma coluna única */
+    }
+
+    /* Cabeçalho da ficha empilha os elementos verticalmente */
+    .ficha-header {
+        flex-direction: column;
+        /* Direção de coluna */
+        gap: 10px;
+        /* Espaçamento de 10px entre elementos */
+        text-align: center;
+        /* Texto centralizado */
+    }
+
+    /* Reduz a fonte da tabela de progressão */
+    .progression-table {
+        font-size: 0.9rem;
+        /* Reduz para 0.9rem */
+    }
+
+    /* Ajusta margens e padding do container de imagens */
+    .image-container {
+        margin: 20px 0;
+        /* Margem vertical reduzida */
+        padding: 12px;
+        /* Padding reduzido */
+    }
+
+    /* Reduz largura máxima das variantes de imagem em tablets */
+    .logo-image {
+        max-width: 250px;
+        /* Reduz de 300px para 250px */
+    }
+
+    .contextual-image {
+        max-width: 400px;
+        /* Reduz de 500px para 400px */
+    }
+
+    .interface-image {
+        max-width: 500px;
+        /* Reduz de 600px para 500px */
+    }
+
+    .blocks-image {
+        max-width: 350px;
+        /* Reduz de 400px para 350px */
+    }
+
+    .project-image {
+        max-width: 450px;
+        /* Reduz de 550px para 450px */
+    }
+
+    /* Ajusta o grid de cartões Scratch em tablets */
+    .cartoes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        /* Mínimo de 250px (era 280px) */
+        gap: 15px;
+        /* Reduz o gap de 20px para 15px */
+    }
+
+    /* Reduz as dimensões dos cartões Scratch */
+    .cartao-scratch {
+        min-height: 160px;
+        /* Reduz de 180px para 160px */
+        padding: 15px;
+        /* Reduz de 20px para 15px */
+    }
+}
+
+/* ===================================================================
+   SEÇÃO 24 — RESPONSIVIDADE: CELULARES (max-width: 480px)
+   Adaptações de layout para viewports com até 480px de largura,
+   correspondendo a smartphones em modo retrato.
+   =================================================================== */
+
+@media (max-width: 480px) {
+
+    /* Reduz o padding lateral do container em celulares */
+    .container {
+        padding: 0 15px;
+        /* Reduz de 20px para 15px */
+    }
+
+    /* Reduz ainda mais o título principal */
+    .page-header h1 {
+        font-size: 1.9rem;
+        /* Reduz de 2.2rem para 1.9rem */
+    }
+
+    /* Reduz o título h2 das seções */
+    .content-section h2 {
+        font-size: 1.6rem;
+        /* Reduz de 1.9rem para 1.6rem */
+    }
+
+    /* Reduz o título h3 das seções */
+    .content-section h3 {
+        font-size: 1.35rem;
+        /* Reduz de 1.45rem para 1.35rem */
+    }
+
+    /* Reduz a altura da logo em celulares */
+    .logo {
+        height: 55px;
+        /* Reduz de 65px para 55px */
+    }
+
+    /* Reduz padding das seções de conteúdo */
+    .content-section {
+        padding: 20px;
+        /* Reduz de 25px para 20px */
+    }
+
+    /* Reduz padding dos componentes de projeto e plano de aula */
+    .projeto-ano,
+    .plano-aula {
+        padding: 20px;
+        /* Reduz padding */
+    }
+
+    /* Reduz padding da ficha modelo */
+    .ficha-modelo {
+        padding: 20px;
+        /* Reduz de 25px para 20px */
+    }
+
+    /* Ajusta margens e padding do container de imagens */
+    .image-container {
+        margin: 15px 0;
+        /* Margem reduzida */
+        padding: 10px;
+        /* Padding reduzido */
+    }
+
+    /* Reduz o arredondamento das bordas das imagens */
+    .content-image {
+        border-radius: 6px;
+        /* Reduz de 8px para 6px */
+    }
+
+    /* Reduz ainda mais as variantes de imagem em celulares */
+    .logo-image {
+        max-width: 200px;
+        /* Reduz de 250px para 200px */
+    }
+
+    .contextual-image {
+        max-width: 300px;
+        /* Reduz de 400px para 300px */
+    }
+
+    .interface-image {
+        max-width: 350px;
+        /* Reduz de 500px para 350px */
+    }
+
+    .blocks-image {
+        max-width: 280px;
+        /* Reduz de 350px para 280px */
+        padding: 10px;
+        /* Reduz o padding interno */
+    }
+
+    .project-image {
+        max-width: 320px;
+        /* Reduz de 450px para 320px */
+        padding: 8px;
+        /* Reduz o padding interno */
+    }
+
+    /* Grid de cartões Scratch passa a uma coluna em celulares */
+    .cartoes-grid {
+        grid-template-columns: 1fr;
+        /* Uma coluna única */
+    }
+
+    /* Reduz ainda mais as dimensões dos cartões Scratch */
+    .cartao-scratch {
+        min-height: 140px;
+        /* Reduz de 160px para 140px */
+        padding: 12px;
+        /* Reduz de 15px para 12px */
+    }
+
+    /* Reduz a fonte do conteúdo dos cartões */
+    .cartao-content {
+        font-size: 0.9rem;
+        /* Reduz de 0.95rem para 0.9rem */
+    }
+}
+
+/* ===================================================================
+   SEÇÃO 25 — ACESSIBILIDADE: REDUÇÃO DE MOVIMENTO
+   Respeita a preferência do sistema operacional para reduzir ou
+   eliminar animações e transições (importante para usuários com
+   sensibilidade a movimento ou epilepsia fotossensível).
+   =================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* Remove todas as animações e transições de todos os elementos */
+    * {
+        animation-duration: 0.01ms !important;
+        /* Duração de animação praticamente nula */
+        animation-iteration-count: 1 !important;
+        /* Executa a animação apenas uma vez */
+        transition-duration: 0.01ms !important;
+        /* Duração de transição praticamente nula */
+    }
+
+    /* Remove o efeito de zoom nas imagens */
+    .content-image:hover {
+        transform: none;
+        /* Sem transformação de escala */
+    }
+
+    /* Remove o efeito de elevação nos cards de navegação */
+    .nav-card:hover {
+        transform: none;
+        /* Sem transformação de translação */
+    }
+
+    /* Remove o efeito de elevação nos cartões Scratch */
+    .cartao-scratch:hover {
+        transform: none;
+        /* Sem transformação de translação */
+    }
+}
+
+/* ===================================================================
+   SEÇÃO 26 — ESTILOS PARA IMPRESSÃO (@media print)
+   Define como a página se comporta ao ser impressa ou salva como PDF.
+   Oculta elementos de navegação e adapta cores para impressão.
+   =================================================================== */
+
+@media print {
+
+    /* Oculta todos os elementos filhos diretos do body, exceto o container temporário de impressão */
+    body>*:not(.print-temp-container) {
+        display: none !important;
+        /* Força ocultação de todo o conteúdo não destinado à impressão */
+    }
+
+    /* Garante que o container de impressão ocupe toda a página com fundo branco */
+    .print-temp-container {
+        display: block !important;
+        /* Força exibição do container */
+        background: white !important;
+        /* Fundo branco para impressão */
+        color: black !important;
+        /* Texto preto para impressão */
+        margin: 0 !important;
+        /* Remove margens */
+        padding: 20px !important;
+        /* Adiciona padding de 20px */
+        width: 100% !important;
+        /* Ocupa 100% da largura da página */
+    }
+
+    /* Estilos gerais do body para impressão */
+    body {
+        background: white !important;
+        /* Fundo branco */
+        color: black !important;
+        /* Texto preto */
+        font-size: 12pt;
+        /* Tamanho de fonte padrão para impressão em pontos */
+        line-height: 1.4;
+        /* Altura de linha compacta para impressão */
+    }
+
+    /* Remove restrições de largura para impressão */
+    .container {
+        max-width: 100% !important;
+        /* Ocupa 100% da largura */
+        padding: 0 !important;
+        /* Remove padding */
+        margin: 0 !important;
+        /* Remove margin */
+    }
+
+    /* Cartões do Scratch para impressão */
+    .scratch-card,
+    .cartao-scratch {
+        break-inside: avoid;
+        /* CSS moderno: evita que o card seja cortado por quebra de página */
+        page-break-inside: avoid;
+        /* Fallback: evita quebra de página dentro do card */
+        border: 2px solid #000 !important;
+        /* Borda preta para visibilidade na impressão */
+        box-shadow: none !important;
+        /* Remove sombras (não funcionam bem em impressão) */
+        margin-bottom: 15px;
+        /* Margem inferior entre cards */
+    }
+
+    /* Remove o efeito de hover durante a impressão */
+    .scratch-card:hover,
+    .cartao-scratch:hover {
+        transform: none !important;
+        /* Sem transformação na impressão */
+    }
+
+    /* Ajusta a margem do cabeçalho de página */
+    .page-header {
+        margin-bottom: 20px !important;
+        /* Margem inferior reduzida */
+    }
+
+    /* Estilos das seções de conteúdo para impressão */
+    .content-section {
+        box-shadow: none !important;
+        /* Remove sombra */
+        margin-bottom: 20px !important;
+        /* Margem inferior reduzida */
+        padding: 15px !important;
+        /* Padding reduzido */
+        break-inside: avoid;
+        /* Evita quebra dentro da seção */
+        border: 1px solid #000;
+        /* Borda preta simples */
+    }
+
+    /* Força quebra de página antes da terceira seção em diante */
+    .content-section:nth-child(n+3) {
+        page-break-before: always;
+        /* Cada seção a partir da terceira começa em nova página */
+    }
+
+    /* Badges adaptados para impressão */
+    .badge {
+        background: #ddd !important;
+        /* Fundo cinza claro (sem gradiente) */
+        color: black !important;
+        /* Texto preto */
+        border: 1px solid #999;
+        /* Borda cinza */
+    }
+
+    /* Grid de cards de impressão com 3 colunas fixas */
+    .print-cards {
+        display: grid !important;
+        /* Força layout grid */
+        grid-template-columns: repeat(3, 1fr) !important;
+        /* 3 colunas iguais */
+        gap: 15px !important;
+        /* Gap reduzido */
+        margin: 0 !important;
+        /* Sem margens */
+        padding: 20px !important;
+        /* Padding interno */
+    }
+
+    /* Card individual de impressão */
+    .print-card {
+        break-inside: avoid;
+        /* Evita quebra dentro do card */
+        page-break-inside: avoid;
+        /* Fallback para quebra de página */
+        background: white !important;
+        /* Fundo branco */
+        border: 2px solid #000 !important;
+        /* Borda preta */
+        border-radius: 8px !important;
+        /* Bordas arredondadas */
+        padding: 15px !important;
+        /* Padding interno */
+        margin: 0 !important;
+        /* Sem margens */
+        box-shadow: none !important;
+        /* Sem sombra */
+        min-height: 120px !important;
+        /* Altura mínima */
+        display: flex !important;
+        /* Flexbox */
+        flex-direction: column !important;
+        /* Direção de coluna */
+        justify-content: center !important;
+        /* Centralizado verticalmente */
+    }
+
+    /* --- Cores de categoria para cards de impressão via borda esquerda --- */
+
+    .print-card.movimento {
+        border-left: 8px solid var(--scratch-motion) !important;
+        /* Borda azul para Movimento */
+    }
+
+    .print-card.aparencia {
+        border-left: 8px solid var(--scratch-looks) !important;
+        /* Borda roxa para Aparência */
+    }
+
+    .print-card.som {
+        border-left: 8px solid var(--scratch-sound) !important;
+        /* Borda rosa para Som */
+    }
+
+    .print-card.eventos {
+        border-left: 8px solid var(--scratch-events) !important;
+        /* Borda âmbar para Eventos */
+    }
+
+    .print-card.controle {
+        border-left: 8px solid var(--scratch-control) !important;
+        /* Borda laranja para Controle */
+    }
+
+    .print-card.operadores {
+        border-left: 8px solid var(--scratch-operators) !important;
+        /* Borda verde para Operadores */
+    }
+
+    /* Título (h3) do card de impressão */
+    .print-card h3 {
+        font-size: 14px !important;
+        /* Tamanho fixo em px para impressão */
+        margin: 0 0 8px 0 !important;
+        /* Margem inferior de 8px */
+        color: black !important;
+        /* Texto preto */
+    }
+
+    /* Parágrafo do card de impressão */
+    .print-card p {
+        font-size: 12px !important;
+        /* Tamanho menor para impressão */
+        margin: 2px 0 !important;
+        /* Margens mínimas */
+        color: black !important;
+        /* Texto preto */
+    }
+
+    /* Código inline dentro do card de impressão */
+    .print-card code {
+        background: #f5f5f5 !important;
+        /* Fundo cinza muito claro */
+        color: black !important;
+        /* Texto preto */
+        border: 1px solid #ddd !important;
+        /* Borda cinza clara */
+        font-size: 11px !important;
+        /* Fonte pequena */
+    }
+
+    /* Bloco de instruções para o usuário no topo da impressão */
+    .print-instructions {
+        background: #f8f9fa !important;
+        /* Fundo cinza claro */
+        border: 1px solid #000 !important;
+        /* Borda preta */
+        padding: 15px !important;
+        /* Padding */
+        margin-bottom: 20px !important;
+        /* Margem inferior */
+        page-break-after: avoid;
+        /* Evita quebra de página após este bloco */
+    }
+
+    /* Título do bloco de instruções */
+    .print-instructions h2 {
+        color: black !important;
+        /* Texto preto */
+        font-size: 16px !important;
+        /* Tamanho fixo */
+        margin-bottom: 10px !important;
+        /* Margem inferior */
+    }
+
+    /* Lista de instruções */
+    .print-instructions ul {
+        margin: 0 !important;
+        /* Sem margem */
+        padding-left: 20px !important;
+        /* Recuo para os marcadores */
+    }
+
+    /* Itens da lista de instruções */
+    .print-instructions li {
+        font-size: 12px !important;
+        /* Tamanho de fonte para impressão */
+        margin-bottom: 5px !important;
+        /* Margem entre itens */
+        color: black !important;
+        /* Texto preto */
+    }
+
+    /* Container de conteúdo da cartilha para impressão */
+    .print-index-content {
+        width: 100% !important;
+        /* Largura total */
+    }
+
+    /* Container do conteúdo de projetos do 6º ano */
+    .print-projetos6-content {
+        width: 100% !important;
+        /* Largura total */
+    }
+
+    /* Container do conteúdo de projetos do 7º ano */
+    .print-projetos7-content {
+        width: 100% !important;
+        /* Largura total */
+    }
+
+    /* Container do conteúdo do guia de primeiros passos */
+    .print-primeiros-passos-content {
+        width: 100% !important;
+        /* Largura total */
+    }
+
+    /* Seção genérica dentro do container de impressão */
+    .print-section {
+        break-inside: avoid;
+        /* Evita quebra dentro da seção */
+        page-break-inside: avoid;
+        /* Fallback */
+        background: white !important;
+        /* Fundo branco */
+        border: 1px solid #000 !important;
+        /* Borda preta */
+        border-radius: 8px !important;
+        /* Bordas arredondadas */
+        padding: 20px !important;
+        /* Padding interno */
+        margin: 20px 0 !important;
+        /* Margem vertical */
+        box-shadow: none !important;
+        /* Sem sombra */
+    }
+
+    /* Título h2 dentro de seção de impressão */
+    .print-section h2 {
+        color: #000 !important;
+        /* Texto preto */
+        font-size: 18px !important;
+        /* Tamanho fixo */
+        margin-bottom: 15px !important;
+        /* Margem inferior */
+        border-bottom: 2px solid #000 !important;
+        /* Linha divisória preta */
+        padding-bottom: 8px !important;
+        /* Espaçamento abaixo do título */
+    }
+
+    /* Oculta o botão de impressão durante a impressão */
+    .print-button {
+        display: none !important;
+        /* Botão não deve aparecer na folha impressa */
+    }
+
+    /* Caixa de destaque na impressão */
+    .highlight-box {
+        background: #fff3cd;
+        /* Fundo amarelo claro */
+        border-left: 5px solid #ffc107;
+        /* Borda amarela */
+        padding: 15px;
+        /* Padding */
+        margin: 20px 0;
+        /* Margem vertical */
+        border-radius: 8px;
+        /* Bordas arredondadas */
+    }
+
+    /* Badge de novo recurso na impressão */
+    .new-feature {
+        display: inline-block;
+        /* Elemento inline com dimensionamento */
+        background: #28a745;
+        /* Fundo verde */
+        color: white;
+        /* Texto branco */
+        font-size: 0.7rem;
+        /* Fonte pequena */
+        padding: 2px 8px;
+        /* Padding compacto */
+        border-radius: 12px;
+        /* Formato de pílula */
+        margin-left: 10px;
+        /* Margem esquerda */
+        vertical-align: middle;
+        /* Alinhamento vertical */
+    }
+
+    /* Tabela de categorias de blocos na impressão */
+    .category-table {
+        width: 100%;
+        /* Largura total */
+        border-collapse: collapse;
+        /* Bordas colapsadas */
+        margin: 15px 0;
+        /* Margem vertical */
+    }
+
+    /* Células da tabela de categorias na impressão */
+    .category-table th,
+    .category-table td {
+        padding: 8px;
+        /* Padding das células */
+        border: 1px solid var(--border-color);
+        /* Borda com variável */
+        text-align: left;
+        /* Alinhamento à esquerda */
+    }
+
+    /* Cabeçalho da tabela de categorias na impressão */
+    .category-table th {
+        background: var(--utfpr-Yellow-dark);
+        /* Fundo amarelo escuro */
+        font-weight: bold;
+        /* Negrito */
+    }
+
+    /* Seção de impressão para planos de aula */
+    .print-section {
+        break-inside: avoid;
+        /* Evita quebra interna */
+        page-break-inside: avoid;
+        /* Fallback */
+        background: white !important;
+        /* Fundo branco */
+        border: 2px solid #000 !important;
+        /* Borda preta mais espessa */
+        border-radius: 8px !important;
+        /* Bordas arredondadas */
+        padding: 20px !important;
+        /* Padding */
+        margin: 20px 0 !important;
+        /* Margem vertical */
+        box-shadow: none !important;
+        /* Sem sombra */
+    }
+
+    /* Título da seção de plano de aula na impressão */
+    .print-section h2 {
+        color: #000 !important;
+        /* Texto preto */
+        font-size: 18px !important;
+        /* Tamanho fixo */
+        margin-bottom: 15px !important;
+        /* Margem inferior */
+        border-bottom: 2px solid #000 !important;
+        /* Linha divisória */
+        padding-bottom: 8px !important;
+        /* Espaçamento abaixo */
+    }
+
+    /* Informações do plano de aula na impressão */
+    .plano-info {
+        background: #f8f9fa !important;
+        /* Fundo cinza claro */
+        border: 1px solid #ccc !important;
+        /* Borda cinza */
+    }
+
+    /* Bloco de código Scratch na impressão */
+    .scratch-code {
+        background: #f5f5f5 !important;
+        /* Fundo cinza claro */
+        color: black !important;
+        /* Texto preto */
+        border: 1px solid #ccc !important;
+        /* Borda cinza */
+    }
+
+    /* Tabela de projetos na impressão */
+    .projeto-tabela {
+        break-inside: avoid;
+        /* Evita quebra interna */
+        page-break-inside: avoid;
+        /* Fallback */
+    }
+}
+
+/* ===================================================================
+   SEÇÃO 27 — SIMULAÇÃO DA INTERFACE SCRATCH
+   Layout de grid que replica visualmente a interface do Scratch,
+   com áreas nomeadas: menu, palco, blocos, scripts e sprites.
+   =================================================================== */
+
+/* Container principal da interface simulada */
+.scratch-interface {
+    display: grid;
+    /* Layout CSS Grid */
+    grid-template-areas:
+        /* Define as áreas nomeadas do grid */
+        "menu menu menu"
+        /* Linha 1: menu ocupa todas as 3 colunas */
+        "palco blocos scripts"
+        /* Linha 2: palco, blocos e scripts */
+        "sprites blocos scripts";
+    /* Linha 3: sprites, continuação de blocos e scripts */
+    grid-template-columns: 1fr 1fr 2fr;
+    /* Proporções: palco e blocos iguais, scripts com o dobro de largura */
+    gap: 12px;
+    /* Espaçamento de 12px entre as áreas */
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro para a área externa */
+    border: 2px solid var(--utfpr-gray-medium);
+    /* Borda ao redor do simulador */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    padding: 15px;
+    /* Espaçamento interno de 15px */
+    margin: 25px auto;
+    /* Margem vertical com centralização horizontal */
+    max-width: 100%;
+    /* Largura responsiva */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra de elevação */
+}
+
+/* Área individual da interface simulada */
+.interface-area {
+    background: var(--utfpr-white);
+    /* Fundo branco para cada área */
+    border: 1px solid var(--utfpr-gray-medium);
+    /* Borda sutil */
+    border-radius: 6px;
+    /* Bordas arredondadas */
+    padding: 10px;
+    /* Espaçamento interno */
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
+    /* Sombra interna sutil */
+    text-align: center;
+    /* Texto centralizado */
+    font-size: 0.95rem;
+    /* Tamanho de fonte */
+    color: var(--utfpr-black);
+    /* Cor do texto */
+}
+
+/* Área do menu (barra superior da interface Scratch) */
+.menu-area {
+    grid-area: menu;
+    /* Posiciona na área 'menu' do grid */
+    background: var(--utfpr-Yellow-dark);
+    /* Fundo amarelo escuro para o menu */
+    font-weight: bold;
+    /* Negrito */
+    border-radius: 6px;
+    /* Bordas arredondadas */
+    text-align: left;
+    /* Alinhamento à esquerda */
+    padding: 10px 15px;
+    /* Padding interno */
+}
+
+/* Área do palco (onde a animação é exibida) */
+.palco-area {
+    grid-area: palco;
+    /* Posiciona na área 'palco' do grid */
+}
+
+/* Área de blocos de programação */
+.blocos-area {
+    grid-area: blocos;
+    /* Posiciona na área 'blocos' do grid */
+}
+
+/* Área de scripts (onde os blocos são encaixados) */
+.scripts-area {
+    grid-area: scripts;
+    /* Posiciona na área 'scripts' do grid */
+}
+
+/* Área de sprites (lista de personagens) */
+.sprites-area {
+    grid-area: sprites;
+    /* Posiciona na área 'sprites' do grid */
+}
+
+/* Rótulo de identificação de cada área */
+.area-label {
+    font-weight: bold;
+    /* Negrito */
+    color: var(--utfpr-Yellow-dark);
+    /* Cor amarela escura */
+    border-bottom: 2px solid var(--utfpr-Yellow-light);
+    /* Linha decorativa inferior */
+    padding-bottom: 4px;
+    /* Espaçamento entre texto e linha */
+    margin-bottom: 8px;
+    /* Margem inferior de 8px */
+}
+
+/* Conteúdo interno de cada área simulada */
+.area-content {
+    font-family: 'Courier New', monospace;
+    /* Fonte monoespaçada para representar código/blocos */
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    border-radius: 6px;
+    /* Bordas arredondadas */
+    padding: 8px;
+    /* Padding interno */
+    border: 1px dashed var(--utfpr-gray-dark);
+    /* Borda tracejada para indicar área de arrastar e soltar */
+}
+
+/* ===================================================================
+   SEÇÃO 28 — RESPONSIVIDADE DA INTERFACE SCRATCH (max-width: 900px)
+   Adapta o grid de 3 colunas para uma coluna única em telas menores.
+   =================================================================== */
+
+@media (max-width: 900px) {
+
+    /* Redefine o grid para coluna única */
+    .scratch-interface {
+        grid-template-areas:
+            /* Redefine as áreas: cada uma em sua própria linha */
+            "menu"
+            "palco"
+            "blocos"
+            "scripts"
+            "sprites";
+        grid-template-columns: 1fr;
+        /* Uma única coluna */
+    }
+
+    /* Redefine o alinhamento do texto das áreas para a esquerda */
+    .interface-area {
+        text-align: left;
+        /* Alinhamento à esquerda para melhor leitura em mobile */
+    }
+}
+
+/* ===================================================================
+   SEÇÃO 29 — COMPONENTES ADICIONAIS
+   Blocos de informação de atividade, código Scratch, fichas rápidas,
+   dica-box, cartaz, checklists e área de desenho.
+   =================================================================== */
+
+/* Bloco de informação de uma atividade */
+.atividade-info {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    padding: 15px;
+    /* Padding interno */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    margin: 15px 0;
+    /* Margem vertical */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela */
+}
+
+/* Bloco de código Scratch com tema escuro (primeira definição) */
+.scratch-code {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    border: 1px solid var(--utfpr-gray-medium);
+    /* Borda sutil */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela */
+    padding: 15px;
+    /* Padding interno */
+    margin: 15px 0;
+    /* Margem vertical */
+    border-radius: 6px;
+    /* Bordas arredondadas */
+    font-family: 'Courier New', monospace;
+    /* Fonte monoespaçada */
+    white-space: pre-wrap;
+    /* Preserva quebras de linha e indentação */
+    line-height: 1.4;
+    /* Altura de linha para código */
+}
+
+/* Container da ficha rápida de consulta */
+.ficha-rapida {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    padding: 25px;
+    /* Padding interno de 25px */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    margin: 20px 0;
+    /* Margem vertical */
+    border: 2px solid var(--utfpr-Yellow);
+    /* Borda amarela de 2px */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Sombra de elevação */
+}
+
+/* Cabeçalho da ficha rápida (segunda definição — sobrescreve a anterior) */
+.ficha-header {
+    display: flex;
+    /* Flexbox */
+    justify-content: space-between;
+    /* Espaço entre título e metadados */
+    align-items: center;
+    /* Alinhamento vertical centralizado */
+    margin-bottom: 20px;
+    /* Margem inferior */
+    padding-bottom: 15px;
+    /* Padding inferior interno */
+    border-bottom: 2px solid var(--utfpr-Yellow-light);
+    /* Linha divisória amarela clara */
+    flex-wrap: wrap;
+    /* Permite quebra em telas menores */
+    gap: 10px;
+    /* Espaçamento entre elementos */
+}
+
+/* Badges de tempo e nível da ficha rápida (segunda definição — sobrescreve a anterior) */
+.ficha-tempo,
+.ficha-nivel {
+    background: var(--utfpr-Yellow);
+    /* Fundo amarelo */
+    color: var(--utfpr-black);
+    /* Texto preto */
+    padding: 8px 15px;
+    /* Padding maior que na primeira definição */
+    border-radius: 20px;
+    /* Formato de pílula */
+    font-size: 0.9rem;
+    /* Tamanho de fonte */
+    font-weight: bold;
+    /* Negrito */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+/* Caixa de dica com gradiente amarelo */
+.dica-box {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    /* Gradiente amarelo muito claro */
+    border: 1px solid var(--utfpr-Yellow-dark);
+    /* Borda amarela escura */
+    border-left: 4px solid var(--utfpr-Yellow-dark);
+    /* Barra de destaque amarela escura */
+    padding: 15px;
+    /* Padding interno */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    margin: 15px 0;
+    /* Margem vertical */
+}
+
+/* Container de cartaz informativo */
+.cartaz-box {
+    background: white;
+    /* Fundo branco */
+    border: 3px solid var(--utfpr-Yellow);
+    /* Borda amarela espessa de 3px */
+    border-radius: 12px;
+    /* Bordas arredondadas */
+    margin: 20px 0;
+    /* Margem vertical */
+    overflow: hidden;
+    /* Esconde o conteúdo que ultrapassa as bordas arredondadas */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    /* Sombra de elevação moderada */
+}
+
+/* Cabeçalho colorido do cartaz */
+.cartaz-header {
+    background: var(--utfpr-Yellow);
+    /* Fundo amarelo primário */
+    color: var(--utfpr-black);
+    /* Texto preto */
+    text-align: center;
+    /* Texto centralizado */
+    padding: 15px;
+    /* Padding interno */
+    font-size: 1.3rem;
+    /* Fonte grande para título do cartaz */
+    font-weight: bold;
+    /* Negrito */
+    border-bottom: 2px solid var(--utfpr-Yellow-dark);
+    /* Linha divisória amarela escura abaixo */
+}
+
+/* Área de conteúdo do cartaz */
+.cartaz-content {
+    padding: 20px;
+    /* Padding interno de 20px */
+}
+
+/* Parágrafos dentro do conteúdo do cartaz */
+.cartaz-content p {
+    margin-bottom: 15px;
+    /* Margem inferior entre parágrafos */
+    padding-bottom: 15px;
+    /* Padding inferior antes da linha divisória */
+    border-bottom: 1px dashed var(--utfpr-gray);
+    /* Linha tracejada cinza divisória */
+}
+
+/* Remove a linha divisória do último parágrafo do cartaz */
+.cartaz-content p:last-child {
+    border-bottom: none;
+    /* Sem borda inferior */
+    margin-bottom: 0;
+    /* Sem margem inferior */
+}
+
+/* Lista de verificação customizada (segunda definição — mais completa) */
+.checklist {
+    list-style: none;
+    /* Remove marcadores padrão */
+    padding-left: 0;
+    /* Remove recuo */
+}
+
+/* Itens da checklist (segunda definição) */
+.checklist li {
+    padding: 8px 0;
+    /* Padding vertical de 8px */
+    display: flex;
+    /* Flexbox para alinhar marcador e texto */
+    align-items: center;
+    /* Alinhamento vertical centralizado */
+    border-bottom: 1px solid var(--utfpr-gray);
+    /* Linha divisória entre itens */
+}
+
+/* Remove a borda do último item da checklist */
+.checklist li:last-child {
+    border-bottom: none;
+    /* Sem linha divisória no último item */
+}
+
+/* Marcador customizado de checkbox não preenchido */
+.checklist li::before {
+    content: "☐";
+    /* Caractere Unicode de quadrado vazio (checkbox) */
+    margin-right: 10px;
+    /* Espaçamento de 10px entre o marcador e o texto */
+    font-size: 1.1rem;
+    /* Tamanho ligeiramente maior para visibilidade */
+}
+
+/* Bloco de código Scratch com tema escuro (segunda definição — sobrescreve) */
+.scratch-code {
+    background: #2d2d2d;
+    /* Fundo escuro para simulação de editor de código */
+    color: #f8f8f2;
+    /* Texto claro (estilo syntax highlighting) */
+    border: 1px solid #444;
+    /* Borda escura */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela */
+    padding: 18px;
+    /* Padding generoso */
+    margin: 18px 0;
+    /* Margem vertical */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    font-family: 'Courier New', monospace;
+    /* Fonte monoespaçada */
+    white-space: pre-wrap;
+    /* Preserva formatação */
+    line-height: 1.5;
+    /* Altura de linha */
+    font-size: 0.95rem;
+    /* Tamanho da fonte */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra de elevação */
+}
+
+/* Responsividade para fichas rápidas */
+@media (max-width: 768px) {
+
+    /* Empilha o cabeçalho da ficha em telas menores */
+    .ficha-header {
+        flex-direction: column;
+        /* Direção de coluna */
+        align-items: flex-start;
+        /* Alinhamento à esquerda */
+    }
+
+    /* Badges de tempo e nível ocupam largura total */
+    .ficha-tempo,
+    .ficha-nivel {
+        width: 100%;
+        /* Largura total */
+        text-align: center;
+        /* Texto centralizado */
+    }
+
+    /* Reduz o código Scratch em telas menores */
+    .scratch-code {
+        font-size: 0.85rem;
+        /* Fonte menor */
+        padding: 12px;
+        /* Padding reduzido */
+    }
+}
+
+/* ===================================================================
+   SEÇÃO 30 — FICHAS DE ATIVIDADE ESPECÍFICAS (ficha-atividade)
+   Componentes mais detalhados para fichas com cabeçalho preenchível,
+   checklists coloridas, áreas de desenho e assinaturas.
+   =================================================================== */
+
+/* Card de atividade com borda amarela */
+.ficha-atividade {
+    background: var(--utfpr-white);
+    /* Fundo branco */
+    border: 2px solid var(--utfpr-Yellow);
+    /* Borda amarela de 2px */
+    border-radius: 12px;
+    /* Bordas arredondadas */
+    padding: 25px;
+    /* Padding interno */
+    margin: 25px 0;
+    /* Margem vertical */
+    box-shadow: var(--shadow);
+    /* Sombra padrão */
+}
+
+/* Cabeçalho preenchível da ficha de atividade */
+.ficha-cabecalho {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    padding: 15px;
+    /* Padding interno */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    margin-bottom: 20px;
+    /* Margem inferior */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela */
+}
+
+/* Campos de informação dentro do cabeçalho da ficha */
+.ficha-cabecalho p {
+    margin: 5px 0;
+    /* Margem vertical reduzida entre campos */
+    font-weight: 500;
+    /* Peso médio para os rótulos */
+}
+
+/* Checklist específica para fichas de atividade */
+.checklist-ficha {
+    list-style: none;
+    /* Remove marcadores */
+    padding-left: 0;
+    /* Remove recuo */
+}
+
+/* Itens da checklist de ficha */
+.checklist-ficha li {
+    padding: 8px 0;
+    /* Padding vertical */
+    display: flex;
+    /* Flexbox */
+    align-items: center;
+    /* Alinhamento vertical */
+    border-bottom: 1px solid var(--utfpr-gray);
+    /* Linha divisória */
+}
+
+/* Remove a borda do último item da checklist de ficha */
+.checklist-ficha li:last-child {
+    border-bottom: none;
+    /* Sem linha divisória */
+}
+
+/* Marcador customizado da checklist de ficha (em amarelo) */
+.checklist-ficha li::before {
+    content: "☐";
+    /* Caractere de checkbox vazio */
+    margin-right: 10px;
+    /* Espaçamento entre marcador e texto */
+    font-size: 1.1rem;
+    /* Tamanho do marcador */
+    color: var(--utfpr-Yellow-dark);
+    /* Cor amarela escura para o marcador */
+}
+
+/* Área em branco para desenhos ou diagramas manuais */
+.area-desenho {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza muito claro */
+    border: 2px dashed var(--utfpr-gray-dark);
+    /* Borda tracejada cinza escuro */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    margin: 15px 0;
+    /* Margem vertical */
+    padding: 15px;
+    /* Padding interno */
+}
+
+/* Linha de assinatura no final da ficha */
+.assinatura {
+    margin-top: 25px;
+    /* Margem superior generosa */
+    padding-top: 15px;
+    /* Padding superior */
+    border-top: 2px solid var(--utfpr-Yellow);
+    /* Linha divisória amarela */
+    text-align: right;
+    /* Alinhamento à direita */
+}
+
+/* Espaço de escrita para respostas de formulário (campo único) */
+.form-input-space {
+    border-bottom: 1px dashed var(--utfpr-gray-dark);
+    /* Linha tracejada para escrita */
+    min-height: 25px;
+    /* Altura mínima de 25px */
+    margin: 5px 0 15px 0;
+    /* Margem: 5px acima, 15px abaixo */
+    padding: 0 5px;
+    /* Pequeno padding lateral */
+}
+
+/* Espaço de escrita para listas no formulário */
+.form-list-space {
+    border-bottom: 1px dashed var(--utfpr-gray-dark);
+    /* Linha tracejada */
+    min-height: 20px;
+    /* Altura mínima de 20px */
+    margin: 8px 0;
+    /* Margem vertical */
+    padding: 0 5px;
+    /* Pequeno padding lateral */
+    display: block;
+    /* Elemento de bloco */
+}
+
+/* Caixa para fórmulas matemáticas ou pseudocódigo */
+.formula-box {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    padding: 15px;
+    /* Padding interno */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    margin: 10px 0;
+    /* Margem vertical */
+    border-left: 4px solid var(--utfpr-Yellow-dark);
+    /* Barra de destaque amarela escura */
+    font-family: 'Courier New', monospace;
+    /* Fonte monoespaçada para fórmulas */
+}
+
+/* Campo de diário de bordo (registro de reflexões do aluno) */
+.diario-bordo {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    border: 1px solid var(--utfpr-gray-medium);
+    /* Borda sutil */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    padding: 15px;
+    /* Padding interno */
+    margin: 15px 0;
+    /* Margem vertical */
+    min-height: 80px;
+    /* Altura mínima para espaço de escrita */
+}
+
+/* Seção de brainstorming com gradiente azul/roxo */
+.brainstorming-section {
+    background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+    /* Gradiente diagonal suave de azul a roxo */
+    padding: 20px;
+    /* Padding interno */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    margin: 20px 0;
+    /* Margem vertical */
+    border: 2px solid var(--utfpr-Yellow-light);
+    /* Borda amarela clara */
+}
+
+/* Plano de ação com borda tracejada */
+.plano-acao {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    padding: 20px;
+    /* Padding interno */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    margin: 20px 0;
+    /* Margem vertical */
+    border: 2px dashed var(--utfpr-Yellow);
+    /* Borda tracejada amarela */
+}
+
+/* Subseção de uma semana dentro do plano de ação */
+.semana-plano {
+    background: white;
+    /* Fundo branco */
+    padding: 15px;
+    /* Padding interno */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    margin: 15px 0;
+    /* Margem vertical */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela */
+}
+
+/* Responsividade para fichas de atividade em tablets */
+@media (max-width: 768px) {
+
+    .ficha-atividade {
+        padding: 20px;
+        /* Reduz padding de 25px para 20px */
+    }
+
+    .ficha-cabecalho {
+        padding: 12px;
+        /* Reduz padding de 15px para 12px */
+    }
+
+    .area-desenho {
+        padding: 12px;
+        /* Reduz padding de 15px para 12px */
+    }
+}
+
+/* Responsividade para fichas de atividade em celulares */
+@media (max-width: 480px) {
+
+    .ficha-atividade {
+        padding: 15px;
+        /* Reduz ainda mais de 20px para 15px */
+    }
+
+    .checklist-ficha li {
+        padding: 6px 0;
+        /* Reduz o padding vertical dos itens */
+        font-size: 0.9rem;
+        /* Reduz o tamanho da fonte */
+    }
+}
+
+/* ===================================================================
+   SEÇÃO 31 — COMPONENTES ADICIONAIS: TABELAS, AVALIAÇÃO E CÓDIGO
+   =================================================================== */
+
+/* Tabela de projetos com zebragem */
+.projeto-tabela {
+    width: 100%;
+    /* Largura total */
+    border-collapse: collapse;
+    /* Bordas colapsadas */
+    margin: 20px 0;
+    /* Margem vertical */
+    background: white;
+    /* Fundo branco */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    overflow: hidden;
+    /* Esconde os cantos das células */
+    box-shadow: var(--shadow);
+    /* Sombra padrão */
+}
+
+/* Cabeçalho da tabela de projetos */
+.projeto-tabela th {
+    background: var(--utfpr-Yellow);
+    /* Fundo amarelo */
+    color: var(--utfpr-black);
+    /* Texto preto */
+    padding: 12px;
+    /* Padding interno */
+    text-align: left;
+    /* Alinhamento à esquerda */
+    font-weight: bold;
+    /* Negrito */
+    border-bottom: 2px solid var(--utfpr-Yellow-dark);
+    /* Linha inferior amarela escura */
+}
+
+/* Células de dados da tabela de projetos */
+.projeto-tabela td {
+    padding: 10px 12px;
+    /* Padding interno */
+    border-bottom: 1px solid var(--utfpr-gray);
+    /* Linha divisória entre linhas */
+}
+
+/* Linhas pares com fundo alternado (zebragem) */
+.projeto-tabela tr:nth-child(even) {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro nas linhas pares */
+}
+
+/* Highlight da linha ao passar o mouse */
+.projeto-tabela tr:hover {
+    background: var(--utfpr-Yellow-light);
+    /* Fundo amarelo claro no hover */
+}
+
+/* Lista de critérios de avaliação */
+.avaliacao-lista {
+    list-style: none;
+    /* Remove marcadores */
+    padding-left: 0;
+    /* Remove recuo */
+}
+
+/* Itens da lista de avaliação */
+.avaliacao-lista li {
+    padding: 8px 0;
+    /* Padding vertical */
+    border-bottom: 1px solid var(--utfpr-gray);
+    /* Linha divisória */
+    display: flex;
+    /* Flexbox */
+    align-items: center;
+    /* Alinhamento vertical */
+}
+
+/* Remove a borda do último item */
+.avaliacao-lista li:last-child {
+    border-bottom: none;
+    /* Sem linha divisória */
+}
+
+/* Marcador de checkmark verde para a lista de avaliação */
+.avaliacao-lista li::before {
+    content: "✅";
+    /* Emoji de checkmark verde */
+    margin-right: 10px;
+    /* Espaçamento entre marcador e texto */
+    font-size: 1.1rem;
+    /* Tamanho do marcador */
+}
+
+/* Bloco de código Scratch completo com label (terceira definição — versão final) */
+.scratch-code {
+    background: #2d2d2d;
+    /* Fundo escuro para tema de código */
+    color: #f8f8f2;
+    /* Texto claro */
+    border: 1px solid #444;
+    /* Borda escura */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela */
+    padding: 18px;
+    /* Padding generoso */
+    margin: 18px 0;
+    /* Margem vertical */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    font-family: 'Courier New', monospace;
+    /* Fonte monoespaçada */
+    white-space: pre-wrap;
+    /* Preserva formatação do código */
+    line-height: 1.5;
+    /* Altura de linha para legibilidade */
+    font-size: 0.95rem;
+    /* Tamanho de fonte */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra */
+    position: relative;
+    /* Contexto para o pseudo-elemento ::before */
+}
+
+/* Rótulo "Scratch" posicionado acima do bloco de código */
+.scratch-code::before {
+    content: "Scratch";
+    /* Texto do rótulo identificador */
+    position: absolute;
+    /* Posicionamento absoluto em relação ao .scratch-code */
+    top: -10px;
+    /* Sobe 10px acima da borda superior */
+    left: 10px;
+    /* 10px da borda esquerda */
+    background: var(--utfpr-Yellow);
+    /* Fundo amarelo */
+    color: var(--utfpr-black);
+    /* Texto preto */
+    padding: 2px 8px;
+    /* Padding compacto */
+    border-radius: 4px;
+    /* Bordas arredondadas */
+    font-size: 0.8rem;
+    /* Fonte pequena */
+    font-weight: bold;
+    /* Negrito */
+}
+
+/* Responsividade da tabela de projetos em tablets */
+@media (max-width: 768px) {
+
+    .projeto-tabela {
+        font-size: 0.9rem;
+        /* Reduz a fonte da tabela */
+    }
+
+    .projeto-tabela th,
+    .projeto-tabela td {
+        padding: 8px 10px;
+        /* Reduz o padding das células */
+    }
+
+    .scratch-code {
+        font-size: 0.85rem;
+        /* Reduz a fonte do código */
+        padding: 12px;
+        /* Reduz o padding */
+    }
+}
+
+/* Responsividade da tabela de projetos em celulares */
+@media (max-width: 480px) {
+
+    .projeto-tabela {
+        font-size: 0.8rem;
+        /* Reduz ainda mais a fonte */
+    }
+
+    .projeto-tabela th,
+    .projeto-tabela td {
+        padding: 6px 8px;
+        /* Reduz ainda mais o padding */
+    }
+}
+
+/* ===================================================================
+   SEÇÃO 32 — COMPONENTES ADICIONAIS: AVISO IMPORTANTE, CÓDIGO EM LISTA
+   =================================================================== */
+
+/* Caixa de aviso importante em destaque */
+.aviso-importante {
+    background-color: var(--utfpr-gray-dark);
+    /* Fundo cinza escuro */
+    border: 3px solid var(--utfpr-Yellow-dark);
+    /* Borda espessa amarela escura */
+    border-radius: 12px;
+    /* Bordas arredondadas */
+    padding: 25px;
+    /* Padding generoso */
+    margin: 25px 0;
+    /* Margem vertical */
+    text-align: center;
+    /* Texto centralizado */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    /* Sombra intensa */
+}
+
+/* Título do aviso importante */
+.aviso-importante h4 {
+    color: var(--utfpr-black);
+    /* Texto escuro */
+    margin: 0;
+    /* Sem margens */
+    font-size: 1.4rem;
+    /* Fonte grande */
+}
+
+/* Código Scratch dentro de listas não-ordenadas e ordenadas */
+.content-section ul .scratch-code,
+.content-section ol .scratch-code {
+    margin: 10px 0;
+    /* Margem reduzida dentro de listas */
+    font-size: 0.9rem;
+    /* Fonte ligeiramente menor */
+}
+
+/* Responsividade do aviso importante em tablets */
+@media (max-width: 768px) {
+
+    .scratch-code {
+        font-size: 0.85rem;
+        /* Reduz fonte */
+        padding: 12px;
+        /* Reduz padding */
+        overflow-x: auto;
+        /* Habilita scroll horizontal */
+    }
+
+    .aviso-importante {
+        padding: 20px;
+        /* Reduz padding */
+    }
+
+    .aviso-importante h4 {
+        font-size: 1.2rem;
+        /* Reduz fonte */
+    }
+}
+
+/* Responsividade do aviso importante em celulares */
+@media (max-width: 480px) {
+
+    .scratch-code {
+        font-size: 0.8rem;
+        /* Reduz ainda mais */
+        padding: 10px;
+        /* Reduz ainda mais */
+    }
+
+    .aviso-importante {
+        padding: 15px;
+        /* Reduz ainda mais */
+    }
+
+    .aviso-importante h4 {
+        font-size: 1.1rem;
+        /* Reduz ainda mais */
+    }
+}
+
+/* ===================================================================
+   SEÇÃO 33 — MELHORIAS DE HIERARQUIA VISUAL PARA PLANOS DE AULA
+   =================================================================== */
+
+/* Bloco de informações do plano de aula (segunda definição — mais completo) */
+.plano-info {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    padding: 20px;
+    /* Padding interno de 20px */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    margin-bottom: 25px;
+    /* Margem inferior de 25px */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela */
+}
+
+/* Listas dentro do bloco de informações do plano */
+.plano-info ul {
+    margin: 10px 0;
+    /* Margem vertical de 10px para listas */
+}
+
+/* Itens de lista dentro do bloco de informações */
+.plano-info li {
+    margin-bottom: 8px;
+    /* Margem inferior de 8px entre itens */
+}
+
+/* Título h4 das seções (segunda definição — adiciona borda inferior) */
+.content-section h4 {
+    color: var(--utfpr-Yellow-dark);
+    /* Amarelo escuro */
+    margin: 20px 0 12px 0;
+    /* Margens */
+    font-size: 1.2rem;
+    /* Tamanho de fonte */
+    border-bottom: 1px solid var(--utfpr-Yellow-light);
+    /* Linha decorativa inferior */
+    padding-bottom: 6px;
+    /* Espaçamento abaixo do texto */
+}
+
+/* Título h5 das seções (segunda definição — amarelo mais escuro) */
+.content-section h5 {
+    color: var(--utfpr-Yellow-darker);
+    /* Amarelo ainda mais escuro para hierarquia inferior */
+    margin: 16px 0 8px 0;
+    /* Margens reduzidas */
+    font-size: 1.1rem;
+    /* Tamanho de fonte */
+    font-weight: 600;
+    /* Semi-negrito */
+}
+
+/* ===================================================================
+   SEÇÃO 34 — MODO ESCURO (body.dark-mode)
+   Sobrescreve as variáveis CSS e aplica estilos específicos quando a
+   classe 'dark-mode' é adicionada ao body via JavaScript.
+   =================================================================== */
+
+/* Redefinição das variáveis CSS para o modo escuro */
+body.dark-mode {
+    --utfpr-black: #f8f9fa;
+    /* Texto claro (invertido do preto original) */
+    --utfpr-white: #212529;
+    /* Fundo escuro (invertido do branco original) */
+    --utfpr-gray-light: #343a40;
+    /* Cinza escuro (antes era cinza muito claro) */
+    --utfpr-gray: #495057;
+    /* Cinza médio-escuro */
+    --utfpr-gray-medium: #6c757d;
+    /* Cinza médio */
+    --utfpr-gray-dark: #adb5bd;
+    /* Cinza claro (antes era escuro — invertido) */
+    --card-bg: #2d3748;
+    /* Fundo de cards escuro */
+    --border-color: #4a5568;
+    /* Cor de bordas escura */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    /* Sombra mais intensa no modo escuro */
+}
+
+/* Cabeçalho superior no modo escuro */
+body.dark-mode .header-top {
+    background: linear-gradient(135deg, var(--utfpr-gray) 0%, var(--utfpr-gray-medium) 100%);
+    /* Gradiente cinza */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Cabeçalho inferior no modo escuro */
+body.dark-mode .header-bottom {
+    background-color: var(--utfpr-gray);
+    /* Fundo cinza */
+}
+
+/* Links de navegação no modo escuro */
+body.dark-mode nav a {
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Links de navegação no hover no modo escuro */
+body.dark-mode nav a:hover {
+    background-color: var(--utfpr-Yellow-dark);
+    /* Fundo amarelo escuro */
+    color: var(--utfpr-white);
+    /* Texto branco (fundo escuro do modo dark) */
+}
+
+/* Conteúdo principal no modo escuro */
+body.dark-mode main {
+    background: linear-gradient(135deg, var(--utfpr-gray-medium) 0%, var(--utfpr-gray) 100%);
+    /* Gradiente cinza */
+}
+
+/* Cabeçalho de página no modo escuro */
+body.dark-mode .page-header {
+    background: var(--utfpr-white);
+    /* Fundo escuro (variável redefinida no modo dark) */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Seções de conteúdo no modo escuro */
+body.dark-mode .content-section {
+    background: var(--utfpr-white);
+    /* Fundo escuro */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Todos os títulos das seções de conteúdo no modo escuro */
+body.dark-mode .content-section h2,
+body.dark-mode .content-section h3,
+body.dark-mode .content-section h4,
+body.dark-mode .content-section h5 {
+    color: var(--utfpr-Yellow);
+    /* Mantém a cor amarela para contraste no fundo escuro */
+}
+
+/* Componentes de conteúdo no modo escuro */
+body.dark-mode .summary-item,
+body.dark-mode .info-box,
+body.dark-mode .step-by-step,
+body.dark-mode .practice-box,
+body.dark-mode .projeto-ano,
+body.dark-mode .plano-aula,
+body.dark-mode .ficha-modelo,
+body.dark-mode .ficha-rapida,
+body.dark-mode .ficha-atividade {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza escuro */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Tags de palavras-chave no modo escuro */
+body.dark-mode .keyword {
+    background: var(--utfpr-gray);
+    /* Fundo cinza médio */
+    color: var(--utfpr-black);
+    /* Texto claro */
+    border-color: var(--utfpr-gray-medium);
+    /* Borda cinza médio */
+}
+
+/* Cards de navegação no modo escuro */
+body.dark-mode .nav-card {
+    background: linear-gradient(135deg, var(--utfpr-white) 0%, var(--utfpr-gray-light) 100%);
+    /* Gradiente escuro */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Cards de navegação no hover no modo escuro */
+body.dark-mode .nav-card:hover {
+    background: linear-gradient(135deg, var(--utfpr-white) 0%, var(--utfpr-gray) 100%);
+    /* Gradiente mais escuro no hover */
+}
+
+/* Rodapé no modo escuro */
+body.dark-mode footer {
+    background: linear-gradient(135deg, var(--utfpr-gray-medium) 0%, var(--utfpr-gray) 100%);
+    /* Gradiente cinza */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Títulos das seções do rodapé no modo escuro */
+body.dark-mode .footer-section h3 {
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Links do rodapé no modo escuro */
+body.dark-mode .footer-section a {
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Cartões Scratch no modo escuro */
+body.dark-mode .cartao-scratch {
+    background: var(--utfpr-white);
+    /* Fundo escuro */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Cabeçalho dos cartões Scratch no modo escuro */
+body.dark-mode .cartao-header {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza escuro */
+}
+
+/* Campo de input dos cartões Scratch no modo escuro */
+body.dark-mode .cartao-input {
+    background: var(--utfpr-gray);
+    /* Fundo cinza médio */
+    border-color: var(--utfpr-gray-medium);
+    /* Borda cinza médio */
+}
+
+/* Código pré-formatado e inline no modo escuro */
+body.dark-mode pre,
+body.dark-mode code {
+    background-color: var(--utfpr-gray-light);
+    /* Fundo cinza escuro */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Bloco de código Scratch no modo escuro */
+body.dark-mode .scratch-code {
+    background: #1a202c;
+    /* Fundo azul muito escuro */
+    color: #e2e8f0;
+    /* Texto azul-acinzentado claro */
+    border-color: #4a5568;
+    /* Borda cinza azulado */
+}
+
+/* Container de imagens no modo escuro */
+body.dark-mode .image-container {
+    background-color: var(--utfpr-gray-light);
+    /* Fundo cinza escuro */
+    border-color: var(--utfpr-gray-medium);
+    /* Borda cinza médio */
+}
+
+/* Caixa de dica no modo escuro */
+body.dark-mode .dica-box {
+    background: linear-gradient(135deg, #4a5568, #2d3748);
+    /* Gradiente azul escuro */
+    border-color: var(--utfpr-Yellow);
+    /* Borda amarela */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Cartaz no modo escuro */
+body.dark-mode .cartaz-box {
+    background: var(--utfpr-white);
+    /* Fundo escuro */
+    border-color: var(--utfpr-Yellow);
+    /* Borda amarela */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Cabeçalho do cartaz no modo escuro */
+body.dark-mode .cartaz-header {
+    background: var(--utfpr-Yellow);
+    /* Fundo amarelo (mantido) */
+    color: var(--utfpr-white);
+    /* Texto branco (fundo escuro do modo dark) */
+}
+
+/* Área de desenho no modo escuro */
+body.dark-mode .area-desenho {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza escuro */
+    border-color: var(--utfpr-gray-dark);
+    /* Borda cinza claro */
+}
+
+/* Diário de bordo no modo escuro */
+body.dark-mode .diario-bordo {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza escuro */
+    border-color: var(--utfpr-gray-medium);
+    /* Borda cinza médio */
+}
+
+/* Seção de brainstorming no modo escuro */
+body.dark-mode .brainstorming-section {
+    background: linear-gradient(135deg, #2d3748, #4a5568);
+    /* Gradiente azul escuro */
+    border-color: var(--utfpr-Yellow-light);
+    /* Borda amarela clara */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Plano de ação no modo escuro */
+body.dark-mode .plano-acao {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza escuro */
+    border-color: var(--utfpr-Yellow);
+    /* Borda amarela */
+}
+
+/* Semana do plano de ação no modo escuro */
+body.dark-mode .semana-plano {
+    background: var(--utfpr-white);
+    /* Fundo escuro */
+    border-left-color: var(--utfpr-Yellow);
+    /* Destaque amarelo mantido */
+}
+
+/* Tabelas no modo escuro */
+body.dark-mode .progression-table table,
+body.dark-mode .projeto-tabela {
+    background: var(--utfpr-white);
+    /* Fundo escuro */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Cabeçalhos de tabela no modo escuro */
+body.dark-mode .progression-table th,
+body.dark-mode .projeto-tabela th {
+    background: var(--utfpr-Yellow);
+    /* Fundo amarelo (mantido para contraste) */
+    color: var(--utfpr-white);
+    /* Texto branco */
+}
+
+/* Linhas pares das tabelas no modo escuro */
+body.dark-mode .progression-table tr:nth-child(even),
+body.dark-mode .projeto-tabela tr:nth-child(even) {
+    background: var(--utfpr-gray-light);
+    /* Zebragem com fundo cinza escuro */
+}
+
+/* Campos de formulário no modo escuro */
+body.dark-mode .form-input-space,
+body.dark-mode .form-list-space {
+    border-bottom-color: var(--utfpr-gray-dark);
+    /* Borda cinza claro visível */
+}
+
+/* Checklists no modo escuro */
+body.dark-mode .checklist li,
+body.dark-mode .checklist-ficha li {
+    border-bottom-color: var(--utfpr-gray);
+    /* Borda cinza médio */
+}
+
+/* Botão de alternância de tema no modo escuro */
+body.dark-mode .theme-toggle {
+    background-color: var(--utfpr-gray-dark);
+    /* Fundo cinza claro (antes escuro) */
+    color: var(--utfpr-white);
+    /* Cor do ícone escura */
+}
+
+/* ===================================================================
+   SEÇÃO 35 — CARTÕES DE NAVEGAÇÃO COM CORES DE CATEGORIA SCRATCH
+   Sobrescreve o estilo padrão do nav-card com as cores temáticas
+   de cada categoria de bloco do Scratch.
+   =================================================================== */
+
+/* Nav-card com cor de Movimento (azul) */
+.nav-card.movimento {
+    background: var(--scratch-motion) !important;
+    /* Fundo azul sólido */
+    color: var(--utfpr-black) !important;
+    /* Texto preto */
+    border: 2px solid var(--scratch-motion);
+    /* Borda azul */
+}
+
+/* Texto interno do card de Movimento */
+.nav-card.movimento h3,
+.nav-card.movimento p,
+.nav-card.movimento code {
+    color: var(--utfpr-black) !important;
+    /* Força texto preto em todos os filhos */
+}
+
+/* Nav-card com cor de Aparência (roxo) */
+.nav-card.aparencia {
+    background: var(--scratch-looks) !important;
+    /* Fundo roxo */
+    color: var(--utfpr-black) !important;
+    /* Texto preto */
+    border: 2px solid var(--scratch-looks);
+    /* Borda roxa */
+}
+
+/* Texto interno do card de Aparência */
+.nav-card.aparencia h3,
+.nav-card.aparencia p,
+.nav-card.aparencia code {
+    color: var(--utfpr-black) !important;
+    /* Força texto preto */
+}
+
+/* Nav-card com cor de Som (rosa/magenta) */
+.nav-card.som {
+    background: var(--scratch-sound) !important;
+    /* Fundo rosa */
+    color: var(--utfpr-black) !important;
+    /* Texto preto */
+    border: 2px solid var(--scratch-sound);
+    /* Borda rosa */
+}
+
+/* Texto interno do card de Som */
+.nav-card.som h3,
+.nav-card.som p,
+.nav-card.som code {
+    color: var(--utfpr-black) !important;
+    /* Força texto preto */
+}
+
+/* Nav-card com cor de Eventos (âmbar) */
+.nav-card.eventos {
+    background: var(--scratch-events) !important;
+    /* Fundo âmbar */
+    color: var(--utfpr-black) !important;
+    /* Texto preto */
+    border: 2px solid var(--scratch-events);
+    /* Borda âmbar */
+}
+
+/* Texto interno do card de Eventos */
+.nav-card.eventos h3,
+.nav-card.eventos p,
+.nav-card.eventos code {
+    color: var(--utfpr-black) !important;
+    /* Força texto preto */
+}
+
+/* Nav-card com cor de Controle (laranja) */
+.nav-card.controle {
+    background: var(--scratch-control) !important;
+    /* Fundo laranja */
+    color: var(--utfpr-black) !important;
+    /* Texto preto */
+    border: 2px solid var(--scratch-control);
+    /* Borda laranja */
+}
+
+/* Texto interno do card de Controle */
+.nav-card.controle h3,
+.nav-card.controle p,
+.nav-card.controle code {
+    color: var(--utfpr-black) !important;
+    /* Força texto preto */
+}
+
+/* Nav-card com cor de Operadores (verde) */
+.nav-card.operadores {
+    background: var(--scratch-operators) !important;
+    /* Fundo verde */
+    color: var(--utfpr-black) !important;
+    /* Texto preto */
+    border: 2px solid var(--scratch-operators);
+    /* Borda verde */
+}
+
+/* Texto interno do card de Operadores */
+.nav-card.operadores h3,
+.nav-card.operadores p,
+.nav-card.operadores code {
+    color: var(--utfpr-black) !important;
+    /* Força texto preto */
+}
+
+/* Efeito hover no card de Operadores */
+.nav-card.operadores:hover {
+    transform: translateY(-5px);
+    /* Elevação vertical */
+    box-shadow: 0 8px 25px rgba(35, 31, 32, 0.3);
+    /* Sombra mais intensa */
+    filter: brightness(1.1);
+    /* Leve aumento de brilho */
+}
+
+/* Texto no hover do card de Operadores */
+.nav-card.operadores:hover h3,
+.nav-card.operadores:hover p,
+.nav-card.operadores:hover code {
+    color: var(--utfpr-black) !important;
+    /* Mantém texto preto no hover */
+}
+
+/* Efeito hover nos demais cards coloridos do Scratch */
+.nav-card.movimento:hover,
+.nav-card.aparencia:hover,
+.nav-card.som:hover,
+.nav-card.eventos:hover,
+.nav-card.controle:hover {
+    transform: translateY(-5px);
+    /* Elevação vertical */
+    box-shadow: 0 8px 25px rgba(35, 31, 32, 0.3);
+    /* Sombra mais intensa */
+    filter: brightness(1.1);
+    /* Leve aumento de brilho */
+}
+
+/* Texto no hover de todos os cards coloridos */
+.nav-card.movimento:hover h3,
+.nav-card.movimento:hover p,
+.nav-card.movimento:hover code,
+.nav-card.aparencia:hover h3,
+.nav-card.aparencia:hover p,
+.nav-card.aparencia:hover code,
+.nav-card.som:hover h3,
+.nav-card.som:hover p,
+.nav-card.som:hover code,
+.nav-card.eventos:hover h3,
+.nav-card.eventos:hover p,
+.nav-card.eventos:hover code,
+.nav-card.controle:hover h3,
+.nav-card.controle:hover p,
+.nav-card.controle:hover code {
+    color: var(--utfpr-black) !important;
+    /* Mantém texto preto em todos os estados hover */
+}
+
+/* ===================================================================
+   SEÇÃO 36 — BOTÃO E OVERLAY DE IMPRESSÃO DE CARTÕES SCRATCH
+   =================================================================== */
+
+/* Botão de impressão com gradiente amarelo */
+.print-button {
+    background: linear-gradient(135deg, var(--utfpr-Yellow) 0%, var(--utfpr-Yellow-dark) 100%);
+    /* Gradiente amarelo */
+    color: var(--utfpr-black);
+    /* Texto preto */
+    border: none;
+    /* Sem borda */
+    padding: 12px 24px;
+    /* Padding interno */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    font-weight: bold;
+    /* Negrito */
+    cursor: pointer;
+    /* Cursor de mão */
+    margin: 20px 0;
+    /* Margem vertical */
+    display: inline-flex;
+    /* Flex inline para alinhar ícone e texto */
+    align-items: center;
+    /* Alinhamento vertical centralizado */
+    gap: 8px;
+    /* Espaço entre ícone e texto */
+    transition: all 0.3s ease;
+    /* Transição suave */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra */
+    font-size: 1rem;
+    /* Tamanho de fonte padrão */
+}
+
+/* Efeito hover no botão de impressão */
+.print-button:hover {
+    transform: translateY(-2px);
+    /* Pequena elevação no hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    /* Sombra mais intensa */
+    background: linear-gradient(135deg, var(--utfpr-Yellow-light) 0%, var(--utfpr-Yellow) 100%);
+    /* Gradiente mais claro */
+}
+
+/* Overlay escuro para o modal de preview de impressão */
+.print-overlay {
+    position: fixed;
+    /* Fixo em relação à viewport */
+    top: 0;
+    /* No topo da viewport */
+    left: 0;
+    /* Na esquerda da viewport */
+    width: 100%;
+    /* Largura total */
+    height: 100%;
+    /* Altura total */
+    background: rgba(0, 0, 0, 0.8);
+    /* Fundo preto com 80% de opacidade */
+    display: none;
+    /* Oculto por padrão (exibido via JS) */
+    justify-content: center;
+    /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
+    /* Centraliza o conteúdo verticalmente */
+    z-index: 10000;
+    /* Acima de todos os outros elementos */
+}
+
+/* Container de preview de impressão */
+.print-preview {
+    background: white;
+    /* Fundo branco */
+    padding: 30px;
+    /* Padding interno */
+    border-radius: 12px;
+    /* Bordas arredondadas */
+    max-width: 90%;
+    /* Largura máxima de 90% da viewport */
+    max-height: 90%;
+    /* Altura máxima de 90% da viewport */
+    overflow: auto;
+    /* Scroll se o conteúdo ultrapassar */
+    position: relative;
+    /* Contexto para o botão de fechar absoluto */
+}
+
+/* Botão de fechar o preview (X no canto) */
+.close-preview {
+    position: absolute;
+    /* Posicionamento absoluto no container */
+    top: 15px;
+    /* 15px do topo */
+    right: 15px;
+    /* 15px da direita */
+    background: var(--utfpr-gray-dark);
+    /* Fundo cinza escuro */
+    color: white;
+    /* Texto branco */
+    border: none;
+    /* Sem borda */
+    border-radius: 50%;
+    /* Forma circular */
+    width: 30px;
+    /* Largura fixa */
+    height: 30px;
+    /* Altura fixa */
+    cursor: pointer;
+    /* Cursor de mão */
+    font-size: 16px;
+    /* Tamanho do ícone X */
+    display: flex;
+    /* Flexbox para centralizar o ícone */
+    align-items: center;
+    /* Centralização vertical */
+    justify-content: center;
+    /* Centralização horizontal */
+}
+
+/* Barra de ações do preview de impressão */
+.print-actions {
+    display: flex;
+    /* Flexbox para organizar os botões */
+    gap: 10px;
+    /* Espaçamento de 10px entre botões */
+    margin-top: 20px;
+    /* Margem superior */
+    justify-content: center;
+    /* Centraliza os botões */
+}
+
+/* Botão secundário (cancelar/fechar) */
+.secondary-button {
+    background: var(--utfpr-gray);
+    /* Fundo cinza */
+    color: var(--utfpr-black);
+    /* Texto escuro */
+    border: none;
+    /* Sem borda */
+    padding: 10px 20px;
+    /* Padding interno */
+    border-radius: 6px;
+    /* Bordas arredondadas */
+    cursor: pointer;
+    /* Cursor de mão */
+    transition: background 0.3s ease;
+    /* Transição suave de fundo */
+}
+
+/* Estado hover do botão secundário */
+.secondary-button:hover {
+    background: var(--utfpr-gray-dark);
+    /* Fundo cinza escuro no hover */
+    color: white;
+    /* Texto branco no hover */
+}
+
+/* Botão de impressão no modo escuro */
+body.dark-mode .print-button {
+    background: linear-gradient(135deg, var(--utfpr-Yellow-dark) 0%, var(--utfpr-Yellow-darker) 100%);
+    /* Gradiente amarelo escuro */
+    color: var(--utfpr-white);
+    /* Texto escuro (variável redefinida no modo dark) */
+}
+
+/* Hover do botão de impressão no modo escuro */
+body.dark-mode .print-button:hover {
+    background: linear-gradient(135deg, var(--utfpr-Yellow) 0%, var(--utfpr-Yellow-dark) 100%);
+    /* Gradiente mais claro */
+}
+
+/* Botão secundário no modo escuro */
+body.dark-mode .secondary-button {
+    background: var(--utfpr-gray-medium);
+    /* Fundo cinza médio */
+    color: var(--utfpr-black);
+    /* Texto claro */
+}
+
+/* Hover do botão secundário no modo escuro */
+body.dark-mode .secondary-button:hover {
+    background: var(--utfpr-gray-dark);
+    /* Fundo cinza claro no modo escuro */
+    color: var(--utfpr-white);
+    /* Texto escuro */
+}
+
+/* ===================================================================
+   SEÇÃO 37 — TABELA DE CATEGORIAS DE BLOCOS (category-table)
+   =================================================================== */
+
+/* Tabela de categorias de blocos do Scratch */
+.category-table {
+    width: auto;
+    /* Largura automática conforme o conteúdo */
+    margin: 15px auto;
+    /* Centralização horizontal com margem vertical */
+    border-collapse: collapse;
+    /* Bordas colapsadas */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    background-color: var(--utfpr-white);
+    /* Fundo branco */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    overflow: hidden;
+    /* Esconde os cantos das células */
+}
+
+/* Células da tabela de categorias */
+.category-table th,
+.category-table td {
+    padding: 12px 20px;
+    /* Padding generoso */
+    border: 1px solid var(--border-color);
+    /* Borda com a variável de cor de borda */
+    text-align: center;
+    /* Texto centralizado */
+}
+
+/* Cabeçalho da tabela de categorias */
+.category-table th {
+    background: var(--utfpr-Yellow-dark);
+    /* Fundo amarelo escuro */
+    font-weight: bold;
+    /* Negrito */
+    color: var(--utfpr-black);
+    /* Texto preto */
+}
+
+/* Células de dados da tabela de categorias */
+.category-table td {
+    color: var(--utfpr-black);
+    /* Texto escuro */
+}
+
+/* Tabela de categorias em tablets */
+@media (max-width: 768px) {
+
+    .category-table th,
+    .category-table td {
+        padding: 10px 12px;
+        /* Reduz padding */
+        font-size: 0.9rem;
+        /* Reduz fonte */
+    }
+}
+
+/* Tabela de categorias em celulares */
+@media (max-width: 480px) {
+
+    .category-table th,
+    .category-table td {
+        padding: 8px 10px;
+        /* Reduz ainda mais o padding */
+        font-size: 0.8rem;
+        /* Reduz ainda mais a fonte */
+    }
+}
+
+/* ===================================================================
+   SEÇÃO 38 — ESTILOS EXTRAÍDOS DO INDEX.HTML
+   Componentes específicos da página inicial do projeto.
+   =================================================================== */
+
+/* Parágrafo de texto introdutório com fonte maior */
+.introduction-text {
+    font-size: 1.1rem;
+    /* Fonte ligeiramente maior para o texto de introdução */
+    line-height: 1.7;
+    /* Altura de linha generosa para legibilidade */
+    margin-bottom: 1.5rem;
+    /* Margem inferior de 1.5rem */
+}
+
+/* Badge de "novo" em verde */
+.badge-new {
+    background-color: #28a745;
+    /* Fundo verde semântico */
+    color: white;
+    /* Texto branco */
+    font-size: 0.7rem;
+    /* Fonte pequena */
+    padding: 2px 8px;
+    /* Padding compacto */
+    border-radius: 12px;
+    /* Formato de pílula */
+    margin-left: 10px;
+    /* Margem esquerda para separar do título */
+    vertical-align: middle;
+    /* Alinhamento vertical com o texto ao redor */
+}
+
+/* Container de visão geral por ano escolar */
+.year-overview {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    padding: 20px;
+    /* Padding interno */
+    margin-top: 30px;
+    /* Margem superior */
+    border-left: 4px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela */
+}
+
+/* Remove a margem superior do h3 dentro da visão geral */
+.year-overview h3 {
+    margin-top: 0;
+    /* Remove margem superior para alinhamento limpo */
+}
+
+/* Grid de cards de ano escolar */
+.year-grid {
+    display: flex;
+    /* Flexbox para layout em linha */
+    flex-wrap: wrap;
+    /* Permite quebra de linha */
+    gap: 20px;
+    /* Espaçamento entre cards */
+    justify-content: space-between;
+    /* Distribui os cards igualmente */
+    margin-top: 15px;
+    /* Margem superior */
+}
+
+/* Card individual de ano escolar */
+.year-card {
+    background: var(--utfpr-gray-medium);
+    /* Fundo cinza médio */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    padding: 15px;
+    /* Padding interno */
+    flex: 1;
+    /* Cresce para preencher o espaço disponível */
+    min-width: 180px;
+    /* Largura mínima de 180px */
+    text-align: center;
+    /* Texto centralizado */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    transition: transform 0.2s;
+    /* Transição suave de 200ms para o hover */
+}
+
+/* Efeito hover no card de ano */
+.year-card:hover {
+    transform: translateY(-5px);
+    /* Elevação de 5px no hover */
+}
+
+/* Título do card de ano (número do ano) */
+.year-card h4 {
+    margin: 0 0 10px 0;
+    /* Margem apenas inferior */
+    color: var(--utfpr-Yellow-dark);
+    /* Cor amarela escura */
+    font-size: 1.4rem;
+    /* Fonte grande para o número do ano */
+}
+
+/* Parágrafo descritivo do card de ano */
+.year-card p {
+    margin: 0;
+    /* Sem margem */
+    font-size: 0.9rem;
+    /* Fonte ligeiramente menor */
+}
+
+/* ===================================================================
+   SEÇÃO 39 — ESTILOS ADICIONAIS PARA PROJETOS DO 6º ANO
+   =================================================================== */
+
+/* Caixa de referência à BNCC */
+.bncc-box {
+    background: var(--utfpr-gray-medium);
+    /* Fundo cinza médio */
+    border-left: 5px solid #ffbf00;
+    /* Barra de destaque âmbar (cor dos Eventos Scratch) */
+    padding: 15px;
+    /* Padding interno */
+    margin: 20px 0;
+    /* Margem vertical */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+}
+
+/* Título da caixa BNCC */
+.bncc-box h4 {
+    margin-top: 0;
+    /* Remove margem superior */
+    color: #212529;
+    /* Texto escuro */
+}
+
+/* Bloco de storyboard para planejamento visual */
+.storyboard {
+    background: var(--utfpr-gray-medium);
+    /* Fundo cinza médio */
+    border: 2px dashed #6c757d;
+    /* Borda tracejada cinza para indicar esboço */
+    padding: 20px;
+    /* Padding interno */
+    margin: 20px 0;
+    /* Margem vertical */
+    border-radius: 12px;
+    /* Bordas arredondadas */
+    font-family: 'Courier New', monospace;
+    /* Fonte monoespaçada para esboços de código */
+}
+
+/* Parágrafos dentro do storyboard */
+.storyboard p {
+    margin: 0 0 10px 0;
+    /* Margem apenas inferior de 10px */
+}
+
+/* ===================================================================
+   SEÇÃO 40 — ESTILOS PARA PROJETOS DO 7º ANO
+   =================================================================== */
+
+/* Caixa de quiz interativo */
+.quiz-box {
+    background: var(--utfpr-gray-medium);
+    /* Fundo cinza médio */
+    border: 1px solid #dee2e6;
+    /* Borda sutil */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    padding: 15px;
+    /* Padding interno */
+    margin: 20px 0;
+    /* Margem vertical */
+}
+
+/* Título da caixa de quiz */
+.quiz-box h4 {
+    margin-top: 0;
+    /* Remove margem superior */
+    color: var(--utfpr-Yellow-dark);
+    /* Cor amarela escura */
+}
+
+/* ===================================================================
+   SEÇÃO 41 — ESTILOS PARA PROJETOS DO 8º ANO
+   =================================================================== */
+
+/* Caixa explicativa sobre clones no Scratch */
+.clone-box {
+    background: #f0f7ff;
+    /* Fundo azul muito claro */
+    border-left: 5px solid #2ca5a2;
+    /* Barra de destaque verde-água (cor dos Sensores Scratch) */
+    padding: 15px;
+    /* Padding interno */
+    margin: 20px 0;
+    /* Margem vertical */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+}
+
+/* Título da caixa de clone */
+.clone-box h4 {
+    margin-top: 0;
+    /* Remove margem superior */
+    color: #2ca5a2;
+    /* Cor verde-água (cor dos Sensores Scratch) */
+}
+
+/* Demonstração de lista no estilo memo */
+.list-demo {
+    background: var(--utfpr-gray-medium);
+    /* Fundo cinza médio (segunda definição — sobrescreve) */
+    border: 1px solid #dee2e6;
+    /* Borda sutil */
+    border-radius: 6px;
+    /* Bordas arredondadas */
+    padding: 10px;
+    /* Padding interno */
+    font-family: monospace;
+    /* Fonte monoespaçada */
+    margin: 10px 0;
+    /* Margem vertical */
+}
+
+/* ===================================================================
+   SEÇÃO 42 — ESTILOS PARA PROJETOS DO 9º ANO
+   Comparação de código Scratch vs Python.
+   =================================================================== */
+
+/* Container de comparação lado a lado de código */
+.code-comparison {
+    display: flex;
+    /* Flexbox para layout em colunas */
+    flex-wrap: wrap;
+    /* Permite quebra em telas menores */
+    gap: 20px;
+    /* Espaçamento entre os blocos */
+    margin: 20px 0;
+    /* Margem vertical */
+}
+
+/* Bloco individual de código (Scratch ou Python) */
+.code-box {
+    flex: 1;
+    /* Cresce para preencher o espaço disponível igualmente */
+    background: #2d2d2d;
+    /* Fundo escuro para tema de editor */
+    color: var(--utfpr-gray-dark);
+    /* Texto cinza (cor de comentário em editores) */
+    padding: 15px;
+    /* Padding interno */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    font-family: 'Courier New', monospace;
+    /* Fonte monoespaçada */
+    font-size: 0.9rem;
+    /* Tamanho de fonte */
+    overflow-x: auto;
+    /* Scroll horizontal para linhas longas */
+}
+
+/* Título do bloco de código */
+.code-box h4 {
+    color: #ffd200;
+    /* Cor amarela UTFPR para o título do bloco */
+    margin-top: 0;
+    /* Remove margem superior */
+    margin-bottom: 10px;
+    /* Margem inferior de 10px */
+}
+
+/* ===================================================================
+   SEÇÃO 43 — ESTILOS PARA PLANOS DE AULA (DETALHADOS)
+   =================================================================== */
+
+/* Resumo do plano de aula */
+.plano-resumo {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro */
+    border-left: 5px solid var(--utfpr-Yellow);
+    /* Barra de destaque amarela de 5px */
+    padding: 15px;
+    /* Padding interno */
+    margin: 20px 0;
+    /* Margem vertical */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+}
+
+/* Remove margem superior do h4 dentro do resumo */
+.plano-resumo h4 {
+    margin-top: 0;
+    /* Alinhamento limpo com o topo do container */
+}
+
+/* Bloco de etapa de execução do plano */
+.etapa {
+    margin: 15px 0;
+    /* Margem vertical de 15px entre etapas */
+}
+
+/* ===================================================================
+   SEÇÃO 44 — TABELA BNCC
+   Tabela para mapear competências e habilidades da BNCC.
+   =================================================================== */
+
+/* Tabela de mapeamento BNCC */
+.bncc-table {
+    width: 100%;
+    /* Largura total */
+    border-collapse: collapse;
+    /* Bordas colapsadas */
+    margin: 20px 0;
+    /* Margem vertical */
+}
+
+/* Células da tabela BNCC */
+.bncc-table th,
+.bncc-table td {
+    border: 1px solid var(--border-color);
+    /* Borda com variável de cor */
+    padding: 10px;
+    /* Padding interno */
+    text-align: left;
+    /* Alinhamento à esquerda */
+    vertical-align: top;
+    /* Alinhamento vertical ao topo */
+}
+
+/* Cabeçalho da tabela BNCC */
+.bncc-table th {
+    background: var(--utfpr-Yellow);
+    /* Fundo amarelo primário */
+    color: var(--utfpr-black);
+    /* Texto preto para contraste */
+}
+
+/* Zebragem das linhas da tabela BNCC */
+.bncc-table tr:nth-child(even) {
+    background: var(--utfpr-gray-light);
+    /* Fundo cinza claro nas linhas pares */
+}

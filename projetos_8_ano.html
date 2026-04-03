@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- ===================================================================
+     Projetos 8º Ano: Simulação com Clones | Scratch EF II
+     ===================================================================
+     Objetivo: Fornecer material didático para professores do 8º ano com projetos de simulação usando clones no Scratch
+     Autor : Gisele Nunes, Rodrigo Barbosa
+     Data  : 2026
+     ===================================================================
+-->
+
+<head>
+    <!-- Define o conjunto de caracteres como UTF-8 para suporte a acentos e caracteres especiais -->
+    <meta charset="UTF-8">
+    <!-- Configura a viewport para garantir responsividade em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página exibido na aba do navegador -->
+    <title>Projetos 8º Ano: Simulação com Clones | Scratch EF II</title>
+    <!-- Link para o arquivo CSS externo que contém os estilos da página -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ==================== CABEÇALHO DA PÁGINA ==================== -->
+    <header>
+        <!-- Primeira linha do cabeçalho: logo e título principal -->
+        <div class="header-top">
+            <!-- Container centralizador do conteúdo -->
+            <div class="container">
+                <!-- Área que agrupa a logo e o nome da instituição -->
+                <div class="logo-container">
+                    <!-- Imagem da logo da UTFPR -->
+                    <img src="UTFPR_logo.png" alt="UTFPR Logo" class="logo">
+                    <!-- Nome da universidade e campus -->
+                    <div class="institution-name">
+                        Universidade Tecnológica Federal do Paraná<br>
+                        <small>Campus Siqueira Campos</small>
+                    </div>
+                </div>
+                <!-- Título do material didático -->
+                <div class="header-title">
+                    Scratch na Educação Básica<br>
+                    <small>Material Didático para Professores do 6º ao 9º Ano</small>
+                </div>
+            </div>
+        </div>
+        <!-- Segunda linha do cabeçalho: barra de navegação -->
+        <div class="header-bottom">
+            <div class="container">
+                <!-- Menu de navegação principal -->
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Página Inicial</a></li>
+                        <li><a href="primeiros_passos.html">Primeiros Passos</a></li>
+                        <li><a href="projetos_6_ano.html">Projetos 6º Ano</a></li>
+                        <li><a href="projetos_7_ano.html">Projetos 7º Ano</a></li>
+                        <!-- Link atual (página de projetos do 8º ano) -->
+                        <li><a href="projetos_8_ano.html">Projetos 8º Ano</a></li>
+                        <li><a href="projetos_9_ano.html">Projetos 9º Ano</a></li>
+                        <li><a href="planos_de_aula.html">Planos de Aula</a></li>
+                        <li><a href="referencias_BNCC.html">Referências BNCC</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+    <main>
+        <!-- Container centralizador para todo o conteúdo principal -->
+        <div class="container">
+            <!-- Cabeçalho da página com título e subtítulo -->
+            <div class="page-header">
+                <h1>Projetos Didáticos - 8º Ano</h1>
+                <p class="subtitle">Simulações e Clones: criando sistemas dinâmicos</p>
+            </div>
+
+            <!-- ========== PROJETO 1: ECOSSISTEMA DINÂMICO ========== -->
+            <div class="content-section">
+                <h2>🌿 PROJETO 8º ANO: "ECOSSISTEMA DINÂMICO"</h2>
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos criarão uma simulação de um ecossistema simples, utilizando clones para representar
+                        plantas (produtores), coelhos (consumidores primários) e raposas (consumidores secundários). O
+                        projeto deve incluir <strong>clones</strong> que se movem, se reproduzem e interagem entre si,
+                        além de variáveis para monitorar as populações. É uma oportunidade para explorar o pensamento
+                        sistêmico e a complexidade dos ecossistemas.</p>
+                    <div class="image-container">
+                        <!-- Imagem ilustrativa da simulação do ecossistema -->
+                        <img src="simulador_ecossistema.png" alt="Simulação de ecossistema com clones no Scratch"
+                            class="content-image">
+                    </div>
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Compreender relações em cadeias alimentares, analisar
+                            equilíbrio ecológico, modelar sistemas complexos.</li>
+                        <li><strong>Técnicos:</strong> Utilizar clones (<code>crie um clone de [mim mesmo]</code>),
+                            controlar o comportamento de clones, usar variáveis globais para monitorar populações,
+                            aplicar loops e condicionais.</li>
+                        <li><strong>Socioemocionais:</strong> Desenvolver pensamento sistêmico, trabalhar em equipe para
+                            ajustar parâmetros da simulação, discutir impactos ambientais.</li>
+                    </ul>
+                    <!-- Caixa com alinhamento à BNCC -->
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF08CI02</strong> – Analisar cadeias alimentares e fluxo de energia em
+                                ecossistemas.</li>
+                            <li><strong>EF08MA04</strong> – Utilizar variáveis e modelar situações matemáticas (aqui,
+                                populações).</li>
+                            <li><strong>EF69LP47</strong> – Analisar e construir textos com escolhas que levem o leitor
+                                a diferentes caminhos (feedback na simulação).</li>
+                            <li><strong>Competência Geral 2</strong> – Pensamento Científico, Crítico e Criativo.</li>
+                        </ul>
+                    </div>
+                    <h3>Passo a Passo do Projeto</h3>
+                    <h4>Fase 1: Planejamento do Ecossistema (1 aula de 50 min)</h4>
+                    <p><strong>Atividade:</strong> Em grupos, os alunos definem as espécies e as regras de interação.
+                        Exemplo simplificado:</p>
+                    <ul>
+                        <li><strong>Plantas:</strong> Clones que aparecem aleatoriamente e são "comidas" por coelhos.
+                        </li>
+                        <li><strong>Coelhos:</strong> Movem-se aleatoriamente; ao tocar uma planta, a planta é removida
+                            e o coelho ganha energia (podendo reproduzir).</li>
+                        <li><strong>Raposas:</strong> Movem-se em direção aos coelhos; ao tocar um coelho, o coelho é
+                            removido e a raposa ganha energia.</li>
+                    </ul>
+                    <p>Os alunos devem definir taxas de reprodução e a energia inicial de cada espécie.</p>
+                    <h4>Fase 2: Implementação no Scratch (3 aulas)</h4>
+                    <p><strong>Preparação:</strong> Criar os sprites: Planta, Coelho, Raposa. Criar as variáveis
+                        globais: <code>pop_plantas</code>, <code>pop_coelhos</code>, <code>pop_raposas</code>.</p>
+                    <!-- Bloco de código Scratch para o sprite Planta -->
+                    <h5>Sprite Planta:</h5>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado
+                        esconda
+                        mude [pop_plantas] para [0]
+
+                        quando eu receber [iniciar_simulacao]
+                        repita (20) vezes
+                        crie um clone de [mim mesmo]
+
+                        quando eu começar como clone
+                        mostre
+                        mude [pop_plantas] para (pop_plantas + 1)
+                        vá para (posição aleatória)
+                        repita até &lt;tocando em [Coelho]?&gt;
+                        espere (0.1) segundos
+                        delete este clone
+                    </div>
+                    <!-- Bloco de código Scratch para o sprite Coelho -->
+                    <h5>Sprite Coelho:</h5>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado
+                        esconda
+                        mude [pop_coelhos] para [0]
+
+                        quando eu receber [iniciar_simulacao]
+                        repita (10) vezes
+                        crie um clone de [mim mesmo]
+
+                        quando eu começar como clone
+                        mostre
+                        mude [pop_coelhos] para (pop_coelhos + 1)
+                        vá para (posição aleatória)
+                        sempre
+                        aponte para a direção (número aleatório entre (1) e (360))
+                        mova (3) passos
+                        se &lt;tocando em [Planta]?&gt; então
+                        delete este clone
+                        crie um clone de [mim mesmo]
+                    </div>
+                    <!-- Bloco de código Scratch para o sprite Raposa -->
+                    <h5>Sprite Raposa:</h5>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado
+                        esconda
+                        mude [pop_raposas] para [0]
+
+                        quando eu receber [iniciar_simulacao]
+                        repita (2) vezes
+                        crie um clone de [mim mesmo]
+
+                        quando eu começar como clone
+                        mostre
+                        mude [pop_raposas] para (pop_raposas + 1)
+                        vá para (posição aleatória)
+                        sempre
+                        aponte para [Coelho]
+                        mova (2) passos
+                        se &lt;tocando em [Coelho]?&gt; então
+                        delete este clone
+                        crie um clone de [mim mesmo]
+                    </div>
+                    <!-- Bloco de código Scratch para monitoramento -->
+                    <h5>Monitoramento:</h5>
+                    <div class="scratch-code">
+                        sempre
+                        diga (juntar [Plantas: ] (pop_plantas))
+
+                        sempre
+                        diga (juntar [Coelhos: ] (pop_coelhos))
+
+                        sempre
+                        diga (juntar [Raposas: ] (pop_raposas))
+                    </div>
+                    <h4>Fase 3: Experimentação e Análise (1 aula)</h4>
+                    <p>Os alunos executam a simulação e observam o comportamento das populações. O professor pode propor
+                        perguntas:</p>
+                    <ul>
+                        <li>O que acontece se aumentarmos a taxa de reprodução das plantas?</li>
+                        <li>E se colocarmos muitas raposas no início?</li>
+                        <li>Como o sistema se comporta ao longo do tempo?</li>
+                    </ul>
+                    <p>Os alunos devem registrar suas observações e apresentar conclusões sobre o equilíbrio ecológico.
+                    </p>
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <li><strong>✅ Modelagem (2 pontos):</strong> Regras ecológicas definidas corretamente (cadeia
+                            alimentar).</li>
+                        <li><strong>✅ Implementação (3 pontos):</strong> Uso adequado de clones e variáveis; código
+                            funcional.</li>
+                        <li><strong>✅ Análise (3 pontos):</strong> Observações e conclusões sobre a simulação.</li>
+                        <li><strong>✅ Criatividade (2 pontos):</strong> Adição de elementos extras (clima, desmatamento,
+                            etc.).</li>
+                    </ul>
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Adicionar listas:</strong> Armazenar histórico das populações para gerar gráficos.
+                        </li>
+                        <li><strong>Incluir variáveis ambientais:</strong> Como "umidade" ou "temperatura" que afetam a
+                            reprodução das plantas.</li>
+                        <li><strong>Intervenção humana:</strong> Botões que permitem ao usuário adicionar ou remover
+                            indivíduos manualmente.</li>
+                        <li><strong>Diferentes cenários:</strong> Floresta, deserto, etc., com regras adaptadas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ========== PROJETO 2: FRACTAIS COM CLONES (MATEMÁTICA) ========== -->
+            <div class="content-section">
+                <h2>📐 PROJETO MATEMÁTICA: "FRACTAIS COM CLONES"</h2>
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos criarão um gerador de fractais utilizando clones. Cada clone representa um elemento
+                        recursivo que se posiciona e se multiplica seguindo uma regra matemática. O projeto explora
+                        sequências, progressões geométricas e auto-similaridade, exigindo raciocínio abstrato para
+                        definir os padrões de crescimento. Exemplo: geração da Árvore de Pitágoras ou Tapete de
+                        Sierpinski.</p>
+                    <div class="image-container">
+                        <img src="simulador_fractal.png" alt="Fractal gerado por clones no Scratch"
+                            class="content-image">
+                    </div>
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Compreender progressões geométricas, identificar padrões de
+                            auto-similaridade, modelar recursividade matemática.</li>
+                        <li><strong>Técnicos:</strong> Usar clones para gerar figuras recursivas, controlar posição e
+                            direção com coordenadas, aplicar blocos de operadores e repetição aninhada.</li>
+                        <li><strong>Socioemocionais:</strong> Desenvolver pensamento computacional e algébrico,
+                            trabalhar em equipe na definição das regras, comunicar padrões matemáticos.</li>
+                    </ul>
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF08MA06</strong> – Resolver e elaborar problemas que envolvam cálculo do valor
+                                numérico de expressões algébricas, utilizando as propriedades das operações.</li>
+                            <li><strong>EF08MA10</strong> – Associar uma equação linear de 1º grau com duas incógnitas a
+                                uma reta no plano cartesiano.</li>
+                            <li><strong>EF08MA15</strong> – Construir figuras planas semelhantes em situações de
+                                ampliação e redução, identificando a razão de semelhança.</li>
+                            <li><strong>Competência Geral 4</strong> – Utilizar diferentes linguagens para expressar e
+                                comunicar ideias.</li>
+                        </ul>
+                    </div>
+                    <h3>Passo a Passo do Projeto</h3>
+                    <h4>Fase 1: Planejamento do Fractal (1 aula)</h4>
+                    <p><strong>Atividade:</strong> Em grupos, os alunos escolhem um fractal conhecido (Árvore de
+                        Pitágoras, Tapete de Sierpinski, Floco de neve de Koch) e definem a regra recursiva. Exemplo
+                        para a Árvore de Pitágoras:</p>
+                    <ul>
+                        <li>Um segmento (tronco) divide‑se em dois ramos menores, com ângulo fixo.</li>
+                        <li>Cada ramo é um novo clone que segue a mesma regra.</li>
+                        <li>A profundidade da recursão é controlada por uma variável.</li>
+                    </ul>
+                    <h4>Fase 2: Implementação no Scratch (3 aulas)</h4>
+                    <p><strong>Preparação:</strong> Criar um sprite “Ramo” que desenha um segmento e cria clones.</p>
+                    <h5>Sprite Ramo:</h5>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado
+                        apague tudo
+                        vá para x: 0 y: -150
+                        aponte para a direção (90)
+                        crie um clone de [mim mesmo]
+
+                        quando eu começar como clone
+                        defina [profundidade] como (0)
+                        desenhe ramo com profundidade
+
+                        defina desenhe ramo com profundidade
+                        se &lt;profundidade &lt; 5&gt; então
+                        mova (50 / (profundidade + 1)) passos
+                        crie um clone de [mim mesmo] com [profundidade + 1]
+                        gire ↻ (45) graus
+                        crie um clone de [mim mesmo] com [profundidade + 1]
+                        gire ↺ (90) graus
+                    </div>
+                    <p>Os alunos ajustam os ângulos, comprimentos e cores para cada nível.</p>
+                    <h4>Fase 3: Análise e Experimentação (1 aula)</h4>
+                    <p>Os alunos variam os parâmetros (ângulo, redução de tamanho, profundidade) e observam como a forma
+                        final se altera. Perguntas orientadoras:</p>
+                    <ul>
+                        <li>Qual a relação entre a profundidade e o número total de segmentos?</li>
+                        <li>Como a redução do comprimento afeta a semelhança entre os níveis?</li>
+                        <li>É possível criar um fractal com área finita e perímetro infinito?</li>
+                    </ul>
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <li><strong>✅ Modelagem (2 pts):</strong> Regra recursiva definida matematicamente.</li>
+                        <li><strong>✅ Implementação (3 pts):</strong> Uso correto de clones, recursão e variáveis.</li>
+                        <li><strong>✅ Análise (3 pts):</strong> Relação entre parâmetros e forma do fractal.</li>
+                        <li><strong>✅ Criatividade (2 pts):</strong> Criação de um fractal original ou combinação de
+                            regras.</li>
+                    </ul>
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Fractais com cores:</strong> Variar a cor conforme a profundidade.</li>
+                        <li><strong>Interação:</strong> Botões para alterar ângulos e tamanhos em tempo real.</li>
+                        <li><strong>Exploração de área/perímetro:</strong> Calcular e exibir essas medidas com
+                            variáveis.</li>
+                        <li><strong>Conectar com progressões:</strong> Mostrar que o número de clones segue uma
+                            progressão geométrica.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ========== PROJETO 3: SIMULADOR DE URBANIZAÇÃO (GEOGRAFIA) ========== -->
+            <div class="content-section">
+                <h2>🏙️ PROJETO GEOGRAFIA: "SIMULADOR DE URBANIZAÇÃO"</h2>
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos construirão um modelo de ocupação do espaço urbano usando clones. Cada clone representa
+                        uma edificação (residencial, comercial, área verde) e se espalha conforme regras de zoneamento,
+                        densidade populacional e infraestrutura. O projeto exige raciocínio sistêmico para equilibrar
+                        crescimento e sustentabilidade, além de manipular variáveis globais.</p>
+                    <div class="image-container">
+                        <img src="simulador_urbanizacao.png" alt="Simulação de urbanização com clones no Scratch"
+                            class="content-image">
+                    </div>
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Compreender processos de urbanização, zoneamento, impacto
+                            ambiental e social, analisar crescimento populacional.</li>
+                        <li><strong>Técnicos:</strong> Utilizar clones com diferentes comportamentos, variáveis para
+                            monitorar área construída e áreas verdes, estruturas condicionais para regras de ocupação.
+                        </li>
+                        <li><strong>Socioemocionais:</strong> Desenvolver pensamento crítico sobre planejamento urbano,
+                            trabalhar em equipe na definição de políticas de uso do solo, debater sustentabilidade.</li>
+                    </ul>
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF08GE09</strong> – Analisar a organização do espaço urbano e as transformações
+                                das cidades.</li>
+                            <li><strong>EF08GE10</strong> – Identificar e analisar problemas ambientais urbanos,
+                                propondo soluções.</li>
+                            <li><strong>EF08MA04</strong> – Utilizar variáveis para modelar situações matemáticas (aqui,
+                                população e área).</li>
+                            <li><strong>Competência Geral 7</strong> – Argumentar com base em fatos, dados e informações
+                                confiáveis.</li>
+                        </ul>
+                    </div>
+                    <h3>Passo a Passo do Projeto</h3>
+                    <h4>Fase 1: Planejamento do Modelo (1 aula)</h4>
+                    <p><strong>Atividade:</strong> Os grupos definem os tipos de clones (residencial, comercial, área
+                        verde) e as regras de ocupação. Exemplo:</p>
+                    <ul>
+                        <li><strong>Residencial:</strong> Pode surgir próximo a áreas verdes ou infraestrutura.</li>
+                        <li><strong>Comercial:</strong> Surge onde há alta densidade residencial.</li>
+                        <li><strong>Área verde:</strong> Diminui a poluição e melhora a qualidade de vida.</li>
+                    </ul>
+                    <p>Definir variáveis globais: <code>populacao</code>, <code>area_verde</code>,
+                        <code>poluicao</code>.
+                    </p>
+                    <h4>Fase 2: Implementação no Scratch (3 aulas)</h4>
+                    <p><strong>Preparação:</strong> Sprites: Residencial, Comercial, Verde.</p>
+                    <h5>Sprite Residencial (exemplo):</h5>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado
+                        esconda
+                        mude [populacao] para [0]
+
+                        quando eu receber [iniciar_simulacao]
+                        repita (20) vezes
+                        crie um clone de [mim mesmo]
+
+                        quando eu começar como clone
+                        mostre
+                        mude [populacao] para (populacao + 1)
+                        vá para (posição aleatória)
+                        sempre
+                        se &lt;não &lt;tocando em [Verde]?&gt; e &lt;distância para [Verde] &gt; 50&gt; então
+                        mude [poluicao] por (1)
+                        se &lt;(populacao) &gt; 100&gt; então
+                        crie um clone de [Comercial]
+                    </div>
+                    <h5>Sprite Verde:</h5>
+                    <div class="scratch-code">
+                        quando eu começar como clone
+                        mostre
+                        mude [area_verde] para (area_verde + 1)
+                        vá para (posição aleatória)
+                        sempre
+                        mude [poluicao] por (-0.1)
+                    </div>
+                    <h4>Fase 3: Experimentação e Análise (1 aula)</h4>
+                    <p>Executar a simulação variando parâmetros iniciais (número de residências, taxas de criação de
+                        áreas verdes). Perguntas:</p>
+                    <ul>
+                        <li>Como a falta de áreas verdes afeta a poluição?</li>
+                        <li>O que ocorre se o comércio crescer desordenadamente?</li>
+                        <li>Que estratégias podem ser implementadas para tornar a cidade mais sustentável?</li>
+                    </ul>
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <li><strong>✅ Modelagem (2 pts):</strong> Regras de urbanização coerentes e bem definidas.</li>
+                        <li><strong>✅ Implementação (3 pts):</strong> Uso correto de clones e variáveis globais.</li>
+                        <li><strong>✅ Análise (3 pts):</strong> Conclusões sobre impacto das variáveis no sistema.</li>
+                        <li><strong>✅ Criatividade (2 pts):</strong> Inclusão de elementos como transporte público,
+                            coleta de lixo, etc.</li>
+                    </ul>
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Mapa interativo:</strong> Permitir que o usuário clique para adicionar áreas verdes.
+                        </li>
+                        <li><strong>Indicadores:</strong> Exibir gráficos de poluição, área verde e população ao longo
+                            do tempo.</li>
+                        <li><strong>Cenários históricos:</strong> Simular diferentes políticas de zoneamento.</li>
+                        <li><strong>Conexão com dados reais:</strong> Coletar dados de uma cidade local e tentar
+                            reproduzir.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ========== PROJETO 4: SIMULADOR DE HERANÇA GENÉTICA (CIÊNCIAS) ========== -->
+            <div class="content-section">
+                <h2>🧬 PROJETO CIÊNCIAS: "SIMULADOR DE HERANÇA GENÉTICA"</h2>
+                <div class="projeto-ano">
+                    <h3>Descrição do Projeto</h3>
+                    <p>Os alunos criarão uma simulação de herança genética mendeliana utilizando clones. Cada clone
+                        representa um indivíduo com alelos (dominante/recessivo) para uma característica (ex: cor de
+                        flor). O projeto envolve a criação de pares de alelos, cruzamentos e análise de proporções
+                        fenotípicas, exigindo raciocínio abstrato e resolução sistemática de problemas probabilísticos.
+                    </p>
+                    <div class="image-container">
+                        <img src="simulador_genetica.png" alt="Simulação de herança genética com clones no Scratch"
+                            class="content-image">
+                    </div>
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li><strong>Cognitivos:</strong> Compreender conceitos de alelos dominantes/recessivos,
+                            genótipo, fenótipo, probabilidade de herança.</li>
+                        <li><strong>Técnicos:</strong> Usar clones para representar indivíduos, manipular listas para
+                            armazenar alelos, aplicar operadores lógicos e aleatórios para simular cruzamentos.</li>
+                        <li><strong>Socioemocionais:</strong> Desenvolver pensamento probabilístico, colaborar na
+                            análise de padrões genéticos, discutir implicações éticas.</li>
+                    </ul>
+                    <div class="bncc-box">
+                        <h4>📚 Alinhamento com a BNCC e DCE-PR</h4>
+                        <ul>
+                            <li><strong>EF08CI06</strong> – Identificar e analisar as características hereditárias e a
+                                variabilidade genética.</li>
+                            <li><strong>EF08MA22</strong> – Calcular a probabilidade de eventos aleatórios em situações
+                                simples (cruzamentos).</li>
+                            <li><strong>EF08CI07</strong> – Analisar a importância da variabilidade genética para a
+                                evolução.</li>
+                            <li><strong>Competência Geral 5</strong> – Compreender, utilizar e criar tecnologias
+                                digitais de forma crítica e ética.</li>
+                        </ul>
+                    </div>
+                    <h3>Passo a Passo do Projeto</h3>
+                    <h4>Fase 1: Planejamento Genético (1 aula)</h4>
+                    <p><strong>Atividade:</strong> Definir a característica (ex: cor da flor: vermelho dominante, branco
+                        recessivo). Os alunos estabelecem as regras de cruzamento:</p>
+                    <ul>
+                        <li>Cada clone tem dois alelos (listas: <code>alelo1</code>, <code>alelo2</code>).</li>
+                        <li>O cruzamento entre dois indivíduos gera um novo clone com um alelo de cada pai.</li>
+                        <li>O fenótipo é determinado pela presença de pelo menos um alelo dominante.</li>
+                    </ul>
+                    <h4>Fase 2: Implementação no Scratch (3 aulas)</h4>
+                    <p><strong>Preparação:</strong> Sprite “Indivíduo” e variáveis globais <code>populacao</code>,
+                        <code>frequencia_dominante</code>.
+                    </p>
+                    <h5>Sprite Indivíduo:</h5>
+                    <div class="scratch-code">
+                        quando ⚑ for clicado
+                        apague todos os clones
+                        crie um clone com alelos [A] [a]
+
+                        quando eu começar como clone
+                        mostre
+                        adicione (alelo1) à [alelos1 v]
+                        adicione (alelo2) à [alelos2 v]
+                        atualize fenótipo
+
+                        defina cruzar com (outro)
+                        novo_alelo1 = item (aleatório) da lista [alelos1 v] do (outro)
+                        novo_alelo2 = item (aleatório) da lista [alelos2 v] do (outro)
+                        crie um clone com (novo_alelo1) (novo_alelo2)
+                    </div>
+                    <h5>Reprodução automática:</h5>
+                    <div class="scratch-code">
+                        sempre
+                        se &lt;(número aleatório entre 1 e 100) &lt; 30&gt; então
+                        cruze com (um vizinho aleatório)
+                    </div>
+                    <h4>Fase 3: Experimentação e Análise (1 aula)</h4>
+                    <p>Executar a simulação partindo de diferentes genótipos iniciais. Observar a frequência fenotípica
+                        ao longo das gerações. Perguntas:</p>
+                    <ul>
+                        <li>Qual a proporção fenotípica esperada na segunda geração (3:1)? A simulação se aproxima?</li>
+                        <li>O que acontece se houver seleção natural (ex: cor vermelha atrai predadores)?</li>
+                        <li>Como a deriva genética afeta populações pequenas?</li>
+                    </ul>
+                    <h3>Rubrica de Avaliação</h3>
+                    <ul class="checklist">
+                        <li><strong>✅ Modelagem (2 pts):</strong> Regras genéticas corretas e representação adequada.
+                        </li>
+                        <li><strong>✅ Implementação (3 pts):</strong> Uso de listas, clones e operações probabilísticas.
+                        </li>
+                        <li><strong>✅ Análise (3 pts):</strong> Comparação entre resultados simulados e previsões
+                            teóricas.</li>
+                        <li><strong>✅ Criatividade (2 pts):</strong> Adição de características múltiplas, dominância
+                            incompleta, etc.</li>
+                    </ul>
+                    <h3>Extensões e Desafios</h3>
+                    <ul>
+                        <li><strong>Múltiplas características:</strong> Simular di‑hibridismo (ex: cor e textura).</li>
+                        <li><strong>Seleção natural:</strong> Remover clones com certos fenótipos e observar evolução.
+                        </li>
+                        <li><strong>Gráficos:</strong> Registrar a frequência de alelos a cada geração.</li>
+                        <li><strong>Interação:</strong> Botão para cruzar indivíduos específicos escolhidos pelo
+                            usuário.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ========== OUTRAS IDEIAS DE PROJETOS ========== -->
+            <div class="content-section">
+                <h2>Outras Ideias de Projetos para o 8º Ano</h2>
+                <div class="card-grid">
+                    <div class="nav-card">
+                        <h3>Corrida de Clones</h3>
+                        <p>Um jogo onde clones competem em uma pista, cada um com um comportamento diferente. Trabalha
+                            listas e parâmetros.</p>
+                    </div>
+                    <div class="nav-card">
+                        <h3>Simulador de Partículas</h3>
+                        <p>Clones que se movem e colidem, simulando movimento browniano ou comportamento de gases.</p>
+                    </div>
+                    <div class="nav-card">
+                        <h3>Jogo de Defesa com Torres</h3>
+                        <p>Clones de inimigos que aparecem em ondas e clones de torres que atiram.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== MATERIAL DE APOIO PARA O PROFESSOR ========== -->
+            <div class="content-section">
+                <h2>Material de Apoio para o Professor</h2>
+                <div class="info-box">
+                    <h4>📌 Dicas para a Atividade</h4>
+                    <ul>
+                        <li><strong>Comece simples:</strong> Implemente apenas plantas e coelhos primeiro, depois
+                            adicione raposas.</li>
+                        <li><strong>Teste com diferentes taxas:</strong> Faça os alunos experimentarem e registrarem o
+                            que observam.</li>
+                        <li><strong>Utilize o "Modo de exibição de tela cheia":</strong> Ajuda a visualizar melhor o
+                            movimento dos clones.</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h4>📚 Conexões Curriculares</h4>
+                    <ul>
+                        <li><strong>Ciências:</strong> Ecologia, cadeias alimentares, fatores bióticos e abióticos.</li>
+                        <li><strong>Matemática:</strong> Modelagem, análise de dados, gráficos.</li>
+                        <li><strong>Geografia:</strong> Impacto humano no meio ambiente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ========== NAVEGAÇÃO ENTRE PÁGINAS ========== -->
+            <div class="content-section">
+                <h2>Navegação</h2>
+                <div class="card-grid">
+                    <a href="projetos_7_ano.html" class="nav-card">
+                        <h3>Anterior: 7º Ano</h3>
+                        <p>Quiz Educativo</p>
+                    </a>
+                    <a href="index.html" class="nav-card">
+                        <h3>Página Inicial</h3>
+                        <p>Voltar à cartilha principal</p>
+                    </a>
+                    <a href="projetos_9_ano.html" class="nav-card">
+                        <h3>Próximo: 9º Ano</h3>
+                        <p>Super Trunfo e Ponte para Python</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UTFPR - Campus Siqueira Campos</h3>
+                    <p>Universidade Tecnológica Federal do Paraná</p>
+                    <p>Departamento de Computação</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos Scratch</h3>
+                    <ul>
+                        <li><a href="https://scratch.mit.edu" target="_blank" rel="noopener noreferrer">Site Oficial do
+                                Scratch</a></li>
+                        <li><a href="https://scratch.mit.edu/educators" target="_blank" rel="noopener noreferrer">Para
+                                Educadores</a></li>
+                        <li><a href="https://scratch.mit.edu/parents" target="_blank" rel="noopener noreferrer">Para
+                                Pais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>Email: giseleacn@gmail.com</p>
+                    <p>Email: barbosa.rodrigo.1979@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 UTFPR - Desenvolvido por Gisele Nunes e Rodrigo Barbosa. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão para alternar entre tema claro e escuro -->
+    <button class="theme-toggle" id="themeToggle" aria-pressed="false"
+        aria-label="Alternar tema claro e escuro">🌙</button>
+    <!-- Script externo para funcionalidades interativas (ex: troca de tema) -->
+    <script src="script.js"></script>
+</body>
+
+</html>
